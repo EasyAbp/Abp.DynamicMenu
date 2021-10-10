@@ -1,0 +1,29 @@
+{
+  "culture": "en",
+  "texts": {
+    "Permission:DynamicMenu": "Dynamic menu",
+    "Permission:MenuItem": "Menu item",
+    "Permission:Create": "Create",
+    "Permission:Update": "Update",
+    "Permission:Delete": "Delete",
+    "Menu:DynamicMenu": "Dynamic menu",
+    "Menu:MenuItem": "Menu item",
+    "MenuItem": "Menu item",
+    "MenuItemParentName": "Parent name",
+    "MenuItemName": "Name",
+    "MenuItemDisplayName": "Display name",
+    "MenuItemUrl": "URL / Path",
+    "MenuItemUrlMvc": "URL / Path for MVC",
+    "MenuItemUrlBlazor": "URL / Path for Blazor",
+    "MenuItemUrlAngular": "URL / Path for Angular",
+    "MenuItemPermission": "Depends on permission name",
+    "MenuItemLResourceTypeName": "Localization resource type name",
+    "MenuItemLResourceTypeAssemblyName": "Localization resource assembly name",
+    "CreateMenuItem": "New",
+    "EditMenuItem": "Edit",
+    "SubMenuItems": "Sub-items",
+    "MenuItemDeletionConfirmationMessage": "Are you sure to delete the menu item {0}?",
+    "SuccessfullyDeleted": "Successfully deleted",
+    "EasyAbp.Abp.DynamicMenu:NonexistentParentMenuItem": "Nonexistent parent menu item: {ParentName}"
+  }
+}

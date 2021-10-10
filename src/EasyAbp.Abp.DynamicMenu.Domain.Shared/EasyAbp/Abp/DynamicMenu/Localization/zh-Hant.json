@@ -1,0 +1,29 @@
+{
+  "culture": "zh-Hant",
+  "texts": {
+    "Permission:DynamicMenu": "動態菜單",
+    "Permission:MenuItem": "菜單項",
+    "Permission:Create": "新建",
+    "Permission:Update": "編輯",
+    "Permission:Delete": "刪除",
+    "Menu:DynamicMenu": "動態菜單",
+    "Menu:MenuItem": "菜單項",
+    "MenuItem": "菜單項",
+    "MenuItemParentName": "父級菜單項名",
+    "MenuItemName": "菜單項名",
+    "MenuItemDisplayName": "顯示名稱",
+    "MenuItemUrl": "網址 / 路徑",
+    "MenuItemUrlMvc": "MVC 網址 / 路徑",
+    "MenuItemUrlBlazor": "Blazor 網址 / 路徑",
+    "MenuItemUrlAngular": "Angular 網址 / 路徑",
+    "MenuItemPermission": "依賴的權限名",
+    "MenuItemLResourceTypeName": "本地化資源類型名",
+    "MenuItemLResourceTypeAssemblyName": "本地化資源類型 Assembly",
+    "CreateMenuItem": "新建",
+    "EditMenuItem": "編輯",
+    "SubMenuItems": "子菜單項",
+    "MenuItemDeletionConfirmationMessage": "確認刪除菜單項 {0}?",
+    "SuccessfullyDeleted": "刪除成功",
+    "EasyAbp.Abp.DynamicMenu:NonexistentParentMenuItem": "不存在的父級菜單項：{ParentName}"
+  }
+}

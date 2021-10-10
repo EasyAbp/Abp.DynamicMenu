@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>EasyAbp.Abp.DynamicMenu</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.1" />
+    <PackageReference Include="Mongo2Go" Version="3.1.1" />
+    <ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.MongoDB\EasyAbp.Abp.DynamicMenu.MongoDB.csproj" />
+    <ProjectReference Include="..\EasyAbp.Abp.DynamicMenu.TestBase\EasyAbp.Abp.DynamicMenu.TestBase.csproj" />
+  </ItemGroup>
+
+</Project>

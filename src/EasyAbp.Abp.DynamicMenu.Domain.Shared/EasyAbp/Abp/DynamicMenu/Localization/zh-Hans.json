@@ -1,0 +1,29 @@
+{
+  "culture": "zh-Hans",
+  "texts": {
+    "Permission:DynamicMenu": "动态菜单",
+    "Permission:MenuItem": "菜单项",
+    "Permission:Create": "新建",
+    "Permission:Update": "编辑",
+    "Permission:Delete": "删除",
+    "Menu:DynamicMenu": "动态菜单",
+    "Menu:MenuItem": "菜单项",
+    "MenuItem": "菜单项",
+    "MenuItemParentName": "父级菜单项名",
+    "MenuItemName": "菜单项名",
+    "MenuItemDisplayName": "显示名称",
+    "MenuItemUrl": "网址 / 路径",
+    "MenuItemUrlMvc": "MVC 网址 / 路径",
+    "MenuItemUrlBlazor": "Blazor 网址 / 路径",
+    "MenuItemUrlAngular": "Angular 网址 / 路径",
+    "MenuItemPermission": "依赖的权限名",
+    "MenuItemLResourceTypeName": "本地化资源类型名",
+    "MenuItemLResourceTypeAssemblyName": "本地化资源类型 Assembly",
+    "CreateMenuItem": "新建",
+    "EditMenuItem": "编辑",
+    "SubMenuItems": "子菜单项",
+    "MenuItemDeletionConfirmationMessage": "确认删除菜单项 {0}?",
+    "SuccessfullyDeleted": "删除成功",
+    "EasyAbp.Abp.DynamicMenu:NonexistentParentMenuItem": "不存在的父级菜单项：{ParentName}"
+  }
+}

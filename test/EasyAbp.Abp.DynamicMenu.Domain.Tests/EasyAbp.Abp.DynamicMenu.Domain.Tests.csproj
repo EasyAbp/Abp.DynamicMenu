@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>EasyAbp.Abp.DynamicMenu</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.1" />
+    <ProjectReference Include="..\EasyAbp.Abp.DynamicMenu.EntityFrameworkCore.Tests\EasyAbp.Abp.DynamicMenu.EntityFrameworkCore.Tests.csproj" />
+  </ItemGroup>
+
+</Project>
