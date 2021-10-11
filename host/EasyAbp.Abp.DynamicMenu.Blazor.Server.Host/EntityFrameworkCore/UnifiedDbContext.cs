@@ -28,7 +28,7 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.Server.Host.EntityFrameworkCore
             modelBuilder.ConfigureIdentity();
             modelBuilder.ConfigureFeatureManagement();
             modelBuilder.ConfigureTenantManagement();
-            modelBuilder.ConfigureDynamicMenu();
+            modelBuilder.ConfigureAbpDynamicMenu();
         }
     }
 }

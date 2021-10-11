@@ -27,7 +27,7 @@ namespace EasyAbp.Abp.DynamicMenu.EntityFrameworkCore
             modelBuilder.ConfigureIdentity();
             modelBuilder.ConfigureFeatureManagement();
             modelBuilder.ConfigureTenantManagement();
-            modelBuilder.ConfigureDynamicMenu();
+            modelBuilder.ConfigureAbpDynamicMenu();
         }
     }
 }

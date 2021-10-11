@@ -51,9 +51,8 @@ using Volo.Abp.VirtualFileSystem;
 namespace EasyAbp.Abp.DynamicMenu.Blazor.Server.Host
 {
     [DependsOn(
-        typeof(DynamicMenuEntityFrameworkCoreModule),
-        typeof(DynamicMenuApplicationModule),
         typeof(DynamicMenuHttpApiModule),
+        typeof(DynamicMenuHostSharedModule),
         typeof(AbpAspNetCoreMvcUiBasicThemeModule),
         typeof(AbpAutofacModule),
         typeof(AbpSwashbuckleModule),

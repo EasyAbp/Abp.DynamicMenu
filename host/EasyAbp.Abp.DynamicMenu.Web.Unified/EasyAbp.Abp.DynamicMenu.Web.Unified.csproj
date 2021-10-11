@@ -40,8 +40,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Application\EasyAbp.Abp.DynamicMenu.Application.csproj" />
-    <ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.EntityFrameworkCore\EasyAbp.Abp.DynamicMenu.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Web\EasyAbp.Abp.DynamicMenu.Web.csproj" />
     <ProjectReference Include="..\EasyAbp.Abp.DynamicMenu.Host.Shared\EasyAbp.Abp.DynamicMenu.Host.Shared.csproj" />
   </ItemGroup>

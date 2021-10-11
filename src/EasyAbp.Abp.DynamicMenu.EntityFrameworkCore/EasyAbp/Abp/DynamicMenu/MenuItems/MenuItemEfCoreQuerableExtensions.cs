@@ -13,7 +13,8 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             }
 
             return queryable
-                .Include(x => x.MenuItems);
+                .Include(x => x.MenuItems)
+                .ThenInclude(x => x.MenuItems);
         }
     }
 }

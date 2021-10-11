@@ -8,7 +8,7 @@ namespace EasyAbp.Abp.DynamicMenu.EntityFrameworkCore
 {
     public static class DynamicMenuDbContextModelCreatingExtensions
     {
-        public static void ConfigureDynamicMenu(
+        public static void ConfigureAbpDynamicMenu(
             this ModelBuilder builder,
             Action<DynamicMenuModelBuilderConfigurationOptions> optionsAction = null)
         {
@@ -45,14 +45,16 @@ namespace EasyAbp.Abp.DynamicMenu.EntityFrameworkCore
             builder.Entity<MenuItem>(b =>
             {
                 b.ToTable(options.TablePrefix + "MenuItems", options.Schema);
-                b.ConfigureByConvention(); 
+                b.ConfigureByConvention();
+
+                /* Configure more properties here */
                 
                 b.HasKey(e => new
                 {
                     e.Name,
                 });
 
-                /* Configure more properties here */
+                b.HasMany(x => x.MenuItems).WithOne();
             });
         }
     }

@@ -24,6 +24,7 @@
     "SubMenuItems": "Sub-items",
     "MenuItemDeletionConfirmationMessage": "Are you sure to delete the menu item {0}?",
     "SuccessfullyDeleted": "Successfully deleted",
-    "EasyAbp.Abp.DynamicMenu:NonexistentParentMenuItem": "Nonexistent parent menu item: {ParentName}"
+    "EasyAbp.Abp.DynamicMenu:NonexistentParentMenuItem": "Nonexistent parent menu item: {ParentName}",
+    "EasyAbp.Abp.DynamicMenu:ExceededMenuLevelLimit": "Exceeded the maximum menu item level: {MaxLevel}"
   }
 }

@@ -23,7 +23,7 @@ namespace EasyAbp.Abp.DynamicMenu.EntityFrameworkCore
         {
             base.OnModelCreating(builder);
 
-            builder.ConfigureDynamicMenu();
+            builder.ConfigureAbpDynamicMenu();
         }
     }
 }

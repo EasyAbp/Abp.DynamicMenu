@@ -86,7 +86,7 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.Menus
                         continue;
                     }
 
-                    child.Url = menuItem.UrlMvc ?? menuItem.Url;
+                    child.Url = menuItem.UrlBlazor ?? menuItem.Url;
                 }
                 else
                 {

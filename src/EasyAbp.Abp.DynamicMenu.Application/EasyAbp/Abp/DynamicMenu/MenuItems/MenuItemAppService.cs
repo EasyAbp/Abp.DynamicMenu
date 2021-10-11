@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EasyAbp.Abp.DynamicMenu.Permissions;
@@ -40,7 +42,7 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
         {
             // TODO: AbpHelper generated
             return await AsyncExecuter.FirstOrDefaultAsync(
-                _repository.Where(e =>
+                (await _repository.WithDetailsAsync()).Where(e =>
                     e.Name == id.Name
                 )
             ); 
@@ -82,6 +84,30 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             return await MapToGetOutputDtoAsync(entity);
         }
 
+        public override async Task DeleteAsync(MenuItemKey id)
+        {
+            await CheckDeletePolicyAsync();
+
+            var menuItem = await GetEntityByIdAsync(id);
+
+            await RecursiveDeleteAsync(menuItem);
+
+            await CurrentUnitOfWork.SaveChangesAsync();
+        }
+
+        protected virtual async Task RecursiveDeleteAsync(MenuItem menuItem)
+        {
+            if (!menuItem.MenuItems.IsNullOrEmpty())
+            {
+                foreach (var subItem in menuItem.MenuItems)
+                {
+                    await RecursiveDeleteAsync(subItem);
+                }
+            }
+
+            await _repository.DeleteAsync(menuItem);
+        }
+
         protected async Task CheckParentNameAsync([CanBeNull] string parentName)
         {
             if (parentName == null)
@@ -89,9 +115,22 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
                 return;
             }
 
-            if (await _repository.FindAsync(x => x.Name == parentName) == null)
+            var parent = await _repository.FindAsync(x => x.Name == parentName);
+
+            if (parent == null)
             {
                 throw new NonexistentParentMenuItemException(parentName);
+            }
+
+            // Maximum menu item level: 3
+            if (!parent.ParentName.IsNullOrEmpty())
+            {
+                var grandparent = await _repository.GetAsync(x => x.Name == parent.ParentName);
+
+                if (grandparent.ParentName != null)
+                {
+                    throw new ExceededMenuLevelLimitException(3);
+                }
             }
         }
     }

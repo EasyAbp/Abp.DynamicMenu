@@ -24,6 +24,7 @@
     "SubMenuItems": "子菜单项",
     "MenuItemDeletionConfirmationMessage": "确认删除菜单项 {0}?",
     "SuccessfullyDeleted": "删除成功",
-    "EasyAbp.Abp.DynamicMenu:NonexistentParentMenuItem": "不存在的父级菜单项：{ParentName}"
+    "EasyAbp.Abp.DynamicMenu:NonexistentParentMenuItem": "不存在的父级菜单项：{ParentName}",
+    "EasyAbp.Abp.DynamicMenu:ExceededMenuLevelLimit": "菜单项最大支持 {MaxLevel} 级"
   }
 }
