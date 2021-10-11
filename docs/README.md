@@ -7,11 +7,11 @@
 
 An abp module that dynamically creates menu items for ABP UI projects in runtime.
 
+![demo.gif](/docs/images/demo.gif)
+
 ## Online Demo
 
 We have launched an online demo for this module: [https://dynamicmenu.samples.easyabp.io](https://dynamicmenu.samples.easyabp.io)
-
-![demo.gif](/docs/images/demo.gif)
 
 ## Installation
 
