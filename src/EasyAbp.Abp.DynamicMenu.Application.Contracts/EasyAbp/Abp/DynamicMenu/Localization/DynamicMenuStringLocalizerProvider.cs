@@ -36,10 +36,18 @@ namespace EasyAbp.Abp.DynamicMenu.Localization
         {
             if (menuItem.LResourceTypeName.IsNullOrEmpty() || menuItem.LResourceTypeAssemblyName.IsNullOrEmpty())
             {
-                return null;
+                return Task.FromResult<Type>(null);
             }
-            
-            return Task.FromResult(Type.GetType($"{menuItem.LResourceTypeName}, {menuItem.LResourceTypeAssemblyName}"));
+
+            try
+            {
+                return Task.FromResult(
+                    Type.GetType($"{menuItem.LResourceTypeName}, {menuItem.LResourceTypeAssemblyName}", true));
+            }
+            catch
+            {
+                return Task.FromResult<Type>(null);
+            }
         }
     }
 }

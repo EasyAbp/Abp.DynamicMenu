@@ -24,8 +24,8 @@ namespace EasyAbp.Abp.DynamicMenu.Web.Menus
         private IMenuItemAppService _menuItemAppService;
         private IDynamicMenuStringLocalizerProvider _stringLocalizerProvider;
 
-        private Dictionary<string, IStringLocalizer> ModuleNameStringLocalizers { get; } = new();
-        
+        private Dictionary<string, StringLocalizerModel> ModuleNameStringLocalizers { get; } = new();
+
         public async Task ConfigureMenuAsync(MenuConfigurationContext context)
         {
             var loggerFactory = context.ServiceProvider.GetRequiredService<ILoggerFactory>();
@@ -129,14 +129,21 @@ namespace EasyAbp.Abp.DynamicMenu.Web.Menus
         protected virtual async Task<IStringLocalizer> GetOrCreateStringLocalizerAsync(MenuItemDto menuItem,
             IDynamicMenuStringLocalizerProvider stringLocalizerProvider)
         {
-            if (ModuleNameStringLocalizers.ContainsKey(menuItem.Name))
+            if (ModuleNameStringLocalizers.ContainsKey(menuItem.Name) &&
+                ModuleNameStringLocalizers[menuItem.Name].LResourceTypeName == menuItem.LResourceTypeName &&
+                ModuleNameStringLocalizers[menuItem.Name].LResourceTypeAssemblyName == menuItem.LResourceTypeAssemblyName)
             {
-                return ModuleNameStringLocalizers[menuItem.Name];
+                return ModuleNameStringLocalizers[menuItem.Name].StringLocalizer;
             }
 
             var localizer =  await stringLocalizerProvider.GetAsync(menuItem);
 
-            ModuleNameStringLocalizers[menuItem.Name] = localizer;
+            ModuleNameStringLocalizers[menuItem.Name] = new StringLocalizerModel
+            {
+                LResourceTypeName = menuItem.LResourceTypeName,
+                LResourceTypeAssemblyName = menuItem.LResourceTypeAssemblyName,
+                StringLocalizer = localizer
+            };
 
             return localizer;
         }
