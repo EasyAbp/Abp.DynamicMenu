@@ -5,11 +5,11 @@ using Volo.Abp.Authorization;
 namespace EasyAbp.Abp.DynamicMenu
 {
     [DependsOn(
-        typeof(DynamicMenuDomainSharedModule),
+        typeof(AbpDynamicMenuDomainSharedModule),
         typeof(AbpDddApplicationContractsModule),
         typeof(AbpAuthorizationModule)
         )]
-    public class DynamicMenuApplicationContractsModule : AbpModule
+    public class AbpDynamicMenuApplicationContractsModule : AbpModule
     {
 
     }

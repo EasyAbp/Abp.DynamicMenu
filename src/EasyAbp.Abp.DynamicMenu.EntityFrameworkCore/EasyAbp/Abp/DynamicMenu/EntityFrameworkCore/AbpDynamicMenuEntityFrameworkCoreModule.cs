@@ -6,10 +6,10 @@ using Volo.Abp.Modularity;
 namespace EasyAbp.Abp.DynamicMenu.EntityFrameworkCore
 {
     [DependsOn(
-        typeof(DynamicMenuDomainModule),
+        typeof(AbpDynamicMenuDomainModule),
         typeof(AbpEntityFrameworkCoreModule)
     )]
-    public class DynamicMenuEntityFrameworkCoreModule : AbpModule
+    public class AbpDynamicMenuEntityFrameworkCoreModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {

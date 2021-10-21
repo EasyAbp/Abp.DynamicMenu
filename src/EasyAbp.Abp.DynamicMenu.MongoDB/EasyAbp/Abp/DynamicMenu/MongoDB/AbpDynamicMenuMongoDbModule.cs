@@ -5,10 +5,10 @@ using Volo.Abp.MongoDB;
 namespace EasyAbp.Abp.DynamicMenu.MongoDB
 {
     [DependsOn(
-        typeof(DynamicMenuDomainModule),
+        typeof(AbpDynamicMenuDomainModule),
         typeof(AbpMongoDbModule)
         )]
-    public class DynamicMenuMongoDbModule : AbpModule
+    public class AbpDynamicMenuMongoDbModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {

@@ -3,7 +3,7 @@
 namespace EasyAbp.Abp.DynamicMenu
 {
     [DependsOn(
-        typeof(DynamicMenuApplicationModule),
+        typeof(AbpDynamicMenuApplicationModule),
         typeof(DynamicMenuDomainTestModule)
         )]
     public class DynamicMenuApplicationTestModule : AbpModule

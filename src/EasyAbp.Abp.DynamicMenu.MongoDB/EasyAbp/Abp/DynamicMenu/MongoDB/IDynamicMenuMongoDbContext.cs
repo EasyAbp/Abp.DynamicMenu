@@ -7,7 +7,7 @@ namespace EasyAbp.Abp.DynamicMenu.MongoDB
     public interface IDynamicMenuMongoDbContext : IAbpMongoDbContext
     {
         /* Define mongo collections here. Example:
-         * IMongoCollection<Question> Questions { get; }
+         * IMongoCollection<Question> Questions { get; set; }
          */
     }
 }

@@ -9,15 +9,15 @@ using Volo.Abp.UI.Navigation;
 namespace EasyAbp.Abp.DynamicMenu.Blazor
 {
     [DependsOn(
-        typeof(DynamicMenuApplicationContractsModule),
+        typeof(AbpDynamicMenuApplicationContractsModule),
         typeof(AbpAspNetCoreComponentsWebThemingModule),
         typeof(AbpAutoMapperModule)
         )]
-    public class DynamicMenuBlazorModule : AbpModule
+    public class AbpDynamicMenuBlazorModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            context.Services.AddAutoMapperObjectMapper<DynamicMenuBlazorModule>();
+            context.Services.AddAutoMapperObjectMapper<AbpDynamicMenuBlazorModule>();
 
             Configure<AbpAutoMapperOptions>(options =>
             {
@@ -31,7 +31,7 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor
 
             Configure<AbpRouterOptions>(options =>
             {
-                options.AdditionalAssemblies.Add(typeof(DynamicMenuBlazorModule).Assembly);
+                options.AdditionalAssemblies.Add(typeof(AbpDynamicMenuBlazorModule).Assembly);
             });
         }
     }

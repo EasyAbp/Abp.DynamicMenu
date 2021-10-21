@@ -5,9 +5,9 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.Server
 {
     [DependsOn(
         typeof(AbpAspNetCoreComponentsServerThemingModule),
-        typeof(DynamicMenuBlazorModule)
+        typeof(AbpDynamicMenuBlazorModule)
         )]
-    public class DynamicMenuBlazorServerModule : AbpModule
+    public class AbpDynamicMenuBlazorServerModule : AbpModule
     {
         
     }

@@ -7,7 +7,7 @@ namespace EasyAbp.Abp.DynamicMenu.MongoDB
 {
     [DependsOn(
         typeof(DynamicMenuTestBaseModule),
-        typeof(DynamicMenuMongoDbModule)
+        typeof(AbpDynamicMenuMongoDbModule)
         )]
     public class DynamicMenuMongoDbTestModule : AbpModule
     {

@@ -8,7 +8,7 @@ namespace EasyAbp.Abp.DynamicMenu
         protected DynamicMenuAppService()
         {
             LocalizationResource = typeof(DynamicMenuResource);
-            ObjectMapperContext = typeof(DynamicMenuApplicationModule);
+            ObjectMapperContext = typeof(AbpDynamicMenuApplicationModule);
         }
     }
 }

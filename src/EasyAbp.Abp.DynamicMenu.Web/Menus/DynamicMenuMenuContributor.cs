@@ -24,7 +24,7 @@ namespace EasyAbp.Abp.DynamicMenu.Web.Menus
         private IMenuItemAppService _menuItemAppService;
         private IDynamicMenuStringLocalizerProvider _stringLocalizerProvider;
 
-        private Dictionary<string, StringLocalizerModel> ModuleNameStringLocalizers { get; } = new();
+        private Dictionary<string, StringLocalizerModel> ModuleNameStringLocalizers { get; set; } = new();
 
         public async Task ConfigureMenuAsync(MenuConfigurationContext context)
         {

@@ -1,9 +1,10 @@
 using System;
-using System.ComponentModel;
+using Volo.Abp.ObjectExtending;
+
 namespace EasyAbp.Abp.DynamicMenu.MenuItems.Dtos
 {
     [Serializable]
-    public class CreateMenuItemDto
+    public class CreateMenuItemDto : ExtensibleObject
     {
         public string ParentName { get; set; }
 

@@ -4,16 +4,17 @@ using AutoMapper;
 
 namespace EasyAbp.Abp.DynamicMenu
 {
-    public class DynamicMenuApplicationAutoMapperProfile : Profile
+    public class AbpDynamicMenuApplicationAutoMapperProfile : Profile
     {
-        public DynamicMenuApplicationAutoMapperProfile()
+        public AbpDynamicMenuApplicationAutoMapperProfile()
         {
             /* You can configure your AutoMapper mapping configuration here.
              * Alternatively, you can split your mapping configurations
              * into multiple profile classes for a better organization. */
-            CreateMap<MenuItem, MenuItemDto>();
-            CreateMap<CreateMenuItemDto, MenuItem>(MemberList.Source);
-            CreateMap<UpdateMenuItemDto, MenuItem>(MemberList.Source);
+            
+            CreateMap<MenuItem, MenuItemDto>().MapExtraProperties();
+            CreateMap<CreateMenuItemDto, MenuItem>(MemberList.Source).MapExtraProperties();
+            CreateMap<UpdateMenuItemDto, MenuItem>(MemberList.Source).MapExtraProperties();
         }
     }
 }

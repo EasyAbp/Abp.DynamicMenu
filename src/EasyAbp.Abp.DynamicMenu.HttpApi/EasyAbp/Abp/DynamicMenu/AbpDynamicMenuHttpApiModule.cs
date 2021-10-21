@@ -8,15 +8,15 @@ using Microsoft.Extensions.DependencyInjection;
 namespace EasyAbp.Abp.DynamicMenu
 {
     [DependsOn(
-        typeof(DynamicMenuApplicationContractsModule),
+        typeof(AbpDynamicMenuApplicationContractsModule),
         typeof(AbpAspNetCoreMvcModule))]
-    public class DynamicMenuHttpApiModule : AbpModule
+    public class AbpDynamicMenuHttpApiModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
             PreConfigure<IMvcBuilder>(mvcBuilder =>
             {
-                mvcBuilder.AddApplicationPartIfNotExists(typeof(DynamicMenuHttpApiModule).Assembly);
+                mvcBuilder.AddApplicationPartIfNotExists(typeof(AbpDynamicMenuHttpApiModule).Assembly);
             });
         }
 

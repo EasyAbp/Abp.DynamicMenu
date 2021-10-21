@@ -10,7 +10,7 @@ namespace EasyAbp.Abp.DynamicMenu.EntityFrameworkCore
 {
     [DependsOn(
         typeof(DynamicMenuTestBaseModule),
-        typeof(DynamicMenuEntityFrameworkCoreModule),
+        typeof(AbpDynamicMenuEntityFrameworkCoreModule),
         typeof(AbpEntityFrameworkCoreSqliteModule)
         )]
     public class DynamicMenuEntityFrameworkCoreTestModule : AbpModule

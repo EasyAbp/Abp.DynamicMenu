@@ -12,7 +12,7 @@ namespace EasyAbp.Abp.DynamicMenu
         typeof(AbpAutofacModule),
         typeof(AbpTestBaseModule),
         typeof(AbpAuthorizationModule),
-        typeof(DynamicMenuDomainModule)
+        typeof(AbpDynamicMenuDomainModule)
         )]
     public class DynamicMenuTestBaseModule : AbpModule
     {

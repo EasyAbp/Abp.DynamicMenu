@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
 using Shouldly;
 using Xunit;
 
@@ -10,16 +12,100 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
         {
         }
 
-        /*
         [Fact]
-        public async Task Test1()
+        public async Task Should_Create_A_Menu_Item()
         {
             // Arrange
+            
+            var repository = ServiceProvider.GetRequiredService<IMenuItemRepository>();
+            
+            var handler = ServiceProvider.GetRequiredService<CreateMenuItemEventHandler>();
+            
+            var eto = new TryCreateMenuItemEto(null, "GoogleLink", "Google", "https://google.com", null, null, null,
+                null, null, null);
+
+            // Act
+            
+            await handler.HandleEventAsync(eto);
+            
+            var menuItem = await repository.FindAsync(x => x.Name == eto.Name);
 
             // Assert
 
-            // Assert
+            menuItem.ShouldNotBeNull();
+            menuItem.ParentName.ShouldBeNull();
+            menuItem.Name.ShouldBe("GoogleLink");
+            menuItem.DisplayName.ShouldBe("Google");
+            menuItem.Url.ShouldBe("https://google.com");
         }
-        */
+        
+        [Fact]
+        public async Task Should_Create_Menu_Items()
+        {
+            // Arrange
+            
+            var repository = ServiceProvider.GetRequiredService<IMenuItemRepository>();
+            
+            var handler = ServiceProvider.GetRequiredService<CreateMenuItemEventHandler>();
+            
+            var itemEto1 = new TryCreateMenuItemEto(null, "SearchEngines", "Search engines", null, null, null, null,
+                null, null, null);
+            
+            var itemEto2 = new TryCreateMenuItemEto(itemEto1.Name, "GoogleLink", "Google", "https://google.com", null, null, null,
+                null, null, null);
+
+            var eto = new TryCreateMenuItemsEto(new List<TryCreateMenuItemEto> {itemEto1, itemEto2});
+
+            // Act
+            
+            await handler.HandleEventAsync(eto);
+            
+            var menuItem1 = await repository.FindAsync(x => x.Name == itemEto1.Name);
+            var menuItem2 = await repository.FindAsync(x => x.Name == itemEto2.Name);
+
+            // Assert
+
+            menuItem1.ShouldNotBeNull();
+            menuItem1.ParentName.ShouldBeNull();
+            menuItem1.Name.ShouldBe("SearchEngines");
+            menuItem1.DisplayName.ShouldBe("Search engines");
+            menuItem1.Url.ShouldBeNull();
+
+            menuItem2.ShouldNotBeNull();
+            menuItem2.ParentName.ShouldBe(menuItem1.Name);
+            menuItem2.Name.ShouldBe("GoogleLink");
+            menuItem2.DisplayName.ShouldBe("Google");
+            menuItem2.Url.ShouldBe("https://google.com");
+        }
+        
+        [Fact]
+        public async Task Should_Skip_Creating_AN_Existing_Menu_Item()
+        {
+            // Arrange
+            
+            var repository = ServiceProvider.GetRequiredService<IMenuItemRepository>();
+            
+            var handler = ServiceProvider.GetRequiredService<CreateMenuItemEventHandler>();
+
+            var existingMenuItem = new MenuItem(null, "GoogleLink", "Google1", "https://google.com", null, null, null,
+                null, null, null, new List<MenuItem>());
+
+            await repository.InsertAsync(existingMenuItem, true);
+
+            var eto = new TryCreateMenuItemEto(null, "GoogleLink", "Google2", "https://google.com", null, null, null,
+                null, null, null);
+
+            // Act
+            
+            await handler.HandleEventAsync(eto);
+            
+            var menuItem = await repository.FindAsync(x => x.Name == "GoogleLink");
+
+            // Assert
+
+            menuItem.ShouldNotBeNull();
+            menuItem.DisplayName.ShouldNotBe("Google2");
+            menuItem.DisplayName.ShouldBe("Google1");
+        }
     }
 }

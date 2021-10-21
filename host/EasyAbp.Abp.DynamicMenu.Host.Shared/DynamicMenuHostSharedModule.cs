@@ -4,8 +4,8 @@ using Volo.Abp.Modularity;
 namespace EasyAbp.Abp.DynamicMenu
 {
     [DependsOn(
-        typeof(DynamicMenuEntityFrameworkCoreModule),
-        typeof(DynamicMenuApplicationModule)
+        typeof(AbpDynamicMenuEntityFrameworkCoreModule),
+        typeof(AbpDynamicMenuApplicationModule)
     )]
     public class DynamicMenuHostSharedModule : AbpModule
     {

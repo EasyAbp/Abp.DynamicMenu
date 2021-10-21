@@ -5,16 +5,16 @@ using Volo.Abp.Modularity;
 namespace EasyAbp.Abp.DynamicMenu
 {
     [DependsOn(
-        typeof(DynamicMenuApplicationContractsModule),
+        typeof(AbpDynamicMenuApplicationContractsModule),
         typeof(AbpHttpClientModule))]
-    public class DynamicMenuHttpApiClientModule : AbpModule
+    public class AbpDynamicMenuHttpApiClientModule : AbpModule
     {
         public const string RemoteServiceName = "EasyAbpAbpDynamicMenu";
 
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
             context.Services.AddHttpClientProxies(
-                typeof(DynamicMenuApplicationContractsModule).Assembly,
+                typeof(AbpDynamicMenuApplicationContractsModule).Assembly,
                 RemoteServiceName
             );
         }

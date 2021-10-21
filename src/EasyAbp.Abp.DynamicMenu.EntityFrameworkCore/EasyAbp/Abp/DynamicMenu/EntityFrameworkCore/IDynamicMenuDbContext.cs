@@ -9,7 +9,7 @@ namespace EasyAbp.Abp.DynamicMenu.EntityFrameworkCore
     public interface IDynamicMenuDbContext : IEfCoreDbContext
     {
         /* Add DbSet for each Aggregate Root here. Example:
-         * DbSet<Question> Questions { get; }
+         * DbSet<Question> Questions { get; set; }
          */
         DbSet<MenuItem> MenuItems { get; set; }
     }

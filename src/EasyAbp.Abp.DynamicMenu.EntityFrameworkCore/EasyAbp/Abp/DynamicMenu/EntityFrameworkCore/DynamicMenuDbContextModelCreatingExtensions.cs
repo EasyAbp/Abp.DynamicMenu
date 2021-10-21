@@ -54,7 +54,7 @@ namespace EasyAbp.Abp.DynamicMenu.EntityFrameworkCore
                     e.Name,
                 });
 
-                b.HasMany(x => x.MenuItems).WithOne();
+                b.HasMany(x => x.MenuItems).WithOne().HasForeignKey(x => x.ParentName);
             });
         }
     }

@@ -13,22 +13,22 @@ using EasyAbp.Abp.DynamicMenu.Permissions;
 namespace EasyAbp.Abp.DynamicMenu.Web
 {
     [DependsOn(
-        typeof(DynamicMenuHttpApiModule),
+        typeof(AbpDynamicMenuHttpApiModule),
         typeof(AbpAspNetCoreMvcUiThemeSharedModule),
         typeof(AbpAutoMapperModule)
         )]
-    public class DynamicMenuWebModule : AbpModule
+    public class AbpDynamicMenuWebModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
             context.Services.PreConfigure<AbpMvcDataAnnotationsLocalizationOptions>(options =>
             {
-                options.AddAssemblyResource(typeof(DynamicMenuResource), typeof(DynamicMenuWebModule).Assembly);
+                options.AddAssemblyResource(typeof(DynamicMenuResource), typeof(AbpDynamicMenuWebModule).Assembly);
             });
 
             PreConfigure<IMvcBuilder>(mvcBuilder =>
             {
-                mvcBuilder.AddApplicationPartIfNotExists(typeof(DynamicMenuWebModule).Assembly);
+                mvcBuilder.AddApplicationPartIfNotExists(typeof(AbpDynamicMenuWebModule).Assembly);
             });
         }
 
@@ -41,13 +41,13 @@ namespace EasyAbp.Abp.DynamicMenu.Web
 
             Configure<AbpVirtualFileSystemOptions>(options =>
             {
-                options.FileSets.AddEmbedded<DynamicMenuWebModule>();
+                options.FileSets.AddEmbedded<AbpDynamicMenuWebModule>();
             });
 
-            context.Services.AddAutoMapperObjectMapper<DynamicMenuWebModule>();
+            context.Services.AddAutoMapperObjectMapper<AbpDynamicMenuWebModule>();
             Configure<AbpAutoMapperOptions>(options =>
             {
-                options.AddMaps<DynamicMenuWebModule>(validate: true);
+                options.AddMaps<AbpDynamicMenuWebModule>(validate: true);
             });
 
             Configure<RazorPagesOptions>(options =>

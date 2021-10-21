@@ -4,11 +4,11 @@ using Volo.Abp.Modularity;
 namespace EasyAbp.Abp.DynamicMenu.Blazor.WebAssembly
 {
     [DependsOn(
-        typeof(DynamicMenuBlazorModule),
-        typeof(DynamicMenuHttpApiClientModule),
+        typeof(AbpDynamicMenuBlazorModule),
+        typeof(AbpDynamicMenuHttpApiClientModule),
         typeof(AbpAspNetCoreComponentsWebAssemblyThemingModule)
         )]
-    public class DynamicMenuBlazorWebAssemblyModule : AbpModule
+    public class AbpDynamicMenuBlazorWebAssemblyModule : AbpModule
     {
         
     }

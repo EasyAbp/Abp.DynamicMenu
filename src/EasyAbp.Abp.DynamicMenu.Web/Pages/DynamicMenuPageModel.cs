@@ -10,7 +10,7 @@ namespace EasyAbp.Abp.DynamicMenu.Web.Pages
         protected DynamicMenuPageModel()
         {
             LocalizationResourceType = typeof(DynamicMenuResource);
-            ObjectMapperContext = typeof(DynamicMenuWebModule);
+            ObjectMapperContext = typeof(AbpDynamicMenuWebModule);
         }
     }
 }

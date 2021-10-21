@@ -51,7 +51,7 @@ using Volo.Abp.VirtualFileSystem;
 namespace EasyAbp.Abp.DynamicMenu.Blazor.Server.Host
 {
     [DependsOn(
-        typeof(DynamicMenuHttpApiModule),
+        typeof(AbpDynamicMenuHttpApiModule),
         typeof(DynamicMenuHostSharedModule),
         typeof(AbpAspNetCoreMvcUiBasicThemeModule),
         typeof(AbpAutofacModule),
@@ -75,7 +75,7 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.Server.Host
         typeof(AbpSettingManagementBlazorServerModule),
         typeof(AbpSettingManagementApplicationModule),
         typeof(AbpSettingManagementEntityFrameworkCoreModule),
-        typeof(DynamicMenuBlazorServerModule)
+        typeof(AbpDynamicMenuBlazorServerModule)
     )]
     public class DynamicMenuBlazorHostModule: AbpModule
     {
@@ -85,10 +85,10 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.Server.Host
             {
                 options.AddAssemblyResource(
                     typeof(DynamicMenuResource),
-                    typeof(DynamicMenuDomainModule).Assembly,
-                    typeof(DynamicMenuDomainSharedModule).Assembly,
-                    typeof(DynamicMenuApplicationModule).Assembly,
-                    typeof(DynamicMenuApplicationContractsModule).Assembly,
+                    typeof(AbpDynamicMenuDomainModule).Assembly,
+                    typeof(AbpDynamicMenuDomainSharedModule).Assembly,
+                    typeof(AbpDynamicMenuApplicationModule).Assembly,
+                    typeof(AbpDynamicMenuApplicationContractsModule).Assembly,
                     typeof(DynamicMenuBlazorHostModule).Assembly
                 );
             });
@@ -139,10 +139,10 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.Server.Host
             {
                 Configure<AbpVirtualFileSystemOptions>(options =>
                 {
-                    options.FileSets.ReplaceEmbeddedByPhysical<DynamicMenuDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}EasyAbp.Abp.DynamicMenu.Domain.Shared", Path.DirectorySeparatorChar)));
-                    options.FileSets.ReplaceEmbeddedByPhysical<DynamicMenuDomainModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}EasyAbp.Abp.DynamicMenu.Domain", Path.DirectorySeparatorChar)));
-                    options.FileSets.ReplaceEmbeddedByPhysical<DynamicMenuApplicationContractsModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}EasyAbp.Abp.DynamicMenu.Application.Contracts", Path.DirectorySeparatorChar)));
-                    options.FileSets.ReplaceEmbeddedByPhysical<DynamicMenuApplicationModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}EasyAbp.Abp.DynamicMenu.Application", Path.DirectorySeparatorChar)));
+                    options.FileSets.ReplaceEmbeddedByPhysical<AbpDynamicMenuDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}EasyAbp.Abp.DynamicMenu.Domain.Shared", Path.DirectorySeparatorChar)));
+                    options.FileSets.ReplaceEmbeddedByPhysical<AbpDynamicMenuDomainModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}EasyAbp.Abp.DynamicMenu.Domain", Path.DirectorySeparatorChar)));
+                    options.FileSets.ReplaceEmbeddedByPhysical<AbpDynamicMenuApplicationContractsModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}EasyAbp.Abp.DynamicMenu.Application.Contracts", Path.DirectorySeparatorChar)));
+                    options.FileSets.ReplaceEmbeddedByPhysical<AbpDynamicMenuApplicationModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}EasyAbp.Abp.DynamicMenu.Application", Path.DirectorySeparatorChar)));
                     options.FileSets.ReplaceEmbeddedByPhysical<DynamicMenuBlazorHostModule>(hostingEnvironment.ContentRootPath);
                 });
             }
