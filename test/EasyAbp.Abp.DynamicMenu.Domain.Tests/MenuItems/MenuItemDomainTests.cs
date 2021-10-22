@@ -79,7 +79,7 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
         }
         
         [Fact]
-        public async Task Should_Skip_Creating_AN_Existing_Menu_Item()
+        public async Task Should_Skip_Creating_An_Existing_Menu_Item()
         {
             // Arrange
             
@@ -106,6 +106,43 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             menuItem.ShouldNotBeNull();
             menuItem.DisplayName.ShouldNotBe("Google2");
             menuItem.DisplayName.ShouldBe("Google1");
+        }
+        
+        [Fact]
+        public async Task Should_Delete_An_Existing_Menu_Item()
+        {
+            // Arrange
+            
+            var repository = ServiceProvider.GetRequiredService<IMenuItemRepository>();
+            
+            var handler = ServiceProvider.GetRequiredService<DeleteMenuItemEventHandler>();
+
+            var existingMenuItem1 = new MenuItem(null, "GoogleLink1", "Google1", "https://google.com", null, null, null,
+                null, null, null, new List<MenuItem>());
+
+            var existingMenuItem2 = new MenuItem(null, "GoogleLink2", "Google2", "https://google.com", null, null, null,
+                null, null, null, new List<MenuItem>());
+
+            await repository.InsertAsync(existingMenuItem1, true);
+            await repository.InsertAsync(existingMenuItem2, true);
+
+            var eto1 = new TryDeleteMenuItemEto("GoogleLink1");
+            var eto2 = new TryDeleteMenuItemEto("GoogleLink3");
+
+            // Act
+            
+            await handler.HandleEventAsync(eto1);
+            await handler.HandleEventAsync(eto2);
+            
+            var menuItem1 = await repository.FindAsync(x => x.Name == "GoogleLink1");
+            var menuItem2 = await repository.FindAsync(x => x.Name == "GoogleLink2");
+
+            // Assert
+
+            menuItem1.ShouldBeNull();
+            
+            menuItem2.ShouldNotBeNull();
+            menuItem2.DisplayName.ShouldBe("Google2");
         }
     }
 }
