@@ -1,9 +1,11 @@
 ﻿using EasyAbp.Abp.DynamicMenu.Localization;
+using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc;
 
 namespace EasyAbp.Abp.DynamicMenu
 {
-    public abstract class DynamicMenuController : AbpController
+    [Area(AbpDynamicMenuRemoteServiceConsts.ModuleName)]
+    public abstract class DynamicMenuController : AbpControllerBase
     {
         protected DynamicMenuController()
         {

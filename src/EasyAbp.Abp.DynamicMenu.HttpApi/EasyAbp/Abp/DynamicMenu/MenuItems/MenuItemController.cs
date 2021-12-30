@@ -6,7 +6,7 @@ using Volo.Abp;
 
 namespace EasyAbp.Abp.DynamicMenu.MenuItems
 {
-    [RemoteService(Name = "EasyAbpAbpDynamicMenu")]
+    [RemoteService(Name = AbpDynamicMenuRemoteServiceConsts.RemoteServiceName)]
     [Route("/api/dynamic-menu/menu-item")]
     public class MenuItemController : DynamicMenuController, IMenuItemAppService
     {

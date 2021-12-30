@@ -13,7 +13,7 @@ using EasyAbp.Abp.DynamicMenu.Permissions;
 namespace EasyAbp.Abp.DynamicMenu.Web
 {
     [DependsOn(
-        typeof(AbpDynamicMenuHttpApiModule),
+        typeof(AbpDynamicMenuApplicationContractsModule),
         typeof(AbpAspNetCoreMvcUiThemeSharedModule),
         typeof(AbpAutoMapperModule)
         )]
