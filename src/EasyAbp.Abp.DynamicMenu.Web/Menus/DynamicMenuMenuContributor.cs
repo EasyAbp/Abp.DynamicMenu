@@ -88,11 +88,6 @@ namespace EasyAbp.Abp.DynamicMenu.Web.Menus
 
                 if (menuItem.MenuItems.IsNullOrEmpty())
                 {
-                    if (menuItem.ParentName.IsNullOrEmpty())
-                    {
-                        continue;
-                    }
-
                     child.Url = menuItem.UrlMvc ?? menuItem.Url;
                 }
                 else

@@ -18,7 +18,7 @@ namespace EasyAbp.Abp.DynamicMenu
             context.Services.AddAutoMapperObjectMapper<AbpDynamicMenuApplicationModule>();
             Configure<AbpAutoMapperOptions>(options =>
             {
-                options.AddMaps<AbpDynamicMenuApplicationModule>(validate: true);
+                options.AddMaps<AbpDynamicMenuApplicationModule>(validate: false); // todo: https://github.com/abpframework/abp/issues/15404
             });
         }
     }

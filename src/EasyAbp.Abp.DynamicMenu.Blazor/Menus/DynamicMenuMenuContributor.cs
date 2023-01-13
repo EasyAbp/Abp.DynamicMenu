@@ -81,11 +81,6 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.Menus
 
                 if (menuItem.MenuItems.IsNullOrEmpty())
                 {
-                    if (menuItem.ParentName.IsNullOrEmpty())
-                    {
-                        continue;
-                    }
-
                     child.Url = menuItem.UrlBlazor ?? menuItem.Url;
                 }
                 else
