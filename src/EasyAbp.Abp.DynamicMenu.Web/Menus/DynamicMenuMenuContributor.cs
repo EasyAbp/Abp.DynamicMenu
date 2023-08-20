@@ -59,7 +59,7 @@ namespace EasyAbp.Abp.DynamicMenu.Web.Menus
             var l = context.GetLocalizer<DynamicMenuResource>();
 
             var dynamicMenu = new ApplicationMenuItem(DynamicMenuMenus.Prefix, displayName: l["Menu:DynamicMenu"],
-                "~/Abp/DynamicMenu", icon: "fa-bars");
+                "~/Abp/DynamicMenu", icon: "fa fa-bars");
 
             if (await context.IsGrantedAsync(DynamicMenuPermissions.MenuItem.Default))
             {
