@@ -15,7 +15,7 @@ namespace EasyAbp.Abp.DynamicMenu
         {
             _menuItemRepository = menuItemRepository;
         }
-        
+
         [UnitOfWork]
         public async Task SeedAsync(DataSeedContext context)
         {
@@ -24,17 +24,27 @@ namespace EasyAbp.Abp.DynamicMenu
                 return;
             }
 
-            var subItems = new List<MenuItem>
-            {
-                new("DemoMenu", "ChangePassword", "Change password", "~/Account/Manage", null, null, null, null,
-                    DynamicMenuConsts.DefaultLResourceTypeName, DynamicMenuConsts.DefaultLResourceTypeAssemblyName,
-                    null)
-            };
-            
-            var demoMenu = new MenuItem(null, "DemoMenu", "Demo menu", null, null, null, null, null,
-                DynamicMenuConsts.DefaultLResourceTypeName, DynamicMenuConsts.DefaultLResourceTypeAssemblyName, subItems);
-            
+            var demoMenu = new MenuItem(null, false, "DemoMenu", "Demo menu", null, null, null, null, null,
+                DynamicMenuConsts.DefaultLResourceTypeName, DynamicMenuConsts.DefaultLResourceTypeAssemblyName,
+                new List<MenuItem>
+                {
+                    new("DemoMenu", false, "ChangePassword", "Change password", "~/Account/Manage", null, null, null,
+                        null, DynamicMenuConsts.DefaultLResourceTypeName,
+                        DynamicMenuConsts.DefaultLResourceTypeAssemblyName, null)
+                });
+
             await _menuItemRepository.InsertAsync(demoMenu, true);
+
+            var demoMenu2 = new MenuItem(null, true, "DemoMenu2", "Demo menu 2", null, null, null, null, null,
+                DynamicMenuConsts.DefaultLResourceTypeName, DynamicMenuConsts.DefaultLResourceTypeAssemblyName,
+                new List<MenuItem>
+                {
+                    new("DemoMenu2", false, "Google", "Google", "https://google.com", null, null, null, null,
+                        DynamicMenuConsts.DefaultLResourceTypeName, DynamicMenuConsts.DefaultLResourceTypeAssemblyName,
+                        null)
+                });
+
+            await _menuItemRepository.InsertAsync(demoMenu2, true);
         }
     }
 }

@@ -10,6 +10,7 @@
     "Menu:MenuItem": "菜单项",
     "MenuItem": "菜单项",
     "MenuItemParentName": "父级菜单项名",
+    "MenuItemInAdministration": "在管理菜单中",
     "MenuItemName": "菜单项名",
     "MenuItemDisplayName": "显示名称",
     "MenuItemUrl": "网址 / 路径",

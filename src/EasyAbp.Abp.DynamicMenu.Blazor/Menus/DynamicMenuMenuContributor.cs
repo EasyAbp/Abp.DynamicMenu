@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using EasyAbp.Abp.DynamicMenu.Localization;
 using EasyAbp.Abp.DynamicMenu.MenuItems;
@@ -24,7 +25,7 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.Menus
         private IDynamicMenuStringLocalizerProvider _stringLocalizerProvider;
 
         private Dictionary<string, StringLocalizerModel> ModuleNameStringLocalizers { get; set; } = new();
-        
+
         public async Task ConfigureMenuAsync(MenuConfigurationContext context)
         {
             var loggerFactory = context.ServiceProvider.GetRequiredService<ILoggerFactory>();
@@ -32,8 +33,9 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.Menus
             _policyProvider = context.ServiceProvider.GetRequiredService<IAbpAuthorizationPolicyProvider>();
             _currentPrincipalAccessor = context.ServiceProvider.GetRequiredService<ICurrentPrincipalAccessor>();
             _menuItemAppService = context.ServiceProvider.GetRequiredService<IMenuItemAppService>();
-            _stringLocalizerProvider = context.ServiceProvider.GetRequiredService<IDynamicMenuStringLocalizerProvider>();
-            
+            _stringLocalizerProvider =
+                context.ServiceProvider.GetRequiredService<IDynamicMenuStringLocalizerProvider>();
+
             if (context.Menu.Name == StandardMenus.Main)
             {
                 await ConfigureMainMenuAsync(context);
@@ -44,25 +46,43 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.Menus
         {
             var menuItems = await _menuItemAppService.GetListAsync(new GetMenuItemListInput
             {
-                MaxResultCount = LimitedResultRequestDto.MaxMaxResultCount
+                MaxResultCount = LimitedResultRequestDto.MaxMaxResultCount,
+                ParentName = null
             });
 
-            await AddDynamicMenuItemsAsync(context.Menu, menuItems.Items, context);
+            await AddDynamicMenuItemsAsync(menuItems.Items, context);
             await AddDynamicMenuManagementMenuItemAsync(context);
         }
 
         protected virtual async Task AddDynamicMenuManagementMenuItemAsync(MenuConfigurationContext context)
         {
             var l = context.GetLocalizer<DynamicMenuResource>();
-            //Add main menu items.
-            context.Menu.AddItem(new ApplicationMenuItem(DynamicMenuMenus.Prefix, displayName: "DynamicMenu", "~/Abp/DynamicMenu"));
+
+            var dynamicMenu = new ApplicationMenuItem(DynamicMenuMenus.Prefix, displayName: "DynamicMenu",
+                "~/Abp/DynamicMenu", icon: "fa-bars");
 
             if (await context.IsGrantedAsync(DynamicMenuPermissions.MenuItem.Default))
             {
-                context.Menu.AddItem(
-                    new ApplicationMenuItem(DynamicMenuMenus.MenuItem, l["Menu:MenuItem"], "~/Abp/DynamicMenu/MenuItems/MenuItem")
+                dynamicMenu.AddItem(
+                    new ApplicationMenuItem(DynamicMenuMenus.MenuItem, l["Menu:MenuItem"],
+                        "~/Abp/DynamicMenu/MenuItems/MenuItem")
                 );
             }
+
+            if (dynamicMenu.Items.Any())
+            {
+                context.Menu.GetAdministration().AddItem(dynamicMenu);
+            }
+        }
+
+        protected virtual async Task AddDynamicMenuItemsAsync(IReadOnlyCollection<MenuItemDto> menuItems,
+            MenuConfigurationContext context)
+        {
+            await AddDynamicMenuItemsAsync(context.Menu,
+                menuItems.Where(x => !x.InAdministration), context);
+
+            await AddDynamicMenuItemsAsync(context.Menu.GetAdministration(),
+                menuItems.Where(x => x.InAdministration), context);
         }
 
         protected virtual async Task AddDynamicMenuItemsAsync(IHasMenuItems parent, IEnumerable<MenuItemDto> menuItems,
@@ -100,14 +120,14 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.Menus
             }
 
             var policy = await _policyProvider.GetPolicyAsync(policyName);
-            
+
             if (policy == null)
             {
                 _logger.LogWarning($"[Entity UI] No policy found: {policyName}.");
-                
+
                 return false;
             }
-            
+
             return (await context.AuthorizationService.AuthorizeAsync(
                 _currentPrincipalAccessor.Principal,
                 null,
@@ -119,12 +139,13 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.Menus
         {
             if (ModuleNameStringLocalizers.ContainsKey(menuItem.Name) &&
                 ModuleNameStringLocalizers[menuItem.Name].LResourceTypeName == menuItem.LResourceTypeName &&
-                ModuleNameStringLocalizers[menuItem.Name].LResourceTypeAssemblyName == menuItem.LResourceTypeAssemblyName)
+                ModuleNameStringLocalizers[menuItem.Name].LResourceTypeAssemblyName ==
+                menuItem.LResourceTypeAssemblyName)
             {
                 return ModuleNameStringLocalizers[menuItem.Name].StringLocalizer;
             }
 
-            var localizer =  await stringLocalizerProvider.GetAsync(menuItem);
+            var localizer = await stringLocalizerProvider.GetAsync(menuItem);
 
             ModuleNameStringLocalizers[menuItem.Name] = new StringLocalizerModel
             {

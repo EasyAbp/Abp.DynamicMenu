@@ -10,6 +10,7 @@
     "Menu:MenuItem": "Menu item",
     "MenuItem": "Menu item",
     "MenuItemParentName": "Parent name",
+    "MenuItemInAdministration": "In administration",
     "MenuItemName": "Name",
     "MenuItemDisplayName": "Display name",
     "MenuItemUrl": "URL / Path",

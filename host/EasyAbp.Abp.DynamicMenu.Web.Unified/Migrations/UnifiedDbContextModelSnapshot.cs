@@ -42,6 +42,9 @@ namespace EasyAbp.Abp.DynamicMenu.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ExtraProperties");
 
+                    b.Property<bool>("InAdministration")
+                        .HasColumnType("bit");
+
                     b.Property<string>("LResourceTypeAssemblyName")
                         .HasColumnType("nvarchar(max)");
 
