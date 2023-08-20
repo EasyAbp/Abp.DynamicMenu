@@ -9,6 +9,8 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems.Dtos
     {
         public string ParentName { get; set; }
 
+        public bool InAdministration { get; set; }
+
         public string Name { get; set; }
 
         public string DisplayName { get; set; }
