@@ -22,7 +22,7 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             var handler = ServiceProvider.GetRequiredService<CreateMenuItemEventHandler>();
 
             var eto = new TryCreateMenuItemEto(null, false, "GoogleLink", "Google", "https://google.com", null, null,
-                null, null, null, null);
+                null, null, null, null, null, false, null, null);
 
             // Act
 
@@ -50,7 +50,7 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             var handler = ServiceProvider.GetRequiredService<CreateMenuItemEventHandler>();
 
             var eto = new TryCreateMenuItemEto(null, true, "GoogleLink", "Google", "https://google.com", null, null,
-                null, null, null, null);
+                null, null, null, null, null, false, null, null);
 
             // Act
 
@@ -78,10 +78,10 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             var handler = ServiceProvider.GetRequiredService<CreateMenuItemEventHandler>();
 
             var itemEto1 = new TryCreateMenuItemEto(null, false, "SearchEngines", "Search engines", null, null, null,
-                null, null, null, null);
+                null, null, null, null, null, false, null, null);
 
             var itemEto2 = new TryCreateMenuItemEto(itemEto1.Name, false, "GoogleLink", "Google", "https://google.com",
-                null, null, null, null, null, null);
+                null, null, null, null, null, null, null, false, null, null);
 
             var eto = new TryCreateMenuItemsEto(new List<TryCreateMenuItemEto> { itemEto1, itemEto2 });
 
@@ -122,7 +122,7 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             await repository.InsertAsync(existingMenuItem, true);
 
             var eto = new TryCreateMenuItemEto(null, false, "GoogleLink", "Google2", "https://google.com", null, null,
-                null, null, null, null);
+                null, null, null, null, null, false, null, null);
 
             // Act
 
