@@ -42,7 +42,13 @@ namespace EasyAbp.Abp.DynamicMenu.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ExtraProperties");
 
+                    b.Property<string>("Icon")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("InAdministration")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDisabled")
                         .HasColumnType("bit");
 
                     b.Property<string>("LResourceTypeAssemblyName")
@@ -51,10 +57,16 @@ namespace EasyAbp.Abp.DynamicMenu.Migrations
                     b.Property<string>("LResourceTypeName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("Order")
+                        .HasColumnType("int");
+
                     b.Property<string>("ParentName")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Permission")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Target")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Url")

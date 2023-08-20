@@ -9,7 +9,8 @@ using Volo.Abp.Application.Services;
 
 namespace EasyAbp.Abp.DynamicMenu.MenuItems
 {
-    public class MenuItemAppService : AbstractKeyCrudAppService<MenuItem, MenuItemDto, MenuItemKey, GetMenuItemListInput, CreateMenuItemDto, UpdateMenuItemDto>,
+    public class MenuItemAppService : AbstractKeyCrudAppService<MenuItem, MenuItemDto, MenuItemKey, GetMenuItemListInput
+            , CreateMenuItemDto, UpdateMenuItemDto>,
         IMenuItemAppService
     {
         protected override string GetPolicyName { get; set; } = null;
@@ -19,7 +20,7 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
         protected override string DeletePolicyName { get; set; } = DynamicMenuPermissions.MenuItem.Delete;
 
         private readonly IMenuItemRepository _repository;
-        
+
         public MenuItemAppService(IMenuItemRepository repository) : base(repository)
         {
             _repository = repository;
@@ -45,7 +46,7 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
                 (await _repository.WithDetailsAsync()).Where(e =>
                     e.Name == id.Name
                 )
-            ); 
+            );
         }
 
         protected override IQueryable<MenuItem> ApplyDefaultSorting(IQueryable<MenuItem> query)
@@ -78,7 +79,7 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             var entity = await GetEntityByIdAsync(id);
 
             await MapToEntityAsync(input, entity);
-            
+
             await Repository.UpdateAsync(entity, autoSave: true);
 
             return await MapToGetOutputDtoAsync(entity);

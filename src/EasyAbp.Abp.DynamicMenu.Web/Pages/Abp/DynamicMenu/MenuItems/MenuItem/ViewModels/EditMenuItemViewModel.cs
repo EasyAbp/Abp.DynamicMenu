@@ -28,6 +28,18 @@ namespace EasyAbp.Abp.DynamicMenu.Web.Pages.Abp.DynamicMenu.MenuItems.MenuItem.V
         [Display(Name = "MenuItemPermission")]
         public string Permission { get; set; }
 
+        [Display(Name = "MenuItemOrder")]
+        public int? Order { get; set; }
+
+        [Display(Name = "MenuItemIcon")]
+        public string Icon { get; set; }
+
+        [Display(Name = "MenuItemTarget")]
+        public string Target { get; set; }
+
+        [Display(Name = "MenuItemIsDisabled")]
+        public bool IsDisabled { get; set; }
+
         [Display(Name = "MenuItemLResourceTypeName")]
         public string LResourceTypeName { get; set; }
 
