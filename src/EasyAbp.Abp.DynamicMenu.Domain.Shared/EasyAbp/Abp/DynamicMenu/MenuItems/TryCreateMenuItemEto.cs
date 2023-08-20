@@ -24,14 +24,25 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
 
         public string Permission { get; set; }
 
+        public int? Order { get; set; }
+
+        public string Icon { get; set; }
+
+        public string Target { get; set; }
+
+        public bool IsDisabled { get; set; }
+
         public string LResourceTypeName { get; set; }
 
         public string LResourceTypeAssemblyName { get; set; }
 
+        public TryCreateMenuItemEto()
+        {
+        }
 
         public TryCreateMenuItemEto(string parentName, bool inAdministration, string name, string displayName,
-            string url, string urlMvc, string urlBlazor, string urlAngular, string permission, string lResourceTypeName,
-            string lResourceTypeAssemblyName)
+            string url, string urlMvc, string urlBlazor, string urlAngular, string permission, int? order, string icon,
+            string target, bool isDisabled, string lResourceTypeName, string lResourceTypeAssemblyName)
         {
             ParentName = parentName;
             InAdministration = inAdministration;
@@ -42,6 +53,10 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             UrlBlazor = urlBlazor;
             UrlAngular = urlAngular;
             Permission = permission;
+            Order = order;
+            Icon = icon;
+            Target = target;
+            IsDisabled = isDisabled;
             LResourceTypeName = lResourceTypeName;
             LResourceTypeAssemblyName = lResourceTypeAssemblyName;
         }
