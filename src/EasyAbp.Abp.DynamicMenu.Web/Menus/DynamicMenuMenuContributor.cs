@@ -88,7 +88,7 @@ namespace EasyAbp.Abp.DynamicMenu.Web.Menus
         protected virtual async Task AddDynamicMenuItemsAsync(IHasMenuItems parent, IEnumerable<MenuItemDto> menuItems,
             MenuConfigurationContext context)
         {
-            foreach (var menuItem in menuItems)
+            foreach (var menuItem in menuItems.Where(x => !x.IsDisabled))
             {
                 if (menuItem.Permission != null && !await IsFoundAndGrantedAsync(menuItem.Permission, context))
                 {
@@ -97,11 +97,13 @@ namespace EasyAbp.Abp.DynamicMenu.Web.Menus
 
                 var l = await GetOrCreateStringLocalizerAsync(menuItem, _stringLocalizerProvider);
 
-                var child = new ApplicationMenuItem(menuItem.Name, l[menuItem.DisplayName]);
+                var child = new ApplicationMenuItem(menuItem.Name, l[menuItem.DisplayName],
+                    order: menuItem.Order ?? default, icon: menuItem.Icon);
 
                 if (menuItem.MenuItems.IsNullOrEmpty())
                 {
-                    child.Url = menuItem.UrlMvc ?? menuItem.Url;
+                    child.Url = menuItem.UrlBlazor ?? menuItem.Url;
+                    child.Target = menuItem.Target;
                 }
                 else
                 {

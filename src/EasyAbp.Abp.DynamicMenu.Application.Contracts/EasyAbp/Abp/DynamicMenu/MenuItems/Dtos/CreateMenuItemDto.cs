@@ -24,6 +24,14 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems.Dtos
 
         public string Permission { get; set; }
 
+        public int? Order { get; set; }
+
+        public string Icon { get; set; }
+
+        public string Target { get; set; }
+
+        public bool IsDisabled { get; set; }
+
         public string LResourceTypeName { get; set; }
 
         public string LResourceTypeAssemblyName { get; set; }

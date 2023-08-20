@@ -25,23 +25,26 @@ namespace EasyAbp.Abp.DynamicMenu
             }
 
             var demoMenu = new MenuItem(null, false, "DemoMenu", "Demo menu", null, null, null, null, null,
-                DynamicMenuConsts.DefaultLResourceTypeName, DynamicMenuConsts.DefaultLResourceTypeAssemblyName,
-                new List<MenuItem>
+                200, "fa-compass", null, false, DynamicMenuConsts.DefaultLResourceTypeName,
+                DynamicMenuConsts.DefaultLResourceTypeAssemblyName, new List<MenuItem>
                 {
                     new("DemoMenu", false, "ChangePassword", "Change password", "~/Account/Manage", null, null, null,
-                        null, DynamicMenuConsts.DefaultLResourceTypeName,
+                        null, null, "fa-compass", null, false, DynamicMenuConsts.DefaultLResourceTypeName,
                         DynamicMenuConsts.DefaultLResourceTypeAssemblyName, null)
                 });
 
             await _menuItemRepository.InsertAsync(demoMenu, true);
 
             var demoMenu2 = new MenuItem(null, true, "DemoMenu2", "Demo menu 2", null, null, null, null, null,
-                DynamicMenuConsts.DefaultLResourceTypeName, DynamicMenuConsts.DefaultLResourceTypeAssemblyName,
-                new List<MenuItem>
+                100000, null, null, false, DynamicMenuConsts.DefaultLResourceTypeName,
+                DynamicMenuConsts.DefaultLResourceTypeAssemblyName, new List<MenuItem>
                 {
                     new("DemoMenu2", false, "Google", "Google", "https://google.com", null, null, null, null,
-                        DynamicMenuConsts.DefaultLResourceTypeName, DynamicMenuConsts.DefaultLResourceTypeAssemblyName,
-                        null)
+                        null, null, "_blank", false, DynamicMenuConsts.DefaultLResourceTypeName,
+                        DynamicMenuConsts.DefaultLResourceTypeAssemblyName, null),
+                    new("DemoMenu2", false, "Disabled", "Disabled", "https://github.com", null, null, null, null,
+                        null, null, null, true, DynamicMenuConsts.DefaultLResourceTypeName,
+                        DynamicMenuConsts.DefaultLResourceTypeAssemblyName, null),
                 });
 
             await _menuItemRepository.InsertAsync(demoMenu2, true);

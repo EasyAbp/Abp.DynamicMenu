@@ -64,6 +64,14 @@ $(function () {
                 title: l('MenuItemDisplayName'),
                 data: "displayName"
             },
+            {
+                title: l('MenuItemOrder'),
+                data: "order"
+            },
+            {
+                title: l('MenuItemIsDisabled'),
+                data: "isDisabled"
+            },
         ]
     }));
 

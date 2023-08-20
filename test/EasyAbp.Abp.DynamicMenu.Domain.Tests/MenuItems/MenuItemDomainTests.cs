@@ -117,7 +117,7 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             var handler = ServiceProvider.GetRequiredService<CreateMenuItemEventHandler>();
 
             var existingMenuItem = new MenuItem(null, false, "GoogleLink", "Google1", "https://google.com", null, null,
-                null, null, null, null, new List<MenuItem>());
+                null, null, null, null, null, false, null, null, new List<MenuItem>());
 
             await repository.InsertAsync(existingMenuItem, true);
 
@@ -147,10 +147,10 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             var handler = ServiceProvider.GetRequiredService<DeleteMenuItemEventHandler>();
 
             var existingMenuItem1 = new MenuItem(null, false, "GoogleLink1", "Google1", "https://google.com", null,
-                null, null, null, null, null, new List<MenuItem>());
+                null, null, null, null, null, null, false, null, null, new List<MenuItem>());
 
             var existingMenuItem2 = new MenuItem(null, false, "GoogleLink2", "Google2", "https://google.com", null,
-                null, null, null, null, null, new List<MenuItem>());
+                null, null, null, null, null, null, false, null, null, new List<MenuItem>());
 
             await repository.InsertAsync(existingMenuItem1, true);
             await repository.InsertAsync(existingMenuItem2, true);
