@@ -14,6 +14,7 @@
 	<ItemGroup>
 		<PackageReference Include="Blazorise.Bootstrap5" Version="1.5.2" />
 		<PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.5.2" />
+		<PackageReference Include="Blazorise.Generator.Features" Version="1.5.2" />
 		<PackageReference Include="Serilog.AspNetCore" Version="8.0.0" />
 		<PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.4" />
@@ -62,11 +63,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<!--<ProjectReference Include="..\..\..\modules\src\EasyAbp.Abp.DynamicMenu.Web\EasyAbp.Abp.DynamicMenu.Web.csproj" />-->
 		<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server\EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.csproj" />
 		<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.HttpApi\EasyAbp.Abp.DynamicMenu.Demo.HttpApi.csproj" />
 		<!--<ProjectReference Include="..\EasyAbp.Abp.DynamicMenu.Demo.Host.Shared\EasyAbp.Abp.DynamicMenu.Demo.Host.Shared.csproj" />-->
 		<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.Application\EasyAbp.Abp.DynamicMenu.Demo.Application.csproj" />
 		<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.EntityFrameworkCore\EasyAbp.Abp.DynamicMenu.Demo.EntityFrameworkCore.csproj" />
+		<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.Web\EasyAbp.Abp.DynamicMenu.Demo.Web.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

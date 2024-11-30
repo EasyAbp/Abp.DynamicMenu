@@ -14,19 +14,19 @@ using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity.Web;
 using Volo.Abp.SettingManagement.Web;
 using Volo.Abp.TenantManagement.Web;
+using EasyAbp.Abp.DynamicMenu.Web;
 
 namespace EasyAbp.Abp.DynamicMenu.Demo.Web
 {
-    [DependsOn(
-        typeof(DemoApplicationContractsModule),
-        typeof(AbpAspNetCoreMvcUiThemeSharedModule),
-        typeof(AbpAutoMapperModule),
-        typeof(AbpAccountWebModule),
-        typeof(AbpSettingManagementWebModule),
-        typeof(AbpIdentityWebModule),
-        typeof(AbpFeatureManagementWebModule),
-        typeof(AbpTenantManagementWebModule)
-        )]
+    [DependsOn(typeof(DemoApplicationContractsModule))]
+    [DependsOn(typeof(AbpAspNetCoreMvcUiThemeSharedModule))]
+    [DependsOn(typeof(AbpAutoMapperModule))]
+    [DependsOn(typeof(AbpAccountWebModule))]
+    [DependsOn(typeof(AbpSettingManagementWebModule))]
+    [DependsOn(typeof(AbpIdentityWebModule))]
+    [DependsOn(typeof(AbpFeatureManagementWebModule))]
+    [DependsOn(typeof(AbpTenantManagementWebModule))]
+    [DependsOn(typeof(AbpDynamicMenuWebModule))]
     public class AbpDemoWebModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

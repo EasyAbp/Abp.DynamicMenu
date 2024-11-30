@@ -22,6 +22,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\..\modules\src\EasyAbp.Abp.DynamicMenu.Web\EasyAbp.Abp.DynamicMenu.Web.csproj" />
 		<ProjectReference Include="..\EasyAbp.Abp.DynamicMenu.Demo.Application.Contracts\EasyAbp.Abp.DynamicMenu.Demo.Application.Contracts.csproj" />
 	</ItemGroup>
 

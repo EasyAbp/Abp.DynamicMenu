@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using EasyAbp.Abp.DynamicMenu.Blazor.Menus;
 using Volo.Abp.AspNetCore.Components.Web.Theming;
 using Volo.Abp.AspNetCore.Components.Web.Theming.Routing;
 using Volo.Abp.AutoMapper;
@@ -24,10 +23,10 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor
                 options.AddProfile<DynamicMenuBlazorAutoMapperProfile>(validate: true);
             });
 
-            Configure<AbpNavigationOptions>(options =>
-            {
-                options.MenuContributors.Add(new DynamicMenuMenuContributor());
-            });
+            //Configure<AbpNavigationOptions>(options =>
+            //{
+            //    options.MenuContributors.Add(new DynamicMenuMenuContributor());
+            //});
 
             Configure<AbpRouterOptions>(options =>
             {
