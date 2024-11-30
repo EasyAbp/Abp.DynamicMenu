@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<Import Project="..\..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.AspNetCore.Components.Web.Theming" Version="$(AbpVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\modules\src\EasyAbp.Abp.DynamicMenu.Blazor\EasyAbp.Abp.DynamicMenu.Blazor.csproj" />
+		<ProjectReference Include="..\EasyAbp.Abp.DynamicMenu.Demo.Application.Contracts\EasyAbp.Abp.DynamicMenu.Demo.Application.Contracts.csproj" />
+	</ItemGroup>
+
+</Project>

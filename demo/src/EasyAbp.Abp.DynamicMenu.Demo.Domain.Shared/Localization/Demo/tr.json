@@ -1,0 +1,21 @@
+{
+  "culture": "tr",
+  "texts": {
+    "Menu:Home": "Ana sayfa",
+    "Menu:Alpha": "Alpha İşletme",
+    "Welcome": "Hoşgeldiniz",
+    "LongWelcomeMessage": "Alpha İşletme .",
+    "DisplayName:EasyAbp.Abp.DynamicMenu.RememberGridFilterState": "Grid Filtrelerini Anımsa",
+    "RememberGridFilterStateHelpText": "Çalışmanız bitip ekranınızı kapatırken otomatik olarak grid filtre ayarlarını kaydedecektir.",
+    "Grid_Edit": "Düzenle",
+    "Grid_Delete": "Sil",
+    "Ok": "Tamam",
+    "Cancel": "İptal",
+    "Yes": "Evet",
+    "Info": "Bilgi",
+    "Success": "Başarılı",
+    "Warn": "Uyarı",
+    "Error": "Hata",
+    "Confirm": "Onay"
+  }
+}

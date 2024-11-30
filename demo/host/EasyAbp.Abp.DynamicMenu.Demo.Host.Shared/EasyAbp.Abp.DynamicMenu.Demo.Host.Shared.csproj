@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>EasyAbp.Abp.DynamicMenu.Demo</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DemoDataSeedContributor.cs" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.Application\EasyAbp.Abp.DynamicMenu.Demo.Application.csproj" />
+    <ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.EntityFrameworkCore\EasyAbp.Abp.DynamicMenu.Demo.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+</Project>
