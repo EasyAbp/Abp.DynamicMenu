@@ -35,8 +35,8 @@ namespace EasyAbp.Abp.DynamicMenu.EntityFrameworkCore
             var connection = new AbpUnitTestSqliteConnection("Data Source=:memory:");
             connection.Open();
 
-            new DemoMigrationsDbContext(
-                new DbContextOptionsBuilder<DemoMigrationsDbContext>().UseSqlite(connection).Options
+            new DynamicMenuDbContext(
+                new DbContextOptionsBuilder<DynamicMenuDbContext>().UseSqlite(connection).Options
             ).GetService<IRelationalDatabaseCreator>().CreateTables();
             
             return connection;

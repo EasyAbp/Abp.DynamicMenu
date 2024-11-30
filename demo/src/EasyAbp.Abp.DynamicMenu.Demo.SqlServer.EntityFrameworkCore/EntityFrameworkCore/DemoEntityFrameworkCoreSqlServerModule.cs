@@ -1,5 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Syrna.Demo.EntityFrameworkCore;
+﻿using EasyAbp.Abp.DynamicMenu.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Modularity;
 
 namespace EasyAbp.Abp.DynamicMenu.Demo.SqlServer.EntityFrameworkCore;

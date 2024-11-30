@@ -39,7 +39,7 @@ using Volo.Abp.VirtualFileSystem;
 using EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host.Menus;
 using EasyAbp.Abp.DynamicMenu.Demo.Localization;
 using EasyAbp.Abp.DynamicMenu.Demo.MultiTenancy;
-using Syrna.Demo.EntityFrameworkCore;
+using EasyAbp.Abp.DynamicMenu.EntityFrameworkCore;
 
 namespace EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host
 {

@@ -34,7 +34,7 @@ namespace EasyAbp.Abp.DynamicMenu.EntityFrameworkCore
 
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            context.Services.AddAbpDbContext<DemoMigrationsDbContext>(options =>
+            context.Services.AddAbpDbContext<DynamicMenuDbContext>(options =>
             {
                 /* Add custom repositories here. Example:
                  * options.AddRepository<Question, EfCoreQuestionRepository>();

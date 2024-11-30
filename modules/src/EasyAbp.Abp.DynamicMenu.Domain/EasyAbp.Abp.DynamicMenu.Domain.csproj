@@ -8,12 +8,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="EasyAbp\Abp\DynamicMenu\IdentityServer\**" />
-	  <EmbeddedResource Remove="EasyAbp\Abp\DynamicMenu\IdentityServer\**" />
-	  <None Remove="EasyAbp\Abp\DynamicMenu\IdentityServer\**" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
 		<PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
 

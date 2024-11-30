@@ -6,14 +6,14 @@ using EasyAbp.Abp.DynamicMenu.MenuItems;
 namespace EasyAbp.Abp.DynamicMenu.EntityFrameworkCore
 {
     [ConnectionStringName(DynamicMenuDbProperties.ConnectionStringName)]
-    public class DemoMigrationsDbContext : AbpDbContext<DemoMigrationsDbContext>, IDynamicMenuDbContext
+    public class DynamicMenuDbContext : AbpDbContext<DynamicMenuDbContext>, IDynamicMenuDbContext
     {
         /* Add DbSet for each Aggregate Root here. Example:
          * public DbSet<Question> Questions { get; set; }
          */
         public DbSet<MenuItem> MenuItems { get; set; }
 
-        public DemoMigrationsDbContext(DbContextOptions<DemoMigrationsDbContext> options) 
+        public DynamicMenuDbContext(DbContextOptions<DynamicMenuDbContext> options) 
             : base(options)
         {
 

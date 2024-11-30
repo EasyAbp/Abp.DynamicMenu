@@ -28,7 +28,7 @@ public class DemoMigrationsDbContext(DbContextOptions<DemoMigrationsDbContext> o
 
         builder.ConfigurePermissionManagement();
         builder.ConfigureSettingManagement();
-        builder.ConfigureBackgroundJobs();
+        //builder.ConfigureBackgroundJobs();
         builder.ConfigureAuditLogging();
         builder.ConfigureIdentity();
         builder.ConfigureIdentityServer();

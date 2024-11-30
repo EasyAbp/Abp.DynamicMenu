@@ -13,7 +13,7 @@ using Volo.Abp.EntityFrameworkCore;
 
 namespace EasyAbp.Abp.DynamicMenu.Demo.SqlServer.Migrations
 {
-    [DbContext(typeof(Demo.SqlServer.EntityFrameworkCore.DemoMigrationsDbContext))]
+    [DbContext(typeof(DemoMigrationsDbContext))]
     [Migration("20211230054057_UpgradedToAbp5")]
     partial class UpgradedToAbp5
     {

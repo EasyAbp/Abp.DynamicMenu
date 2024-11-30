@@ -1,11 +1,11 @@
 using System.IO;
 using EasyAbp.Abp.DynamicMenu.Demo.MultiTenancy;
 using EasyAbp.Abp.DynamicMenu.Demo.Web;
+using EasyAbp.Abp.DynamicMenu.EntityFrameworkCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Syrna.Demo.EntityFrameworkCore;
 using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;

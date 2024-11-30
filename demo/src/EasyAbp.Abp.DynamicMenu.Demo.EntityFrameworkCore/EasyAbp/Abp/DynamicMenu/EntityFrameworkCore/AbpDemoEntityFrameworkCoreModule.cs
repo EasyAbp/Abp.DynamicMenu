@@ -10,9 +10,8 @@ using Volo.Abp.Identity.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using EasyAbp.Abp.DynamicMenu.Demo;
 using Volo.Abp.IdentityServer.EntityFrameworkCore;
-using EasyAbp.Abp.DynamicMenu.EntityFrameworkCore;
 
-namespace Syrna.Demo.EntityFrameworkCore;
+namespace EasyAbp.Abp.DynamicMenu.EntityFrameworkCore;
 
 [DependsOn(typeof(AbpEntityFrameworkCoreModule))]
 [DependsOn(typeof(AbpIdentityEntityFrameworkCoreModule))]
