@@ -36,11 +36,12 @@ using EasyAbp.Abp.DynamicMenu.EntityFrameworkCore;
 namespace EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host
 {
     [DependsOn(typeof(AbpAspNetCoreMvcUiBasicThemeModule))]
+    [DependsOn(typeof(AbpAspNetCoreComponentsServerBasicThemeModule))]
+
     [DependsOn(typeof(AbpAutofacModule))]
     [DependsOn(typeof(AbpSwashbuckleModule))]
     [DependsOn(typeof(AbpAspNetCoreAuthenticationJwtBearerModule))]
     [DependsOn(typeof(AbpAspNetCoreSerilogModule))]
-    [DependsOn(typeof(AbpAspNetCoreComponentsServerBasicThemeModule))]
     [DependsOn(typeof(AbpIdentityBlazorServerModule))]
     [DependsOn(typeof(AbpTenantManagementBlazorServerModule))]
     [DependsOn(typeof(AbpSettingManagementBlazorServerModule))]

@@ -20,7 +20,6 @@ namespace EasyAbp.Abp.DynamicMenu.Demo;
 
 [DependsOn(typeof(AbpEmailingModule))]
 [DependsOn(typeof(AbpAuditLoggingDomainModule))]
-[DependsOn(typeof(AbpBackgroundJobsDomainModule))]
 [DependsOn(typeof(AbpFeatureManagementDomainModule))]
 [DependsOn(typeof(AbpIdentityDomainModule))]
 [DependsOn(typeof(AbpIdentityServerDomainModule))]

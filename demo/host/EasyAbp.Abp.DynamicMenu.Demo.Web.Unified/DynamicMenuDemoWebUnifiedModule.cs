@@ -11,26 +11,23 @@ using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;
 using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Autofac;
-using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 using Volo.Abp.MultiTenancy;
-using Volo.Abp.PermissionManagement.Identity;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.VirtualFileSystem;
 
 namespace EasyAbp.Abp.DynamicMenu.Demo
 {
-    [DependsOn(
-        typeof(DemoHttpApiModule),
-        typeof(DemoWebModule),
-        typeof(AbpAutofacModule),
-        typeof(AbpPermissionManagementDomainIdentityModule),
-        typeof(AbpAspNetCoreMvcUiLeptonXLiteThemeModule),
-        typeof(DemoEntityFrameworkCoreModule),
-        typeof(DemoApplicationModule),
-        typeof(AbpAspNetCoreSerilogModule),
-        typeof(AbpSwashbuckleModule)
-    )]
+    [DependsOn(typeof(AbpAspNetCoreMvcUiLeptonXLiteThemeModule))]
+
+    [DependsOn(typeof(AbpAutofacModule))]
+    [DependsOn(typeof(AbpAspNetCoreSerilogModule))]
+    [DependsOn(typeof(AbpSwashbuckleModule))]
+
+    [DependsOn(typeof(DemoHttpApiModule))]
+    [DependsOn(typeof(DemoEntityFrameworkCoreModule))]
+    [DependsOn(typeof(DemoApplicationModule))]
+    [DependsOn(typeof(DemoWebModule))]
     public class DynamicMenuDemoWebUnifiedModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
@@ -38,10 +35,10 @@ namespace EasyAbp.Abp.DynamicMenu.Demo
             var hostingEnvironment = context.Services.GetHostingEnvironment();
             var configuration = context.Services.GetConfiguration();
 
-            Configure<AbpDbContextOptions>(options =>
-            {
-                options.UseSqlServer();
-            });
+            //Configure<AbpDbContextOptions>(options =>
+            //{
+            //    options.UseSqlServer();
+            //});
 
             if (hostingEnvironment.IsDevelopment())
             {

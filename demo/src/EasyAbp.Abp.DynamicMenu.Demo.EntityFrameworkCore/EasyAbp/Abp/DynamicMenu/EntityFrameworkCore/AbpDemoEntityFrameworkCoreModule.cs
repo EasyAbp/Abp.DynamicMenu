@@ -18,7 +18,6 @@ namespace EasyAbp.Abp.DynamicMenu.EntityFrameworkCore;
 [DependsOn(typeof(AbpIdentityServerEntityFrameworkCoreModule))]
 [DependsOn(typeof(AbpPermissionManagementEntityFrameworkCoreModule))]
 [DependsOn(typeof(AbpSettingManagementEntityFrameworkCoreModule))]
-[DependsOn(typeof(AbpBackgroundJobsEntityFrameworkCoreModule))]
 [DependsOn(typeof(AbpAuditLoggingEntityFrameworkCoreModule))]
 [DependsOn(typeof(AbpTenantManagementEntityFrameworkCoreModule))]
 [DependsOn(typeof(AbpFeatureManagementEntityFrameworkCoreModule))]

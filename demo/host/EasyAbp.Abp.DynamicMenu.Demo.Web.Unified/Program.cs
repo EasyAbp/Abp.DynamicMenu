@@ -1,7 +1,10 @@
 ﻿using System;
 using System.IO;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
@@ -10,7 +13,7 @@ namespace EasyAbp.Abp.DynamicMenu.Demo
 {
     public class Program
     {
-        public static int Main(string[] args)
+        public static async Task<int> Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
@@ -25,7 +28,15 @@ namespace EasyAbp.Abp.DynamicMenu.Demo
             try
             {
                 Log.Information("Starting web host.");
-                CreateHostBuilder(args).Build().Run();
+                var builder = WebApplication.CreateBuilder(args);
+                builder.Host.AddAppSettingsSecretsJson()
+                    .UseAutofac()
+                    .UseSerilog();
+                await builder.AddApplicationAsync<DynamicMenuDemoWebUnifiedModule>();
+                var app = builder.Build();
+                var config = builder.Configuration;
+                await app.InitializeApplicationAsync();
+                await app.RunAsync();
                 return 0;
             }
             catch (Exception ex)
@@ -38,18 +49,5 @@ namespace EasyAbp.Abp.DynamicMenu.Demo
                 Log.CloseAndFlush();
             }
         }
-
-        internal static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureAppConfiguration(build =>
-                {
-                    build.AddJsonFile("appsettings.secrets.json", optional: true);
-                })
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                })
-                .UseAutofac()
-                .UseSerilog();
     }
 }

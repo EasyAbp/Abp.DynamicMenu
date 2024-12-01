@@ -25,7 +25,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Volo.Abp.Emailing" Version="$(AbpVersion)" />
-		<PackageReference Include="Volo.Abp.BackgroundJobs.Domain" Version="$(AbpVersion)" />
+
 		<PackageReference Include="Volo.Abp.AuditLogging.Domain" Version="$(AbpVersion)" />
 		<PackageReference Include="Volo.Abp.TenantManagement.Domain" Version="$(AbpVersion)" />
 		<PackageReference Include="Volo.Abp.FeatureManagement.Domain" Version="$(AbpVersion)" />
