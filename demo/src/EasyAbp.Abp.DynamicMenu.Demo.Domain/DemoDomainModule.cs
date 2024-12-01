@@ -9,10 +9,10 @@ using Volo.Abp.Modularity;
 using Volo.Abp.MultiTenancy;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
-using Volo.Abp.BlobStoring.Database;
 using EasyAbp.Abp.DynamicMenu.Demo.MultiTenancy;
 using Volo.Abp.Identity;
 using Volo.Abp.IdentityServer;
+using Volo.Abp.PermissionManagement;
 using Volo.Abp.PermissionManagement.Identity;
 using Volo.Abp.PermissionManagement.IdentityServer;
 
@@ -23,11 +23,11 @@ namespace EasyAbp.Abp.DynamicMenu.Demo;
 [DependsOn(typeof(AbpFeatureManagementDomainModule))]
 [DependsOn(typeof(AbpIdentityDomainModule))]
 [DependsOn(typeof(AbpIdentityServerDomainModule))]
+[DependsOn(typeof(AbpPermissionManagementDomainModule))]
 [DependsOn(typeof(AbpPermissionManagementDomainIdentityServerModule))]
 [DependsOn(typeof(AbpPermissionManagementDomainIdentityModule))]
 [DependsOn(typeof(AbpSettingManagementDomainModule))]
 [DependsOn(typeof(AbpTenantManagementDomainModule))]
-[DependsOn(typeof(BlobStoringDatabaseDomainModule))]
 //app modules
 [DependsOn(typeof(DemoDomainSharedModule))]
 public class DemoDomainModule : AbpModule

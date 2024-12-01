@@ -8,6 +8,7 @@ using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
 using Volo.Abp.IdentityServer;
 using Volo.Abp.Modularity;
+using Volo.Abp.PermissionManagement;
 using Volo.Abp.PermissionManagement.Identity;
 using Volo.Abp.PermissionManagement.IdentityServer;
 using Volo.Abp.SettingManagement;
@@ -22,6 +23,7 @@ namespace EasyAbp.Abp.DynamicMenu
     [DependsOn(typeof(AbpFeatureManagementDomainModule))]
     [DependsOn(typeof(AbpIdentityDomainModule))]
     [DependsOn(typeof(AbpIdentityServerDomainModule))]
+    [DependsOn(typeof(AbpPermissionManagementDomainModule))]
     [DependsOn(typeof(AbpPermissionManagementDomainIdentityServerModule))]
     [DependsOn(typeof(AbpPermissionManagementDomainIdentityModule))]
     [DependsOn(typeof(AbpSettingManagementDomainModule))]
