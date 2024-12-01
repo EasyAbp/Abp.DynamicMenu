@@ -8,15 +8,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Volo.Abp;
-using Volo.Abp.Account.Web;
 using Volo.Abp.AspNetCore.Authentication.JwtBearer;
 using Volo.Abp.AspNetCore.Components.Server.BasicTheme;
 using Volo.Abp.AspNetCore.Components.Server.BasicTheme.Bundling;
 using Volo.Abp.AspNetCore.Components.Web.Theming.Routing;
 using Volo.Abp.AspNetCore.Mvc.Localization;
 using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
-using Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic;
-using Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Bundling;
 using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Autofac;
 using Volo.Abp.Identity.Blazor.Server;
@@ -32,10 +29,12 @@ using EasyAbp.Abp.DynamicMenu.Demo.Localization;
 using EasyAbp.Abp.DynamicMenu.Demo.MultiTenancy;
 using EasyAbp.Abp.DynamicMenu.Demo.Web;
 using EasyAbp.Abp.DynamicMenu.EntityFrameworkCore;
+using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite;
+using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite.Bundling;
 
 namespace EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host
 {
-    [DependsOn(typeof(AbpAspNetCoreMvcUiBasicThemeModule))]
+    [DependsOn(typeof(AbpAspNetCoreMvcUiLeptonXLiteThemeModule))]
     [DependsOn(typeof(AbpAspNetCoreComponentsServerBasicThemeModule))]
 
     [DependsOn(typeof(AbpAutofacModule))]
@@ -77,7 +76,7 @@ namespace EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host
             {
                 // MVC UI
                 options.StyleBundles.Configure(
-                    BasicThemeBundles.Styles.Global,
+                    LeptonXLiteThemeBundles.Styles.Global,
                     bundle =>
                     {
                         bundle.AddFiles("/global-styles.css");

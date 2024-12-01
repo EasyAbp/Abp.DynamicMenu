@@ -23,28 +23,17 @@
 	<ItemGroup>
 		<PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="$(AbpVersion)" />
 
-		<PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic" Version="$(AbpVersion)" />
+		<!--<PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic" Version="$(AbpVersion)" />-->
+		<PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite" Version="3.3.2" />
+
 		<PackageReference Include="Volo.Abp.Autofac" Version="$(AbpVersion)" />
 		<PackageReference Include="Volo.Abp.Swashbuckle" Version="$(AbpVersion)" />
 		<PackageReference Include="Volo.Abp.AspNetCore.Authentication.JwtBearer" Version="$(AbpVersion)" />
 		<PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="$(AbpVersion)" />
 		<PackageReference Include="Volo.Abp.AspNetCore.Components.Server.BasicTheme" Version="$(AbpVersion)" />
-		<!--<PackageReference Include="Volo.Abp.AuditLogging.EntityFrameworkCore" Version="$(AbpVersion)" />-->
-		<!--<PackageReference Include="Volo.Abp.Account.Web.IdentityServer" Version="$(AbpVersion)" />-->
-		<!--<PackageReference Include="Volo.Abp.Account.Application" Version="$(AbpVersion)" />-->
-		<!--<PackageReference Include="Volo.Abp.FeatureManagement.EntityFrameworkCore" Version="$(AbpVersion)" />-->
-		<!--<PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="$(AbpVersion)" />-->
 		<PackageReference Include="Volo.Abp.Identity.Blazor.Server" Version="$(AbpVersion)" />
-		<!--<PackageReference Include="Volo.Abp.Identity.EntityFrameworkCore" Version="$(AbpVersion)" />-->
-		<!--<PackageReference Include="Volo.Abp.Identity.Application" Version="$(AbpVersion)" />-->
 		<PackageReference Include="Volo.Abp.TenantManagement.Blazor.Server" Version="$(AbpVersion)" />
-		<!--<PackageReference Include="Volo.Abp.TenantManagement.EntityFrameworkCore" Version="$(AbpVersion)" />-->
-		<!--<PackageReference Include="Volo.Abp.TenantManagement.Application" Version="$(AbpVersion)" />-->
 		<PackageReference Include="Volo.Abp.SettingManagement.Blazor.Server" Version="$(AbpVersion)" />
-		<!--<PackageReference Include="Volo.Abp.SettingManagement.EntityFrameworkCore" Version="$(AbpVersion)" />-->
-		<!--<PackageReference Include="Volo.Abp.SettingManagement.Application" Version="$(AbpVersion)" />-->
-		<!--<PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="$(AbpVersion)" />-->
-		<!--<PackageReference Include="Volo.Abp.PermissionManagement.EntityFrameworkCore" Version="$(AbpVersion)" />-->
 	</ItemGroup>
 
 	<ItemGroup>
@@ -63,10 +52,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<!--<ProjectReference Include="..\..\..\modules\src\EasyAbp.Abp.DynamicMenu.Web\EasyAbp.Abp.DynamicMenu.Web.csproj" />-->
 		<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server\EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.csproj" />
 		<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.HttpApi\EasyAbp.Abp.DynamicMenu.Demo.HttpApi.csproj" />
-		<!--<ProjectReference Include="..\EasyAbp.Abp.DynamicMenu.Demo.Host.Shared\EasyAbp.Abp.DynamicMenu.Demo.Host.Shared.csproj" />-->
 		<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.Application\EasyAbp.Abp.DynamicMenu.Demo.Application.csproj" />
 		<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.EntityFrameworkCore\EasyAbp.Abp.DynamicMenu.Demo.EntityFrameworkCore.csproj" />
 		<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.Web\EasyAbp.Abp.DynamicMenu.Demo.Web.csproj" />
