@@ -8,13 +8,9 @@
 
 	<ItemGroup>
 	  <Compile Remove="Menus\**" />
-	  <Compile Remove="Pages\**" />
 	  <Content Remove="Menus\**" />
-	  <Content Remove="Pages\**" />
 	  <EmbeddedResource Remove="Menus\**" />
-	  <EmbeddedResource Remove="Pages\**" />
 	  <None Remove="Menus\**" />
-	  <None Remove="Pages\**" />
 	</ItemGroup>
 
 	<ItemGroup>

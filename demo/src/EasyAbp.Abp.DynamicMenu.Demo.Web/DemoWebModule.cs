@@ -1,14 +1,11 @@
 ﻿using EasyAbp.Abp.DynamicMenu.Demo.Localization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.DependencyInjection;
-using EasyAbp.Abp.DynamicMenu.Localization;
 using Volo.Abp.AspNetCore.Mvc.Localization;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
-using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
-using EasyAbp.Abp.DynamicMenu.Permissions;
 using Volo.Abp.Account.Web;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity.Web;
@@ -19,6 +16,7 @@ using EasyAbp.Abp.DynamicMenu.Web;
 namespace EasyAbp.Abp.DynamicMenu.Demo.Web
 {
     [DependsOn(typeof(DemoApplicationContractsModule))]
+
     [DependsOn(typeof(AbpAspNetCoreMvcUiThemeSharedModule))]
     [DependsOn(typeof(AbpAutoMapperModule))]
     [DependsOn(typeof(AbpAccountWebModule))]
@@ -26,19 +24,21 @@ namespace EasyAbp.Abp.DynamicMenu.Demo.Web
     [DependsOn(typeof(AbpIdentityWebModule))]
     [DependsOn(typeof(AbpFeatureManagementWebModule))]
     [DependsOn(typeof(AbpTenantManagementWebModule))]
+    [DependsOn(typeof(AbpAccountWebIdentityServerModule))]
+
     [DependsOn(typeof(AbpDynamicMenuWebModule))]
-    public class AbpDemoWebModule : AbpModule
+    public class DemoWebModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
             context.Services.PreConfigure<AbpMvcDataAnnotationsLocalizationOptions>(options =>
             {
-                options.AddAssemblyResource(typeof(DemoResource), typeof(AbpDemoWebModule).Assembly);
+                options.AddAssemblyResource(typeof(DemoResource), typeof(DemoWebModule).Assembly);
             });
 
             PreConfigure<IMvcBuilder>(mvcBuilder =>
             {
-                mvcBuilder.AddApplicationPartIfNotExists(typeof(AbpDemoWebModule).Assembly);
+                mvcBuilder.AddApplicationPartIfNotExists(typeof(DemoWebModule).Assembly);
             });
         }
 
@@ -51,13 +51,13 @@ namespace EasyAbp.Abp.DynamicMenu.Demo.Web
 
             Configure<AbpVirtualFileSystemOptions>(options =>
             {
-                options.FileSets.AddEmbedded<AbpDemoWebModule>();
+                options.FileSets.AddEmbedded<DemoWebModule>();
             });
 
-            context.Services.AddAutoMapperObjectMapper<AbpDemoWebModule>();
+            context.Services.AddAutoMapperObjectMapper<DemoWebModule>();
             Configure<AbpAutoMapperOptions>(options =>
             {
-                options.AddMaps<AbpDemoWebModule>(validate: true);
+                options.AddMaps<DemoWebModule>(validate: true);
             });
 
             Configure<RazorPagesOptions>(options =>

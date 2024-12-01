@@ -19,15 +19,12 @@ using Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Bundling;
 using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Autofac;
-using Volo.Abp.Data;
 using Volo.Abp.Identity.Blazor.Server;
-using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.MultiTenancy;
 using Volo.Abp.SettingManagement.Blazor.Server;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.TenantManagement.Blazor.Server;
-using Volo.Abp.Threading;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
 using EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host.Menus;
@@ -38,36 +35,21 @@ using EasyAbp.Abp.DynamicMenu.EntityFrameworkCore;
 
 namespace EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host
 {
-    [DependsOn(
-        typeof(AbpDynamicMenuHttpApiModule),
-        //typeof(DemoHostSharedModule),
-        typeof(AbpAspNetCoreMvcUiBasicThemeModule),
-        typeof(AbpAutofacModule),
-        typeof(AbpSwashbuckleModule),
-        typeof(AbpAspNetCoreAuthenticationJwtBearerModule),
-        typeof(AbpAspNetCoreSerilogModule),
-        typeof(AbpAccountWebIdentityServerModule),
-        //typeof(AbpAccountApplicationModule),
-        typeof(AbpAspNetCoreComponentsServerBasicThemeModule),
-        //typeof(AbpIdentityApplicationModule),
-        //typeof(AbpIdentityEntityFrameworkCoreModule),
-        //typeof(AbpAuditLoggingEntityFrameworkCoreModule),
-        typeof(AbpIdentityBlazorServerModule),
-        //typeof(AbpFeatureManagementApplicationModule),
-        //typeof(AbpFeatureManagementEntityFrameworkCoreModule),
-        typeof(AbpTenantManagementBlazorServerModule),
-        //typeof(AbpTenantManagementApplicationModule),
-        //typeof(AbpTenantManagementEntityFrameworkCoreModule),
-        //typeof(AbpPermissionManagementEntityFrameworkCoreModule),
-        //typeof(AbpPermissionManagementApplicationModule),
-        typeof(AbpSettingManagementBlazorServerModule),
-        //typeof(AbpSettingManagementApplicationModule),
-        //typeof(AbpSettingManagementEntityFrameworkCoreModule),
-        typeof(DemoEntityFrameworkCoreModule),
-        typeof(DemoApplicationModule),
-        typeof(DemoBlazorServerModule),
-        typeof(AbpDemoWebModule)
-    )]
+    [DependsOn(typeof(AbpAspNetCoreMvcUiBasicThemeModule))]
+    [DependsOn(typeof(AbpAutofacModule))]
+    [DependsOn(typeof(AbpSwashbuckleModule))]
+    [DependsOn(typeof(AbpAspNetCoreAuthenticationJwtBearerModule))]
+    [DependsOn(typeof(AbpAspNetCoreSerilogModule))]
+    [DependsOn(typeof(AbpAspNetCoreComponentsServerBasicThemeModule))]
+    [DependsOn(typeof(AbpIdentityBlazorServerModule))]
+    [DependsOn(typeof(AbpTenantManagementBlazorServerModule))]
+    [DependsOn(typeof(AbpSettingManagementBlazorServerModule))]
+
+    [DependsOn(typeof(DemoHttpApiModule))]
+    [DependsOn(typeof(DemoEntityFrameworkCoreModule))]
+    [DependsOn(typeof(DemoApplicationModule))]
+    [DependsOn(typeof(DemoBlazorServerModule))]
+    [DependsOn(typeof(DemoWebModule))]
     public class DynamicMenuDemoBlazorHostModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
@@ -89,11 +71,6 @@ namespace EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host
         {
             var hostingEnvironment = context.Services.GetHostingEnvironment();
             var configuration = context.Services.GetConfiguration();
-
-            //Configure<AbpDbContextOptions>(options =>
-            //{
-            //    options.UseSqlServer();
-            //});
 
             Configure<AbpBundlingOptions>(options =>
             {
@@ -145,24 +122,6 @@ namespace EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host
                     options.DocInclusionPredicate((docName, description) => true);
                     options.CustomSchemaIds(type => type.FullName);
                 });
-
-            Configure<AbpLocalizationOptions>(options =>
-            {
-                options.Languages.Add(new LanguageInfo("cs", "cs", "Čeština"));
-                options.Languages.Add(new LanguageInfo("en", "en", "English"));
-                options.Languages.Add(new LanguageInfo("en-GB", "en-GB", "English (UK)"));
-                options.Languages.Add(new LanguageInfo("fi", "fi", "Finnish"));
-                options.Languages.Add(new LanguageInfo("fr", "fr", "Français"));
-                options.Languages.Add(new LanguageInfo("hi", "hi", "Hindi"));
-                options.Languages.Add(new LanguageInfo("it", "it", "Italian"));
-                options.Languages.Add(new LanguageInfo("hu", "hu", "Magyar"));
-                options.Languages.Add(new LanguageInfo("pt-BR", "pt-BR", "Português (Brasil)"));
-                options.Languages.Add(new LanguageInfo("ru", "ru", "Русский"));
-                options.Languages.Add(new LanguageInfo("sk", "sk", "Slovak"));
-                options.Languages.Add(new LanguageInfo("tr", "tr", "Türkçe"));
-                options.Languages.Add(new LanguageInfo("zh-Hans", "zh-Hans", "简体中文"));
-                options.Languages.Add(new LanguageInfo("zh-Hant", "zh-Hant", "繁體中文"));
-            });
 
             Configure<AbpMultiTenancyOptions>(options =>
             {
@@ -227,16 +186,6 @@ namespace EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "DynamicMenu API");
             });
             app.UseConfiguredEndpoints();
-
-            using (var scope = context.ServiceProvider.CreateScope())
-            {
-                AsyncHelper.RunSync(async () =>
-                {
-                    await scope.ServiceProvider
-                        .GetRequiredService<IDataSeeder>()
-                        .SeedAsync();
-                });
-            }
         }
     }
 }

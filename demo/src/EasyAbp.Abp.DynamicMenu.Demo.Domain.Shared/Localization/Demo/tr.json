@@ -2,9 +2,9 @@
   "culture": "tr",
   "texts": {
     "Menu:Home": "Ana sayfa",
-    "Menu:Alpha": "Alpha İşletme",
+    "Menu:Demo": "Demo",
     "Welcome": "Hoşgeldiniz",
-    "LongWelcomeMessage": "Alpha İşletme .",
+    "LongWelcomeMessage": "Demo.",
     "DisplayName:EasyAbp.Abp.DynamicMenu.RememberGridFilterState": "Grid Filtrelerini Anımsa",
     "RememberGridFilterStateHelpText": "Çalışmanız bitip ekranınızı kapatırken otomatik olarak grid filtre ayarlarını kaydedecektir.",
     "Grid_Edit": "Düzenle",
