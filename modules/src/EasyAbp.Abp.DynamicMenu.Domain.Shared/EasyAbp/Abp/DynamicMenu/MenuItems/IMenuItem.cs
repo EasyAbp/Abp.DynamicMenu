@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using JetBrains.Annotations;
 
 namespace EasyAbp.Abp.DynamicMenu.MenuItems
@@ -6,11 +7,10 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
     public interface IMenuItem
     {
         [CanBeNull]
-        string ParentName { get; }
+        string ParentId { get; }
 
-        [Key]
         [NotNull]
-        string Name { get; }
+        string Id { get; }
         
         [NotNull]
         string DisplayName { get; }

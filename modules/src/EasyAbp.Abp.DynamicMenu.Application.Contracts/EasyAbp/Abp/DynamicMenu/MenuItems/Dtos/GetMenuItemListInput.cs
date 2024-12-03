@@ -1,9 +1,10 @@
-﻿using Volo.Abp.Application.Dtos;
+﻿using System;
+using Volo.Abp.Application.Dtos;
 
 namespace EasyAbp.Abp.DynamicMenu.MenuItems.Dtos
 {
     public class GetMenuItemListInput : PagedAndSortedResultRequestDto
     {
-        public string ParentName { get; set; }
+        public string ParentId { get; set; }
     }
 }

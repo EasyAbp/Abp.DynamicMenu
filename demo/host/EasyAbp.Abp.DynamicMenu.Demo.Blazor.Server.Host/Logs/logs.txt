@@ -29824,3 +29824,1206 @@ Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AbpBack
    at Microsoft.EntityFrameworkCore.Query.Internal.SplitQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
 ClientConnectionId:75346321-a475-431b-b203-41f9f2b3c7cc
 Error Number:208,State:1,Class:16
+2024-12-03 06:20:13.555 +03:00 [INF] Starting web host.
+2024-12-03 06:20:22.098 +03:00 [INF] User profile is available. Using 'C:\Users\CelalAk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-12-03 06:20:22.199 +03:00 [INF] Loaded ABP modules:
+2024-12-03 06:20:22.199 +03:00 [INF] - EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host.DynamicMenuDemoBlazorHostModule
+2024-12-03 06:20:22.199 +03:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite.AbpAspNetCoreMvcUiLeptonXLiteThemeModule
+2024-12-03 06:20:22.199 +03:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2024-12-03 06:20:22.199 +03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2024-12-03 06:20:22.199 +03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2024-12-03 06:20:22.199 +03:00 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2024-12-03 06:20:22.199 +03:00 [INF]             - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2024-12-03 06:20:22.199 +03:00 [INF]               - Volo.Abp.Auditing.AbpAuditingModule
+2024-12-03 06:20:22.199 +03:00 [INF]                 - Volo.Abp.Data.AbpDataModule
+2024-12-03 06:20:22.199 +03:00 [INF]                   - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2024-12-03 06:20:22.199 +03:00 [INF]                     - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2024-12-03 06:20:22.199 +03:00 [INF]                     - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2024-12-03 06:20:22.199 +03:00 [INF]                   - Volo.Abp.Uow.AbpUnitOfWorkModule
+2024-12-03 06:20:22.199 +03:00 [INF]                   - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2024-12-03 06:20:22.199 +03:00 [INF]                 - Volo.Abp.Json.AbpJsonModule
+2024-12-03 06:20:22.199 +03:00 [INF]                   - Volo.Abp.Json.SystemTextJson.AbpJsonSystemTextJsonModule
+2024-12-03 06:20:22.199 +03:00 [INF]                     - Volo.Abp.Json.AbpJsonAbstractionsModule
+2024-12-03 06:20:22.199 +03:00 [INF]                     - Volo.Abp.Timing.AbpTimingModule
+2024-12-03 06:20:22.199 +03:00 [INF]                       - Volo.Abp.Localization.AbpLocalizationModule
+2024-12-03 06:20:22.199 +03:00 [INF]                         - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2024-12-03 06:20:22.199 +03:00 [INF]                         - Volo.Abp.Settings.AbpSettingsModule
+2024-12-03 06:20:22.199 +03:00 [INF]                           - Volo.Abp.Security.AbpSecurityModule
+2024-12-03 06:20:22.199 +03:00 [INF]                         - Volo.Abp.Threading.AbpThreadingModule
+2024-12-03 06:20:22.199 +03:00 [INF]                 - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2024-12-03 06:20:22.199 +03:00 [INF]                   - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2024-12-03 06:20:22.199 +03:00 [INF]                 - Volo.Abp.Auditing.AbpAuditingContractsModule
+2024-12-03 06:20:22.199 +03:00 [INF]               - Volo.Abp.Http.AbpHttpModule
+2024-12-03 06:20:22.200 +03:00 [INF]                 - Volo.Abp.Http.AbpHttpAbstractionsModule
+2024-12-03 06:20:22.200 +03:00 [INF]                 - Volo.Abp.Minify.AbpMinifyModule
+2024-12-03 06:20:22.200 +03:00 [INF]               - Volo.Abp.Authorization.AbpAuthorizationModule
+2024-12-03 06:20:22.200 +03:00 [INF]                 - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2024-12-03 06:20:22.200 +03:00 [INF]               - Volo.Abp.Validation.AbpValidationModule
+2024-12-03 06:20:22.200 +03:00 [INF]               - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2024-12-03 06:20:22.200 +03:00 [INF]               - Volo.Abp.AspNetCore.AbpAspNetCoreAbstractionsModule
+2024-12-03 06:20:22.200 +03:00 [INF]             - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2024-12-03 06:20:22.200 +03:00 [INF]             - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2024-12-03 06:20:22.200 +03:00 [INF]               - Volo.Abp.Application.AbpDddApplicationContractsModule
+2024-12-03 06:20:22.200 +03:00 [INF]             - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2024-12-03 06:20:22.200 +03:00 [INF]               - Volo.Abp.UI.AbpUiModule
+2024-12-03 06:20:22.200 +03:00 [INF]             - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2024-12-03 06:20:22.200 +03:00 [INF]             - Volo.Abp.Application.AbpDddApplicationModule
+2024-12-03 06:20:22.200 +03:00 [INF]               - Volo.Abp.Domain.AbpDddDomainModule
+2024-12-03 06:20:22.200 +03:00 [INF]                 - Volo.Abp.EventBus.AbpEventBusModule
+2024-12-03 06:20:22.200 +03:00 [INF]                   - Volo.Abp.Guids.AbpGuidsModule
+2024-12-03 06:20:22.200 +03:00 [INF]                   - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2024-12-03 06:20:22.200 +03:00 [INF]                   - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2024-12-03 06:20:22.200 +03:00 [INF]                 - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2024-12-03 06:20:22.200 +03:00 [INF]                 - Volo.Abp.Specifications.AbpSpecificationsModule
+2024-12-03 06:20:22.200 +03:00 [INF]                 - Volo.Abp.Caching.AbpCachingModule
+2024-12-03 06:20:22.200 +03:00 [INF]                   - Volo.Abp.Serialization.AbpSerializationModule
+2024-12-03 06:20:22.200 +03:00 [INF]                 - Volo.Abp.Domain.AbpDddDomainSharedModule
+2024-12-03 06:20:22.200 +03:00 [INF]               - Volo.Abp.Features.AbpFeaturesModule
+2024-12-03 06:20:22.200 +03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2024-12-03 06:20:22.200 +03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingAbstractionsModule
+2024-12-03 06:20:22.200 +03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Widgets.AbpAspNetCoreMvcUiWidgetsModule
+2024-12-03 06:20:22.200 +03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2024-12-03 06:20:22.200 +03:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2024-12-03 06:20:22.200 +03:00 [INF]       - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2024-12-03 06:20:22.200 +03:00 [INF]     - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2024-12-03 06:20:22.200 +03:00 [INF]   - Volo.Abp.AspNetCore.Components.Server.BasicTheme.AbpAspNetCoreComponentsServerBasicThemeModule
+2024-12-03 06:20:22.200 +03:00 [INF]     - Volo.Abp.AspNetCore.Components.Web.BasicTheme.AbpAspNetCoreComponentsWebBasicThemeModule
+2024-12-03 06:20:22.200 +03:00 [INF]       - Volo.Abp.AspNetCore.Components.Web.Theming.AbpAspNetCoreComponentsWebThemingModule
+2024-12-03 06:20:22.200 +03:00 [INF]         - Volo.Abp.BlazoriseUI.AbpBlazoriseUIModule
+2024-12-03 06:20:22.200 +03:00 [INF]           - Volo.Abp.AspNetCore.Components.Web.AbpAspNetCoreComponentsWebModule
+2024-12-03 06:20:22.200 +03:00 [INF]             - Volo.Abp.AspNetCore.Components.AbpAspNetCoreComponentsModule
+2024-12-03 06:20:22.200 +03:00 [INF]     - Volo.Abp.AspNetCore.Components.Server.Theming.AbpAspNetCoreComponentsServerThemingModule
+2024-12-03 06:20:22.200 +03:00 [INF]       - Volo.Abp.AspNetCore.Components.Server.AbpAspNetCoreComponentsServerModule
+2024-12-03 06:20:22.200 +03:00 [INF]         - Volo.Abp.Http.Client.AbpHttpClientModule
+2024-12-03 06:20:22.200 +03:00 [INF]           - Volo.Abp.Castle.AbpCastleCoreModule
+2024-12-03 06:20:22.200 +03:00 [INF]           - Volo.Abp.RemoteServices.AbpRemoteServicesModule
+2024-12-03 06:20:22.200 +03:00 [INF]         - Volo.Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule
+2024-12-03 06:20:22.200 +03:00 [INF]   - Volo.Abp.Autofac.AbpAutofacModule
+2024-12-03 06:20:22.200 +03:00 [INF]   - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2024-12-03 06:20:22.200 +03:00 [INF]   - Volo.Abp.AspNetCore.Authentication.JwtBearer.AbpAspNetCoreAuthenticationJwtBearerModule
+2024-12-03 06:20:22.200 +03:00 [INF]   - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2024-12-03 06:20:22.200 +03:00 [INF]   - Volo.Abp.Identity.Blazor.Server.AbpIdentityBlazorServerModule
+2024-12-03 06:20:22.200 +03:00 [INF]     - Volo.Abp.Identity.Blazor.AbpIdentityBlazorModule
+2024-12-03 06:20:22.200 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2024-12-03 06:20:22.200 +03:00 [INF]         - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2024-12-03 06:20:22.200 +03:00 [INF]           - Volo.Abp.Users.AbpUsersDomainSharedModule
+2024-12-03 06:20:22.200 +03:00 [INF]         - Volo.Abp.Users.AbpUsersAbstractionModule
+2024-12-03 06:20:22.200 +03:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2024-12-03 06:20:22.200 +03:00 [INF]           - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2024-12-03 06:20:22.200 +03:00 [INF]       - Volo.Abp.PermissionManagement.Blazor.AbpPermissionManagementBlazorModule
+2024-12-03 06:20:22.200 +03:00 [INF]     - Volo.Abp.PermissionManagement.Blazor.Server.AbpPermissionManagementBlazorServerModule
+2024-12-03 06:20:22.200 +03:00 [INF]   - Volo.Abp.TenantManagement.Blazor.Server.AbpTenantManagementBlazorServerModule
+2024-12-03 06:20:22.200 +03:00 [INF]     - Volo.Abp.TenantManagement.Blazor.AbpTenantManagementBlazorModule
+2024-12-03 06:20:22.200 +03:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementApplicationContractsModule
+2024-12-03 06:20:22.200 +03:00 [INF]         - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2024-12-03 06:20:22.200 +03:00 [INF]       - Volo.Abp.FeatureManagement.Blazor.AbpFeatureManagementBlazorModule
+2024-12-03 06:20:22.201 +03:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationContractsModule
+2024-12-03 06:20:22.201 +03:00 [INF]           - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2024-12-03 06:20:22.201 +03:00 [INF]         - Volo.Abp.SettingManagement.Blazor.AbpSettingManagementBlazorModule
+2024-12-03 06:20:22.201 +03:00 [INF]           - Volo.Abp.SettingManagement.AbpSettingManagementApplicationContractsModule
+2024-12-03 06:20:22.201 +03:00 [INF]             - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - Volo.Abp.FeatureManagement.Blazor.Server.AbpFeatureManagementBlazorServerModule
+2024-12-03 06:20:22.202 +03:00 [INF]   - Volo.Abp.SettingManagement.Blazor.Server.AbpSettingManagementBlazorServerModule
+2024-12-03 06:20:22.202 +03:00 [INF]   - EasyAbp.Abp.DynamicMenu.Demo.DemoHttpApiModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.Demo.DemoApplicationContractsModule
+2024-12-03 06:20:22.202 +03:00 [INF]       - Volo.Abp.Account.AbpAccountApplicationContractsModule
+2024-12-03 06:20:22.202 +03:00 [INF]       - EasyAbp.Abp.DynamicMenu.Demo.DemoDomainSharedModule
+2024-12-03 06:20:22.202 +03:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2024-12-03 06:20:22.202 +03:00 [INF]         - Volo.Abp.IdentityServer.AbpIdentityServerDomainSharedModule
+2024-12-03 06:20:22.202 +03:00 [INF]         - EasyAbp.Abp.DynamicMenu.AbpDynamicMenuDomainSharedModule
+2024-12-03 06:20:22.202 +03:00 [INF]       - EasyAbp.Abp.DynamicMenu.AbpDynamicMenuApplicationContractsModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - Volo.Abp.Account.AbpAccountHttpApiModule
+2024-12-03 06:20:22.202 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementHttpApiModule
+2024-12-03 06:20:22.202 +03:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementHttpApiModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementHttpApiModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.AbpDynamicMenuHttpApiModule
+2024-12-03 06:20:22.202 +03:00 [INF]   - EasyAbp.Abp.DynamicMenu.EntityFrameworkCore.DemoEntityFrameworkCoreModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2024-12-03 06:20:22.202 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityDomainModule
+2024-12-03 06:20:22.202 +03:00 [INF]         - Volo.Abp.Users.AbpUsersDomainModule
+2024-12-03 06:20:22.202 +03:00 [INF]       - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - Volo.Abp.IdentityServer.EntityFrameworkCore.AbpIdentityServerEntityFrameworkCoreModule
+2024-12-03 06:20:22.202 +03:00 [INF]       - Volo.Abp.IdentityServer.AbpIdentityServerDomainModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2024-12-03 06:20:22.202 +03:00 [INF]       - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2024-12-03 06:20:22.202 +03:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2024-12-03 06:20:22.202 +03:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2024-12-03 06:20:22.202 +03:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2024-12-03 06:20:22.202 +03:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.Demo.DemoDomainModule
+2024-12-03 06:20:22.202 +03:00 [INF]       - Volo.Abp.Emailing.AbpEmailingModule
+2024-12-03 06:20:22.202 +03:00 [INF]         - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2024-12-03 06:20:22.202 +03:00 [INF]         - Volo.Abp.TextTemplating.AbpTextTemplatingModule
+2024-12-03 06:20:22.202 +03:00 [INF]           - Volo.Abp.TextTemplating.Scriban.AbpTextTemplatingScribanModule
+2024-12-03 06:20:22.202 +03:00 [INF]             - Volo.Abp.TextTemplating.AbpTextTemplatingCoreModule
+2024-12-03 06:20:22.202 +03:00 [INF]       - Volo.Abp.PermissionManagement.IdentityServer.AbpPermissionManagementDomainIdentityServerModule
+2024-12-03 06:20:22.202 +03:00 [INF]       - Volo.Abp.PermissionManagement.Identity.AbpPermissionManagementDomainIdentityModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.EntityFrameworkCore.AbpDynamicMenuEntityFrameworkCoreModule
+2024-12-03 06:20:22.202 +03:00 [INF]       - EasyAbp.Abp.DynamicMenu.AbpDynamicMenuDomainModule
+2024-12-03 06:20:22.202 +03:00 [INF]   - EasyAbp.Abp.DynamicMenu.Demo.DemoApplicationModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - Volo.Abp.Account.AbpAccountApplicationModule
+2024-12-03 06:20:22.202 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityApplicationModule
+2024-12-03 06:20:22.202 +03:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementApplicationModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementApplicationModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.AbpDynamicMenuApplicationModule
+2024-12-03 06:20:22.202 +03:00 [INF]   - EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.DemoBlazorServerModule
+2024-12-03 06:20:22.202 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.Demo.Blazor.DemoBlazorModule
+2024-12-03 06:20:22.202 +03:00 [INF]       - EasyAbp.Abp.DynamicMenu.Blazor.AbpDynamicMenuBlazorModule
+2024-12-03 06:20:22.385 +03:00 [DBG] Started background worker: Volo.Abp.IdentityServer.Tokens.TokenCleanupBackgroundWorker
+2024-12-03 06:20:22.451 +03:00 [INF] Starting IdentityServer4 version 4.1.2+997a6cdd643e46cd5762b710c4ddc43574cbec2e
+2024-12-03 06:20:24.486 +03:00 [WRN] No authentication scheme has been set. Setting either a default authentication scheme or a CookieAuthenticationScheme on IdentityServerOptions is required.
+2024-12-03 06:20:25.355 +03:00 [INF] Initialized all ABP modules.
+2024-12-03 06:20:25.479 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/ - null null
+2024-12-03 06:20:25.724 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-03 06:20:25.724 +03:00 [INF] Hosting environment: Development
+2024-12-03 06:20:25.724 +03:00 [INF] Content root path: C:\Users\CelalAk\source\repos\EasyAbp.DynamicMenu\demo\host\EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host
+2024-12-03 06:20:32.562 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No DefaultAuthenticateScheme found or no CookieAuthenticationScheme configured on IdentityServerOptions.
+   at Microsoft.AspNetCore.Http.AuthenticationManagerExtensions.GetCookieAuthenticationSchemeAsync(HttpContext context)
+   at IdentityServer4.Services.DefaultUserSession.AuthenticateAsync()
+   at IdentityServer4.Services.DefaultUserSession.GetSessionIdAsync()
+   at IdentityServer4.Services.DefaultUserSession.EnsureSessionIdCookieAsync()
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events, IBackChannelLogoutService backChannelLogoutService)
+   at IdentityServer4.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context)
+   at Volo.Abp.AspNetCore.Uow.AbpUnitOfWorkMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Volo.Abp.AspNetCore.ExceptionHandling.AbpExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Volo.Abp.AspNetCore.ExceptionHandling.AbpExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Volo.Abp.AspNetCore.MultiTenancy.MultiTenancyMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Builder.ApplicationBuilderAbpJwtTokenMiddlewareExtension.<>c__DisplayClass0_0.<<UseJwtTokenMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Volo.Abp.AspNetCore.Tracing.AbpCorrelationIdMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-12-03 06:20:32.661 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/ - 500 null text/html; charset=utf-8 7189.0826ms
+2024-12-03 06:20:32.753 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/_vs/browserLink - null null
+2024-12-03 06:20:32.753 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-03 06:20:32.772 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/_framework/aspnetcore-browser-refresh.js - 200 13830 application/javascript; charset=utf-8 7.1366ms
+2024-12-03 06:20:32.836 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/_vs/browserLink - 200 null text/javascript; charset=UTF-8 83.3635ms
+2024-12-03 06:24:19.824 +03:00 [INF] Starting web host.
+2024-12-03 06:24:26.711 +03:00 [INF] User profile is available. Using 'C:\Users\CelalAk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-12-03 06:24:26.836 +03:00 [INF] Loaded ABP modules:
+2024-12-03 06:24:26.836 +03:00 [INF] - EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host.DynamicMenuDemoBlazorHostModule
+2024-12-03 06:24:26.836 +03:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite.AbpAspNetCoreMvcUiLeptonXLiteThemeModule
+2024-12-03 06:24:26.836 +03:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2024-12-03 06:24:26.836 +03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2024-12-03 06:24:26.836 +03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2024-12-03 06:24:26.836 +03:00 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2024-12-03 06:24:26.836 +03:00 [INF]             - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2024-12-03 06:24:26.836 +03:00 [INF]               - Volo.Abp.Auditing.AbpAuditingModule
+2024-12-03 06:24:26.836 +03:00 [INF]                 - Volo.Abp.Data.AbpDataModule
+2024-12-03 06:24:26.836 +03:00 [INF]                   - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2024-12-03 06:24:26.836 +03:00 [INF]                     - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2024-12-03 06:24:26.836 +03:00 [INF]                     - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2024-12-03 06:24:26.836 +03:00 [INF]                   - Volo.Abp.Uow.AbpUnitOfWorkModule
+2024-12-03 06:24:26.836 +03:00 [INF]                   - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2024-12-03 06:24:26.836 +03:00 [INF]                 - Volo.Abp.Json.AbpJsonModule
+2024-12-03 06:24:26.836 +03:00 [INF]                   - Volo.Abp.Json.SystemTextJson.AbpJsonSystemTextJsonModule
+2024-12-03 06:24:26.836 +03:00 [INF]                     - Volo.Abp.Json.AbpJsonAbstractionsModule
+2024-12-03 06:24:26.836 +03:00 [INF]                     - Volo.Abp.Timing.AbpTimingModule
+2024-12-03 06:24:26.836 +03:00 [INF]                       - Volo.Abp.Localization.AbpLocalizationModule
+2024-12-03 06:24:26.836 +03:00 [INF]                         - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2024-12-03 06:24:26.836 +03:00 [INF]                         - Volo.Abp.Settings.AbpSettingsModule
+2024-12-03 06:24:26.836 +03:00 [INF]                           - Volo.Abp.Security.AbpSecurityModule
+2024-12-03 06:24:26.836 +03:00 [INF]                         - Volo.Abp.Threading.AbpThreadingModule
+2024-12-03 06:24:26.836 +03:00 [INF]                 - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2024-12-03 06:24:26.836 +03:00 [INF]                   - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2024-12-03 06:24:26.836 +03:00 [INF]                 - Volo.Abp.Auditing.AbpAuditingContractsModule
+2024-12-03 06:24:26.836 +03:00 [INF]               - Volo.Abp.Http.AbpHttpModule
+2024-12-03 06:24:26.837 +03:00 [INF]                 - Volo.Abp.Http.AbpHttpAbstractionsModule
+2024-12-03 06:24:26.837 +03:00 [INF]                 - Volo.Abp.Minify.AbpMinifyModule
+2024-12-03 06:24:26.837 +03:00 [INF]               - Volo.Abp.Authorization.AbpAuthorizationModule
+2024-12-03 06:24:26.837 +03:00 [INF]                 - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2024-12-03 06:24:26.837 +03:00 [INF]               - Volo.Abp.Validation.AbpValidationModule
+2024-12-03 06:24:26.837 +03:00 [INF]               - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2024-12-03 06:24:26.837 +03:00 [INF]               - Volo.Abp.AspNetCore.AbpAspNetCoreAbstractionsModule
+2024-12-03 06:24:26.837 +03:00 [INF]             - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2024-12-03 06:24:26.837 +03:00 [INF]             - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2024-12-03 06:24:26.837 +03:00 [INF]               - Volo.Abp.Application.AbpDddApplicationContractsModule
+2024-12-03 06:24:26.837 +03:00 [INF]             - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2024-12-03 06:24:26.837 +03:00 [INF]               - Volo.Abp.UI.AbpUiModule
+2024-12-03 06:24:26.837 +03:00 [INF]             - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2024-12-03 06:24:26.837 +03:00 [INF]             - Volo.Abp.Application.AbpDddApplicationModule
+2024-12-03 06:24:26.837 +03:00 [INF]               - Volo.Abp.Domain.AbpDddDomainModule
+2024-12-03 06:24:26.837 +03:00 [INF]                 - Volo.Abp.EventBus.AbpEventBusModule
+2024-12-03 06:24:26.837 +03:00 [INF]                   - Volo.Abp.Guids.AbpGuidsModule
+2024-12-03 06:24:26.837 +03:00 [INF]                   - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2024-12-03 06:24:26.837 +03:00 [INF]                   - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2024-12-03 06:24:26.837 +03:00 [INF]                 - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2024-12-03 06:24:26.837 +03:00 [INF]                 - Volo.Abp.Specifications.AbpSpecificationsModule
+2024-12-03 06:24:26.837 +03:00 [INF]                 - Volo.Abp.Caching.AbpCachingModule
+2024-12-03 06:24:26.837 +03:00 [INF]                   - Volo.Abp.Serialization.AbpSerializationModule
+2024-12-03 06:24:26.837 +03:00 [INF]                 - Volo.Abp.Domain.AbpDddDomainSharedModule
+2024-12-03 06:24:26.837 +03:00 [INF]               - Volo.Abp.Features.AbpFeaturesModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2024-12-03 06:24:26.837 +03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingAbstractionsModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Widgets.AbpAspNetCoreMvcUiWidgetsModule
+2024-12-03 06:24:26.837 +03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2024-12-03 06:24:26.837 +03:00 [INF]   - Volo.Abp.AspNetCore.Components.Server.BasicTheme.AbpAspNetCoreComponentsServerBasicThemeModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - Volo.Abp.AspNetCore.Components.Web.BasicTheme.AbpAspNetCoreComponentsWebBasicThemeModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.AspNetCore.Components.Web.Theming.AbpAspNetCoreComponentsWebThemingModule
+2024-12-03 06:24:26.837 +03:00 [INF]         - Volo.Abp.BlazoriseUI.AbpBlazoriseUIModule
+2024-12-03 06:24:26.837 +03:00 [INF]           - Volo.Abp.AspNetCore.Components.Web.AbpAspNetCoreComponentsWebModule
+2024-12-03 06:24:26.837 +03:00 [INF]             - Volo.Abp.AspNetCore.Components.AbpAspNetCoreComponentsModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - Volo.Abp.AspNetCore.Components.Server.Theming.AbpAspNetCoreComponentsServerThemingModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.AspNetCore.Components.Server.AbpAspNetCoreComponentsServerModule
+2024-12-03 06:24:26.837 +03:00 [INF]         - Volo.Abp.Http.Client.AbpHttpClientModule
+2024-12-03 06:24:26.837 +03:00 [INF]           - Volo.Abp.Castle.AbpCastleCoreModule
+2024-12-03 06:24:26.837 +03:00 [INF]           - Volo.Abp.RemoteServices.AbpRemoteServicesModule
+2024-12-03 06:24:26.837 +03:00 [INF]         - Volo.Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule
+2024-12-03 06:24:26.837 +03:00 [INF]   - Volo.Abp.Autofac.AbpAutofacModule
+2024-12-03 06:24:26.837 +03:00 [INF]   - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2024-12-03 06:24:26.837 +03:00 [INF]   - Volo.Abp.AspNetCore.Authentication.JwtBearer.AbpAspNetCoreAuthenticationJwtBearerModule
+2024-12-03 06:24:26.837 +03:00 [INF]   - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2024-12-03 06:24:26.837 +03:00 [INF]   - Volo.Abp.Identity.Blazor.Server.AbpIdentityBlazorServerModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - Volo.Abp.Identity.Blazor.AbpIdentityBlazorModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2024-12-03 06:24:26.837 +03:00 [INF]         - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2024-12-03 06:24:26.837 +03:00 [INF]           - Volo.Abp.Users.AbpUsersDomainSharedModule
+2024-12-03 06:24:26.837 +03:00 [INF]         - Volo.Abp.Users.AbpUsersAbstractionModule
+2024-12-03 06:24:26.837 +03:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2024-12-03 06:24:26.837 +03:00 [INF]           - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.PermissionManagement.Blazor.AbpPermissionManagementBlazorModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - Volo.Abp.PermissionManagement.Blazor.Server.AbpPermissionManagementBlazorServerModule
+2024-12-03 06:24:26.837 +03:00 [INF]   - Volo.Abp.TenantManagement.Blazor.Server.AbpTenantManagementBlazorServerModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - Volo.Abp.TenantManagement.Blazor.AbpTenantManagementBlazorModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementApplicationContractsModule
+2024-12-03 06:24:26.837 +03:00 [INF]         - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.FeatureManagement.Blazor.AbpFeatureManagementBlazorModule
+2024-12-03 06:24:26.837 +03:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationContractsModule
+2024-12-03 06:24:26.837 +03:00 [INF]           - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2024-12-03 06:24:26.837 +03:00 [INF]         - Volo.Abp.SettingManagement.Blazor.AbpSettingManagementBlazorModule
+2024-12-03 06:24:26.837 +03:00 [INF]           - Volo.Abp.SettingManagement.AbpSettingManagementApplicationContractsModule
+2024-12-03 06:24:26.837 +03:00 [INF]             - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - Volo.Abp.FeatureManagement.Blazor.Server.AbpFeatureManagementBlazorServerModule
+2024-12-03 06:24:26.837 +03:00 [INF]   - Volo.Abp.SettingManagement.Blazor.Server.AbpSettingManagementBlazorServerModule
+2024-12-03 06:24:26.837 +03:00 [INF]   - EasyAbp.Abp.DynamicMenu.Demo.DemoHttpApiModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.Demo.DemoApplicationContractsModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.Account.AbpAccountApplicationContractsModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - EasyAbp.Abp.DynamicMenu.Demo.DemoDomainSharedModule
+2024-12-03 06:24:26.837 +03:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2024-12-03 06:24:26.837 +03:00 [INF]         - Volo.Abp.IdentityServer.AbpIdentityServerDomainSharedModule
+2024-12-03 06:24:26.837 +03:00 [INF]         - EasyAbp.Abp.DynamicMenu.AbpDynamicMenuDomainSharedModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - EasyAbp.Abp.DynamicMenu.AbpDynamicMenuApplicationContractsModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - Volo.Abp.Account.AbpAccountHttpApiModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementHttpApiModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementHttpApiModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementHttpApiModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.AbpDynamicMenuHttpApiModule
+2024-12-03 06:24:26.837 +03:00 [INF]   - EasyAbp.Abp.DynamicMenu.EntityFrameworkCore.DemoEntityFrameworkCoreModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityDomainModule
+2024-12-03 06:24:26.837 +03:00 [INF]         - Volo.Abp.Users.AbpUsersDomainModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - Volo.Abp.IdentityServer.EntityFrameworkCore.AbpIdentityServerEntityFrameworkCoreModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.IdentityServer.AbpIdentityServerDomainModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.Demo.DemoDomainModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.Emailing.AbpEmailingModule
+2024-12-03 06:24:26.837 +03:00 [INF]         - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2024-12-03 06:24:26.837 +03:00 [INF]         - Volo.Abp.TextTemplating.AbpTextTemplatingModule
+2024-12-03 06:24:26.837 +03:00 [INF]           - Volo.Abp.TextTemplating.Scriban.AbpTextTemplatingScribanModule
+2024-12-03 06:24:26.837 +03:00 [INF]             - Volo.Abp.TextTemplating.AbpTextTemplatingCoreModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.PermissionManagement.IdentityServer.AbpPermissionManagementDomainIdentityServerModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - Volo.Abp.PermissionManagement.Identity.AbpPermissionManagementDomainIdentityModule
+2024-12-03 06:24:26.837 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.EntityFrameworkCore.AbpDynamicMenuEntityFrameworkCoreModule
+2024-12-03 06:24:26.837 +03:00 [INF]       - EasyAbp.Abp.DynamicMenu.AbpDynamicMenuDomainModule
+2024-12-03 06:24:26.838 +03:00 [INF]   - EasyAbp.Abp.DynamicMenu.Demo.DemoApplicationModule
+2024-12-03 06:24:26.838 +03:00 [INF]     - Volo.Abp.Account.AbpAccountApplicationModule
+2024-12-03 06:24:26.838 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityApplicationModule
+2024-12-03 06:24:26.838 +03:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2024-12-03 06:24:26.838 +03:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementApplicationModule
+2024-12-03 06:24:26.838 +03:00 [INF]     - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationModule
+2024-12-03 06:24:26.838 +03:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementApplicationModule
+2024-12-03 06:24:26.838 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.AbpDynamicMenuApplicationModule
+2024-12-03 06:24:26.838 +03:00 [INF]   - EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.DemoBlazorServerModule
+2024-12-03 06:24:26.838 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.Demo.Blazor.DemoBlazorModule
+2024-12-03 06:24:26.838 +03:00 [INF]       - EasyAbp.Abp.DynamicMenu.Blazor.AbpDynamicMenuBlazorModule
+2024-12-03 06:24:27.071 +03:00 [DBG] Started background worker: Volo.Abp.IdentityServer.Tokens.TokenCleanupBackgroundWorker
+2024-12-03 06:24:27.145 +03:00 [INF] Starting IdentityServer4 version 4.1.2+997a6cdd643e46cd5762b710c4ddc43574cbec2e
+2024-12-03 06:24:29.714 +03:00 [WRN] No authentication scheme has been set. Setting either a default authentication scheme or a CookieAuthenticationScheme on IdentityServerOptions is required.
+2024-12-03 06:24:30.478 +03:00 [INF] Initialized all ABP modules.
+2024-12-03 06:24:30.652 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/ - null null
+2024-12-03 06:24:30.888 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-03 06:24:30.889 +03:00 [INF] Hosting environment: Development
+2024-12-03 06:24:30.889 +03:00 [INF] Content root path: C:\Users\CelalAk\source\repos\EasyAbp.DynamicMenu\demo\host\EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host
+2024-12-03 06:24:37.798 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No DefaultAuthenticateScheme found or no CookieAuthenticationScheme configured on IdentityServerOptions.
+   at Microsoft.AspNetCore.Http.AuthenticationManagerExtensions.GetCookieAuthenticationSchemeAsync(HttpContext context)
+   at IdentityServer4.Services.DefaultUserSession.AuthenticateAsync()
+   at IdentityServer4.Services.DefaultUserSession.GetSessionIdAsync()
+   at IdentityServer4.Services.DefaultUserSession.EnsureSessionIdCookieAsync()
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events, IBackChannelLogoutService backChannelLogoutService)
+   at IdentityServer4.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context)
+   at Volo.Abp.AspNetCore.Uow.AbpUnitOfWorkMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Volo.Abp.AspNetCore.ExceptionHandling.AbpExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Volo.Abp.AspNetCore.ExceptionHandling.AbpExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Volo.Abp.AspNetCore.MultiTenancy.MultiTenancyMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Builder.ApplicationBuilderAbpJwtTokenMiddlewareExtension.<>c__DisplayClass0_0.<<UseJwtTokenMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Volo.Abp.AspNetCore.Tracing.AbpCorrelationIdMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-12-03 06:24:37.905 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/ - 500 null text/html; charset=utf-8 7261.5225ms
+2024-12-03 06:24:37.985 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-03 06:24:37.985 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/_vs/browserLink - null null
+2024-12-03 06:24:37.992 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/_framework/aspnetcore-browser-refresh.js - 200 13830 application/javascript; charset=utf-8 5.8844ms
+2024-12-03 06:24:38.067 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/_vs/browserLink - 200 null text/javascript; charset=UTF-8 89.4673ms
+2024-12-03 06:29:00.345 +03:00 [INF] Starting web host.
+2024-12-03 06:29:06.995 +03:00 [INF] User profile is available. Using 'C:\Users\CelalAk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-12-03 06:29:07.097 +03:00 [INF] Loaded ABP modules:
+2024-12-03 06:29:07.097 +03:00 [INF] - EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host.DynamicMenuDemoBlazorHostModule
+2024-12-03 06:29:07.097 +03:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite.AbpAspNetCoreMvcUiLeptonXLiteThemeModule
+2024-12-03 06:29:07.097 +03:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2024-12-03 06:29:07.097 +03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2024-12-03 06:29:07.097 +03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2024-12-03 06:29:07.097 +03:00 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2024-12-03 06:29:07.097 +03:00 [INF]             - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2024-12-03 06:29:07.097 +03:00 [INF]               - Volo.Abp.Auditing.AbpAuditingModule
+2024-12-03 06:29:07.097 +03:00 [INF]                 - Volo.Abp.Data.AbpDataModule
+2024-12-03 06:29:07.097 +03:00 [INF]                   - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2024-12-03 06:29:07.097 +03:00 [INF]                     - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2024-12-03 06:29:07.097 +03:00 [INF]                     - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2024-12-03 06:29:07.097 +03:00 [INF]                   - Volo.Abp.Uow.AbpUnitOfWorkModule
+2024-12-03 06:29:07.097 +03:00 [INF]                   - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2024-12-03 06:29:07.097 +03:00 [INF]                 - Volo.Abp.Json.AbpJsonModule
+2024-12-03 06:29:07.097 +03:00 [INF]                   - Volo.Abp.Json.SystemTextJson.AbpJsonSystemTextJsonModule
+2024-12-03 06:29:07.097 +03:00 [INF]                     - Volo.Abp.Json.AbpJsonAbstractionsModule
+2024-12-03 06:29:07.097 +03:00 [INF]                     - Volo.Abp.Timing.AbpTimingModule
+2024-12-03 06:29:07.097 +03:00 [INF]                       - Volo.Abp.Localization.AbpLocalizationModule
+2024-12-03 06:29:07.097 +03:00 [INF]                         - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2024-12-03 06:29:07.097 +03:00 [INF]                         - Volo.Abp.Settings.AbpSettingsModule
+2024-12-03 06:29:07.097 +03:00 [INF]                           - Volo.Abp.Security.AbpSecurityModule
+2024-12-03 06:29:07.097 +03:00 [INF]                         - Volo.Abp.Threading.AbpThreadingModule
+2024-12-03 06:29:07.097 +03:00 [INF]                 - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2024-12-03 06:29:07.097 +03:00 [INF]                   - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2024-12-03 06:29:07.097 +03:00 [INF]                 - Volo.Abp.Auditing.AbpAuditingContractsModule
+2024-12-03 06:29:07.097 +03:00 [INF]               - Volo.Abp.Http.AbpHttpModule
+2024-12-03 06:29:07.097 +03:00 [INF]                 - Volo.Abp.Http.AbpHttpAbstractionsModule
+2024-12-03 06:29:07.097 +03:00 [INF]                 - Volo.Abp.Minify.AbpMinifyModule
+2024-12-03 06:29:07.097 +03:00 [INF]               - Volo.Abp.Authorization.AbpAuthorizationModule
+2024-12-03 06:29:07.097 +03:00 [INF]                 - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2024-12-03 06:29:07.097 +03:00 [INF]               - Volo.Abp.Validation.AbpValidationModule
+2024-12-03 06:29:07.097 +03:00 [INF]               - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2024-12-03 06:29:07.097 +03:00 [INF]               - Volo.Abp.AspNetCore.AbpAspNetCoreAbstractionsModule
+2024-12-03 06:29:07.097 +03:00 [INF]             - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2024-12-03 06:29:07.097 +03:00 [INF]             - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2024-12-03 06:29:07.097 +03:00 [INF]               - Volo.Abp.Application.AbpDddApplicationContractsModule
+2024-12-03 06:29:07.098 +03:00 [INF]             - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2024-12-03 06:29:07.098 +03:00 [INF]               - Volo.Abp.UI.AbpUiModule
+2024-12-03 06:29:07.098 +03:00 [INF]             - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2024-12-03 06:29:07.098 +03:00 [INF]             - Volo.Abp.Application.AbpDddApplicationModule
+2024-12-03 06:29:07.098 +03:00 [INF]               - Volo.Abp.Domain.AbpDddDomainModule
+2024-12-03 06:29:07.098 +03:00 [INF]                 - Volo.Abp.EventBus.AbpEventBusModule
+2024-12-03 06:29:07.098 +03:00 [INF]                   - Volo.Abp.Guids.AbpGuidsModule
+2024-12-03 06:29:07.098 +03:00 [INF]                   - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2024-12-03 06:29:07.098 +03:00 [INF]                   - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2024-12-03 06:29:07.098 +03:00 [INF]                 - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2024-12-03 06:29:07.098 +03:00 [INF]                 - Volo.Abp.Specifications.AbpSpecificationsModule
+2024-12-03 06:29:07.098 +03:00 [INF]                 - Volo.Abp.Caching.AbpCachingModule
+2024-12-03 06:29:07.098 +03:00 [INF]                   - Volo.Abp.Serialization.AbpSerializationModule
+2024-12-03 06:29:07.098 +03:00 [INF]                 - Volo.Abp.Domain.AbpDddDomainSharedModule
+2024-12-03 06:29:07.098 +03:00 [INF]               - Volo.Abp.Features.AbpFeaturesModule
+2024-12-03 06:29:07.098 +03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2024-12-03 06:29:07.098 +03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingAbstractionsModule
+2024-12-03 06:29:07.098 +03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Widgets.AbpAspNetCoreMvcUiWidgetsModule
+2024-12-03 06:29:07.098 +03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2024-12-03 06:29:07.098 +03:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2024-12-03 06:29:07.098 +03:00 [INF]       - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2024-12-03 06:29:07.098 +03:00 [INF]     - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2024-12-03 06:29:07.098 +03:00 [INF]   - Volo.Abp.AspNetCore.Components.Server.BasicTheme.AbpAspNetCoreComponentsServerBasicThemeModule
+2024-12-03 06:29:07.098 +03:00 [INF]     - Volo.Abp.AspNetCore.Components.Web.BasicTheme.AbpAspNetCoreComponentsWebBasicThemeModule
+2024-12-03 06:29:07.098 +03:00 [INF]       - Volo.Abp.AspNetCore.Components.Web.Theming.AbpAspNetCoreComponentsWebThemingModule
+2024-12-03 06:29:07.098 +03:00 [INF]         - Volo.Abp.BlazoriseUI.AbpBlazoriseUIModule
+2024-12-03 06:29:07.098 +03:00 [INF]           - Volo.Abp.AspNetCore.Components.Web.AbpAspNetCoreComponentsWebModule
+2024-12-03 06:29:07.098 +03:00 [INF]             - Volo.Abp.AspNetCore.Components.AbpAspNetCoreComponentsModule
+2024-12-03 06:29:07.098 +03:00 [INF]     - Volo.Abp.AspNetCore.Components.Server.Theming.AbpAspNetCoreComponentsServerThemingModule
+2024-12-03 06:29:07.098 +03:00 [INF]       - Volo.Abp.AspNetCore.Components.Server.AbpAspNetCoreComponentsServerModule
+2024-12-03 06:29:07.098 +03:00 [INF]         - Volo.Abp.Http.Client.AbpHttpClientModule
+2024-12-03 06:29:07.098 +03:00 [INF]           - Volo.Abp.Castle.AbpCastleCoreModule
+2024-12-03 06:29:07.098 +03:00 [INF]           - Volo.Abp.RemoteServices.AbpRemoteServicesModule
+2024-12-03 06:29:07.098 +03:00 [INF]         - Volo.Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule
+2024-12-03 06:29:07.098 +03:00 [INF]   - Volo.Abp.Autofac.AbpAutofacModule
+2024-12-03 06:29:07.098 +03:00 [INF]   - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2024-12-03 06:29:07.098 +03:00 [INF]   - Volo.Abp.AspNetCore.Authentication.JwtBearer.AbpAspNetCoreAuthenticationJwtBearerModule
+2024-12-03 06:29:07.098 +03:00 [INF]   - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2024-12-03 06:29:07.098 +03:00 [INF]   - Volo.Abp.Identity.Blazor.Server.AbpIdentityBlazorServerModule
+2024-12-03 06:29:07.098 +03:00 [INF]     - Volo.Abp.Identity.Blazor.AbpIdentityBlazorModule
+2024-12-03 06:29:07.098 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2024-12-03 06:29:07.098 +03:00 [INF]         - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2024-12-03 06:29:07.098 +03:00 [INF]           - Volo.Abp.Users.AbpUsersDomainSharedModule
+2024-12-03 06:29:07.098 +03:00 [INF]         - Volo.Abp.Users.AbpUsersAbstractionModule
+2024-12-03 06:29:07.098 +03:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2024-12-03 06:29:07.098 +03:00 [INF]           - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2024-12-03 06:29:07.098 +03:00 [INF]       - Volo.Abp.PermissionManagement.Blazor.AbpPermissionManagementBlazorModule
+2024-12-03 06:29:07.098 +03:00 [INF]     - Volo.Abp.PermissionManagement.Blazor.Server.AbpPermissionManagementBlazorServerModule
+2024-12-03 06:29:07.098 +03:00 [INF]   - Volo.Abp.TenantManagement.Blazor.Server.AbpTenantManagementBlazorServerModule
+2024-12-03 06:29:07.098 +03:00 [INF]     - Volo.Abp.TenantManagement.Blazor.AbpTenantManagementBlazorModule
+2024-12-03 06:29:07.098 +03:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementApplicationContractsModule
+2024-12-03 06:29:07.098 +03:00 [INF]         - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2024-12-03 06:29:07.098 +03:00 [INF]       - Volo.Abp.FeatureManagement.Blazor.AbpFeatureManagementBlazorModule
+2024-12-03 06:29:07.098 +03:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationContractsModule
+2024-12-03 06:29:07.098 +03:00 [INF]           - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2024-12-03 06:29:07.098 +03:00 [INF]         - Volo.Abp.SettingManagement.Blazor.AbpSettingManagementBlazorModule
+2024-12-03 06:29:07.098 +03:00 [INF]           - Volo.Abp.SettingManagement.AbpSettingManagementApplicationContractsModule
+2024-12-03 06:29:07.098 +03:00 [INF]             - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2024-12-03 06:29:07.098 +03:00 [INF]     - Volo.Abp.FeatureManagement.Blazor.Server.AbpFeatureManagementBlazorServerModule
+2024-12-03 06:29:07.098 +03:00 [INF]   - Volo.Abp.SettingManagement.Blazor.Server.AbpSettingManagementBlazorServerModule
+2024-12-03 06:29:07.098 +03:00 [INF]   - EasyAbp.Abp.DynamicMenu.Demo.DemoHttpApiModule
+2024-12-03 06:29:07.098 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.Demo.DemoApplicationContractsModule
+2024-12-03 06:29:07.098 +03:00 [INF]       - Volo.Abp.Account.AbpAccountApplicationContractsModule
+2024-12-03 06:29:07.098 +03:00 [INF]       - EasyAbp.Abp.DynamicMenu.Demo.DemoDomainSharedModule
+2024-12-03 06:29:07.098 +03:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2024-12-03 06:29:07.098 +03:00 [INF]         - Volo.Abp.IdentityServer.AbpIdentityServerDomainSharedModule
+2024-12-03 06:29:07.098 +03:00 [INF]         - EasyAbp.Abp.DynamicMenu.AbpDynamicMenuDomainSharedModule
+2024-12-03 06:29:07.098 +03:00 [INF]       - EasyAbp.Abp.DynamicMenu.AbpDynamicMenuApplicationContractsModule
+2024-12-03 06:29:07.098 +03:00 [INF]     - Volo.Abp.Account.AbpAccountHttpApiModule
+2024-12-03 06:29:07.098 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2024-12-03 06:29:07.098 +03:00 [INF]     - Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule
+2024-12-03 06:29:07.098 +03:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementHttpApiModule
+2024-12-03 06:29:07.098 +03:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementHttpApiModule
+2024-12-03 06:29:07.098 +03:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementHttpApiModule
+2024-12-03 06:29:07.098 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.AbpDynamicMenuHttpApiModule
+2024-12-03 06:29:07.098 +03:00 [INF]   - EasyAbp.Abp.DynamicMenu.EntityFrameworkCore.DemoEntityFrameworkCoreModule
+2024-12-03 06:29:07.098 +03:00 [INF]     - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2024-12-03 06:29:07.098 +03:00 [INF]     - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2024-12-03 06:29:07.098 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityDomainModule
+2024-12-03 06:29:07.098 +03:00 [INF]         - Volo.Abp.Users.AbpUsersDomainModule
+2024-12-03 06:29:07.098 +03:00 [INF]       - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2024-12-03 06:29:07.098 +03:00 [INF]     - Volo.Abp.IdentityServer.EntityFrameworkCore.AbpIdentityServerEntityFrameworkCoreModule
+2024-12-03 06:29:07.098 +03:00 [INF]       - Volo.Abp.IdentityServer.AbpIdentityServerDomainModule
+2024-12-03 06:29:07.098 +03:00 [INF]     - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2024-12-03 06:29:07.098 +03:00 [INF]       - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2024-12-03 06:29:07.099 +03:00 [INF]     - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2024-12-03 06:29:07.099 +03:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2024-12-03 06:29:07.099 +03:00 [INF]     - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2024-12-03 06:29:07.099 +03:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2024-12-03 06:29:07.099 +03:00 [INF]     - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2024-12-03 06:29:07.099 +03:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2024-12-03 06:29:07.099 +03:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2024-12-03 06:29:07.099 +03:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2024-12-03 06:29:07.099 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.Demo.DemoDomainModule
+2024-12-03 06:29:07.099 +03:00 [INF]       - Volo.Abp.Emailing.AbpEmailingModule
+2024-12-03 06:29:07.099 +03:00 [INF]         - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2024-12-03 06:29:07.099 +03:00 [INF]         - Volo.Abp.TextTemplating.AbpTextTemplatingModule
+2024-12-03 06:29:07.099 +03:00 [INF]           - Volo.Abp.TextTemplating.Scriban.AbpTextTemplatingScribanModule
+2024-12-03 06:29:07.099 +03:00 [INF]             - Volo.Abp.TextTemplating.AbpTextTemplatingCoreModule
+2024-12-03 06:29:07.099 +03:00 [INF]       - Volo.Abp.PermissionManagement.IdentityServer.AbpPermissionManagementDomainIdentityServerModule
+2024-12-03 06:29:07.099 +03:00 [INF]       - Volo.Abp.PermissionManagement.Identity.AbpPermissionManagementDomainIdentityModule
+2024-12-03 06:29:07.099 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.EntityFrameworkCore.AbpDynamicMenuEntityFrameworkCoreModule
+2024-12-03 06:29:07.099 +03:00 [INF]       - EasyAbp.Abp.DynamicMenu.AbpDynamicMenuDomainModule
+2024-12-03 06:29:07.099 +03:00 [INF]   - EasyAbp.Abp.DynamicMenu.Demo.DemoApplicationModule
+2024-12-03 06:29:07.099 +03:00 [INF]     - Volo.Abp.Account.AbpAccountApplicationModule
+2024-12-03 06:29:07.099 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityApplicationModule
+2024-12-03 06:29:07.099 +03:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2024-12-03 06:29:07.099 +03:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementApplicationModule
+2024-12-03 06:29:07.099 +03:00 [INF]     - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationModule
+2024-12-03 06:29:07.099 +03:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementApplicationModule
+2024-12-03 06:29:07.099 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.AbpDynamicMenuApplicationModule
+2024-12-03 06:29:07.099 +03:00 [INF]   - EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.DemoBlazorServerModule
+2024-12-03 06:29:07.099 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.Demo.Blazor.DemoBlazorModule
+2024-12-03 06:29:07.099 +03:00 [INF]       - EasyAbp.Abp.DynamicMenu.Blazor.AbpDynamicMenuBlazorModule
+2024-12-03 06:29:07.293 +03:00 [DBG] Started background worker: Volo.Abp.IdentityServer.Tokens.TokenCleanupBackgroundWorker
+2024-12-03 06:29:07.366 +03:00 [INF] Starting IdentityServer4 version 4.1.2+997a6cdd643e46cd5762b710c4ddc43574cbec2e
+2024-12-03 06:29:09.871 +03:00 [WRN] No authentication scheme has been set. Setting either a default authentication scheme or a CookieAuthenticationScheme on IdentityServerOptions is required.
+2024-12-03 06:29:10.838 +03:00 [INF] Initialized all ABP modules.
+2024-12-03 06:29:10.966 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/ - null null
+2024-12-03 06:29:11.254 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-03 06:29:11.254 +03:00 [INF] Hosting environment: Development
+2024-12-03 06:29:11.254 +03:00 [INF] Content root path: C:\Users\CelalAk\source\repos\EasyAbp.DynamicMenu\demo\host\EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host
+2024-12-03 06:29:18.251 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No DefaultAuthenticateScheme found or no CookieAuthenticationScheme configured on IdentityServerOptions.
+   at Microsoft.AspNetCore.Http.AuthenticationManagerExtensions.GetCookieAuthenticationSchemeAsync(HttpContext context)
+   at IdentityServer4.Services.DefaultUserSession.AuthenticateAsync()
+   at IdentityServer4.Services.DefaultUserSession.GetSessionIdAsync()
+   at IdentityServer4.Services.DefaultUserSession.EnsureSessionIdCookieAsync()
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events, IBackChannelLogoutService backChannelLogoutService)
+   at IdentityServer4.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context)
+   at Volo.Abp.AspNetCore.Uow.AbpUnitOfWorkMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Volo.Abp.AspNetCore.ExceptionHandling.AbpExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Volo.Abp.AspNetCore.ExceptionHandling.AbpExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Volo.Abp.AspNetCore.MultiTenancy.MultiTenancyMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Builder.ApplicationBuilderAbpJwtTokenMiddlewareExtension.<>c__DisplayClass0_0.<<UseJwtTokenMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Volo.Abp.AspNetCore.Tracing.AbpCorrelationIdMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-12-03 06:29:18.346 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/ - 500 null text/html; charset=utf-8 7389.6561ms
+2024-12-03 06:29:18.381 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/_vs/browserLink - null null
+2024-12-03 06:29:18.381 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-03 06:29:18.387 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/_framework/aspnetcore-browser-refresh.js - 200 13830 application/javascript; charset=utf-8 4.1377ms
+2024-12-03 06:29:18.472 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/_vs/browserLink - 200 null text/javascript; charset=UTF-8 96.8429ms
+2024-12-03 06:33:40.685 +03:00 [INF] Starting web host.
+2024-12-03 06:33:47.322 +03:00 [INF] User profile is available. Using 'C:\Users\CelalAk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-12-03 06:33:47.416 +03:00 [INF] Loaded ABP modules:
+2024-12-03 06:33:47.417 +03:00 [INF] - EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host.DynamicMenuDemoBlazorHostModule
+2024-12-03 06:33:47.417 +03:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite.AbpAspNetCoreMvcUiLeptonXLiteThemeModule
+2024-12-03 06:33:47.417 +03:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2024-12-03 06:33:47.417 +03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2024-12-03 06:33:47.417 +03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2024-12-03 06:33:47.417 +03:00 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2024-12-03 06:33:47.417 +03:00 [INF]             - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2024-12-03 06:33:47.417 +03:00 [INF]               - Volo.Abp.Auditing.AbpAuditingModule
+2024-12-03 06:33:47.417 +03:00 [INF]                 - Volo.Abp.Data.AbpDataModule
+2024-12-03 06:33:47.417 +03:00 [INF]                   - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2024-12-03 06:33:47.417 +03:00 [INF]                     - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2024-12-03 06:33:47.417 +03:00 [INF]                     - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2024-12-03 06:33:47.417 +03:00 [INF]                   - Volo.Abp.Uow.AbpUnitOfWorkModule
+2024-12-03 06:33:47.417 +03:00 [INF]                   - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2024-12-03 06:33:47.417 +03:00 [INF]                 - Volo.Abp.Json.AbpJsonModule
+2024-12-03 06:33:47.417 +03:00 [INF]                   - Volo.Abp.Json.SystemTextJson.AbpJsonSystemTextJsonModule
+2024-12-03 06:33:47.417 +03:00 [INF]                     - Volo.Abp.Json.AbpJsonAbstractionsModule
+2024-12-03 06:33:47.417 +03:00 [INF]                     - Volo.Abp.Timing.AbpTimingModule
+2024-12-03 06:33:47.417 +03:00 [INF]                       - Volo.Abp.Localization.AbpLocalizationModule
+2024-12-03 06:33:47.417 +03:00 [INF]                         - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2024-12-03 06:33:47.417 +03:00 [INF]                         - Volo.Abp.Settings.AbpSettingsModule
+2024-12-03 06:33:47.417 +03:00 [INF]                           - Volo.Abp.Security.AbpSecurityModule
+2024-12-03 06:33:47.417 +03:00 [INF]                         - Volo.Abp.Threading.AbpThreadingModule
+2024-12-03 06:33:47.417 +03:00 [INF]                 - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2024-12-03 06:33:47.417 +03:00 [INF]                   - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2024-12-03 06:33:47.417 +03:00 [INF]                 - Volo.Abp.Auditing.AbpAuditingContractsModule
+2024-12-03 06:33:47.417 +03:00 [INF]               - Volo.Abp.Http.AbpHttpModule
+2024-12-03 06:33:47.417 +03:00 [INF]                 - Volo.Abp.Http.AbpHttpAbstractionsModule
+2024-12-03 06:33:47.417 +03:00 [INF]                 - Volo.Abp.Minify.AbpMinifyModule
+2024-12-03 06:33:47.417 +03:00 [INF]               - Volo.Abp.Authorization.AbpAuthorizationModule
+2024-12-03 06:33:47.417 +03:00 [INF]                 - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2024-12-03 06:33:47.417 +03:00 [INF]               - Volo.Abp.Validation.AbpValidationModule
+2024-12-03 06:33:47.417 +03:00 [INF]               - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2024-12-03 06:33:47.417 +03:00 [INF]               - Volo.Abp.AspNetCore.AbpAspNetCoreAbstractionsModule
+2024-12-03 06:33:47.417 +03:00 [INF]             - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2024-12-03 06:33:47.417 +03:00 [INF]             - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2024-12-03 06:33:47.417 +03:00 [INF]               - Volo.Abp.Application.AbpDddApplicationContractsModule
+2024-12-03 06:33:47.417 +03:00 [INF]             - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2024-12-03 06:33:47.417 +03:00 [INF]               - Volo.Abp.UI.AbpUiModule
+2024-12-03 06:33:47.417 +03:00 [INF]             - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2024-12-03 06:33:47.417 +03:00 [INF]             - Volo.Abp.Application.AbpDddApplicationModule
+2024-12-03 06:33:47.417 +03:00 [INF]               - Volo.Abp.Domain.AbpDddDomainModule
+2024-12-03 06:33:47.417 +03:00 [INF]                 - Volo.Abp.EventBus.AbpEventBusModule
+2024-12-03 06:33:47.417 +03:00 [INF]                   - Volo.Abp.Guids.AbpGuidsModule
+2024-12-03 06:33:47.417 +03:00 [INF]                   - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2024-12-03 06:33:47.417 +03:00 [INF]                   - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2024-12-03 06:33:47.417 +03:00 [INF]                 - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2024-12-03 06:33:47.417 +03:00 [INF]                 - Volo.Abp.Specifications.AbpSpecificationsModule
+2024-12-03 06:33:47.417 +03:00 [INF]                 - Volo.Abp.Caching.AbpCachingModule
+2024-12-03 06:33:47.417 +03:00 [INF]                   - Volo.Abp.Serialization.AbpSerializationModule
+2024-12-03 06:33:47.417 +03:00 [INF]                 - Volo.Abp.Domain.AbpDddDomainSharedModule
+2024-12-03 06:33:47.417 +03:00 [INF]               - Volo.Abp.Features.AbpFeaturesModule
+2024-12-03 06:33:47.417 +03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2024-12-03 06:33:47.417 +03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingAbstractionsModule
+2024-12-03 06:33:47.417 +03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Widgets.AbpAspNetCoreMvcUiWidgetsModule
+2024-12-03 06:33:47.417 +03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2024-12-03 06:33:47.417 +03:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2024-12-03 06:33:47.417 +03:00 [INF]       - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2024-12-03 06:33:47.417 +03:00 [INF]     - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2024-12-03 06:33:47.417 +03:00 [INF]   - Volo.Abp.AspNetCore.Components.Server.BasicTheme.AbpAspNetCoreComponentsServerBasicThemeModule
+2024-12-03 06:33:47.417 +03:00 [INF]     - Volo.Abp.AspNetCore.Components.Web.BasicTheme.AbpAspNetCoreComponentsWebBasicThemeModule
+2024-12-03 06:33:47.417 +03:00 [INF]       - Volo.Abp.AspNetCore.Components.Web.Theming.AbpAspNetCoreComponentsWebThemingModule
+2024-12-03 06:33:47.417 +03:00 [INF]         - Volo.Abp.BlazoriseUI.AbpBlazoriseUIModule
+2024-12-03 06:33:47.417 +03:00 [INF]           - Volo.Abp.AspNetCore.Components.Web.AbpAspNetCoreComponentsWebModule
+2024-12-03 06:33:47.418 +03:00 [INF]             - Volo.Abp.AspNetCore.Components.AbpAspNetCoreComponentsModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.AspNetCore.Components.Server.Theming.AbpAspNetCoreComponentsServerThemingModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.AspNetCore.Components.Server.AbpAspNetCoreComponentsServerModule
+2024-12-03 06:33:47.418 +03:00 [INF]         - Volo.Abp.Http.Client.AbpHttpClientModule
+2024-12-03 06:33:47.418 +03:00 [INF]           - Volo.Abp.Castle.AbpCastleCoreModule
+2024-12-03 06:33:47.418 +03:00 [INF]           - Volo.Abp.RemoteServices.AbpRemoteServicesModule
+2024-12-03 06:33:47.418 +03:00 [INF]         - Volo.Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule
+2024-12-03 06:33:47.418 +03:00 [INF]   - Volo.Abp.Autofac.AbpAutofacModule
+2024-12-03 06:33:47.418 +03:00 [INF]   - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2024-12-03 06:33:47.418 +03:00 [INF]   - Volo.Abp.AspNetCore.Authentication.JwtBearer.AbpAspNetCoreAuthenticationJwtBearerModule
+2024-12-03 06:33:47.418 +03:00 [INF]   - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2024-12-03 06:33:47.418 +03:00 [INF]   - Volo.Abp.Identity.Blazor.Server.AbpIdentityBlazorServerModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.Identity.Blazor.AbpIdentityBlazorModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2024-12-03 06:33:47.418 +03:00 [INF]         - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2024-12-03 06:33:47.418 +03:00 [INF]           - Volo.Abp.Users.AbpUsersDomainSharedModule
+2024-12-03 06:33:47.418 +03:00 [INF]         - Volo.Abp.Users.AbpUsersAbstractionModule
+2024-12-03 06:33:47.418 +03:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2024-12-03 06:33:47.418 +03:00 [INF]           - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.PermissionManagement.Blazor.AbpPermissionManagementBlazorModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.PermissionManagement.Blazor.Server.AbpPermissionManagementBlazorServerModule
+2024-12-03 06:33:47.418 +03:00 [INF]   - Volo.Abp.TenantManagement.Blazor.Server.AbpTenantManagementBlazorServerModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.TenantManagement.Blazor.AbpTenantManagementBlazorModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementApplicationContractsModule
+2024-12-03 06:33:47.418 +03:00 [INF]         - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.FeatureManagement.Blazor.AbpFeatureManagementBlazorModule
+2024-12-03 06:33:47.418 +03:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationContractsModule
+2024-12-03 06:33:47.418 +03:00 [INF]           - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2024-12-03 06:33:47.418 +03:00 [INF]         - Volo.Abp.SettingManagement.Blazor.AbpSettingManagementBlazorModule
+2024-12-03 06:33:47.418 +03:00 [INF]           - Volo.Abp.SettingManagement.AbpSettingManagementApplicationContractsModule
+2024-12-03 06:33:47.418 +03:00 [INF]             - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.FeatureManagement.Blazor.Server.AbpFeatureManagementBlazorServerModule
+2024-12-03 06:33:47.418 +03:00 [INF]   - Volo.Abp.SettingManagement.Blazor.Server.AbpSettingManagementBlazorServerModule
+2024-12-03 06:33:47.418 +03:00 [INF]   - EasyAbp.Abp.DynamicMenu.Demo.DemoHttpApiModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.Demo.DemoApplicationContractsModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.Account.AbpAccountApplicationContractsModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - EasyAbp.Abp.DynamicMenu.Demo.DemoDomainSharedModule
+2024-12-03 06:33:47.418 +03:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2024-12-03 06:33:47.418 +03:00 [INF]         - Volo.Abp.IdentityServer.AbpIdentityServerDomainSharedModule
+2024-12-03 06:33:47.418 +03:00 [INF]         - EasyAbp.Abp.DynamicMenu.AbpDynamicMenuDomainSharedModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - EasyAbp.Abp.DynamicMenu.AbpDynamicMenuApplicationContractsModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.Account.AbpAccountHttpApiModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementHttpApiModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementHttpApiModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementHttpApiModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.AbpDynamicMenuHttpApiModule
+2024-12-03 06:33:47.418 +03:00 [INF]   - EasyAbp.Abp.DynamicMenu.EntityFrameworkCore.DemoEntityFrameworkCoreModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityDomainModule
+2024-12-03 06:33:47.418 +03:00 [INF]         - Volo.Abp.Users.AbpUsersDomainModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.IdentityServer.EntityFrameworkCore.AbpIdentityServerEntityFrameworkCoreModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.IdentityServer.AbpIdentityServerDomainModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.Demo.DemoDomainModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.Emailing.AbpEmailingModule
+2024-12-03 06:33:47.418 +03:00 [INF]         - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2024-12-03 06:33:47.418 +03:00 [INF]         - Volo.Abp.TextTemplating.AbpTextTemplatingModule
+2024-12-03 06:33:47.418 +03:00 [INF]           - Volo.Abp.TextTemplating.Scriban.AbpTextTemplatingScribanModule
+2024-12-03 06:33:47.418 +03:00 [INF]             - Volo.Abp.TextTemplating.AbpTextTemplatingCoreModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.PermissionManagement.IdentityServer.AbpPermissionManagementDomainIdentityServerModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.PermissionManagement.Identity.AbpPermissionManagementDomainIdentityModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.EntityFrameworkCore.AbpDynamicMenuEntityFrameworkCoreModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - EasyAbp.Abp.DynamicMenu.AbpDynamicMenuDomainModule
+2024-12-03 06:33:47.418 +03:00 [INF]   - EasyAbp.Abp.DynamicMenu.Demo.DemoApplicationModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.Account.AbpAccountApplicationModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityApplicationModule
+2024-12-03 06:33:47.418 +03:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementApplicationModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementApplicationModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.AbpDynamicMenuApplicationModule
+2024-12-03 06:33:47.418 +03:00 [INF]   - EasyAbp.Abp.DynamicMenu.Demo.Web.DemoWebModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.Account.Web.AbpAccountWebModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.Identity.AspNetCore.AbpIdentityAspNetCoreModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.SettingManagement.Web.AbpSettingManagementWebModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.Identity.Web.AbpIdentityWebModule
+2024-12-03 06:33:47.418 +03:00 [INF]       - Volo.Abp.PermissionManagement.Web.AbpPermissionManagementWebModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.FeatureManagement.AbpFeatureManagementWebModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.TenantManagement.Web.AbpTenantManagementWebModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - Volo.Abp.Account.Web.AbpAccountWebIdentityServerModule
+2024-12-03 06:33:47.418 +03:00 [INF]     - EasyAbp.Abp.DynamicMenu.Web.AbpDynamicMenuWebModule
+2024-12-03 06:33:47.656 +03:00 [DBG] Started background worker: Volo.Abp.IdentityServer.Tokens.TokenCleanupBackgroundWorker
+2024-12-03 06:33:47.726 +03:00 [INF] Starting IdentityServer4 version 4.1.2+997a6cdd643e46cd5762b710c4ddc43574cbec2e
+2024-12-03 06:33:50.283 +03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2024-12-03 06:33:50.283 +03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2024-12-03 06:33:50.283 +03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2024-12-03 06:33:50.283 +03:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2024-12-03 06:33:50.283 +03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2024-12-03 06:33:50.283 +03:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2024-12-03 06:33:51.119 +03:00 [INF] Initialized all ABP modules.
+2024-12-03 06:33:51.273 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/ - null null
+2024-12-03 06:33:51.511 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-03 06:33:51.511 +03:00 [INF] Hosting environment: Development
+2024-12-03 06:33:51.511 +03:00 [INF] Content root path: C:\Users\CelalAk\source\repos\EasyAbp.DynamicMenu\demo\host\EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host
+2024-12-03 06:33:56.899 +03:00 [DBG] Login Url: /Account/Login
+2024-12-03 06:33:56.899 +03:00 [DBG] Login Return Url Parameter: ReturnUrl
+2024-12-03 06:33:56.899 +03:00 [DBG] Logout Url: /Account/Logout
+2024-12-03 06:33:56.899 +03:00 [DBG] ConsentUrl Url: /Consent
+2024-12-03 06:33:56.899 +03:00 [DBG] Consent Return Url Parameter: returnUrl
+2024-12-03 06:33:56.899 +03:00 [DBG] Error Url: /Account/Error
+2024-12-03 06:33:56.899 +03:00 [DBG] Error Id Parameter: errorId
+2024-12-03 06:33:57.246 +03:00 [INF] Executing endpoint '/_Host'
+2024-12-03 06:33:57.290 +03:00 [INF] Route matched with {page = "/_Host", area = "", action = "", controller = ""}. Executing page /_Host
+2024-12-03 06:33:57.293 +03:00 [INF] Skipping the execution of current filter as its not the most effective filter implementing the policy Microsoft.AspNetCore.Mvc.ViewFeatures.IAntiforgeryPolicy
+2024-12-03 06:33:57.330 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2024-12-03 06:33:57.331 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2024-12-03 06:33:57.430 +03:00 [DBG] Added bundle 'Blazor.BasicTheme.Global' to the page in 19.97 ms.
+2024-12-03 06:33:57.495 +03:00 [DBG] Added bundle 'Blazor.BasicTheme.Global' to the page in 5.92 ms.
+2024-12-03 06:33:57.587 +03:00 [INF] Executed page /_Host in 274.5201ms
+2024-12-03 06:33:57.620 +03:00 [INF] Executed endpoint '/_Host'
+2024-12-03 06:33:57.621 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host.styles.css?_v=638687852779278314 - null null
+2024-12-03 06:33:57.621 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/@fortawesome/fontawesome-free/css/v4-shims.css?_v=638684962103817557 - null null
+2024-12-03 06:33:57.621 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/blazor-global-styles.css?_v=638684962103707580 - null null
+2024-12-03 06:33:57.622 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/@fortawesome/fontawesome-free/css/all.css?_v=638684962103807654 - null null
+2024-12-03 06:33:57.623 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/bootstrap/css/bootstrap.css?_v=638684962105956713 - null null
+2024-12-03 06:33:57.631 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-03 06:33:57.631 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/_vs/browserLink - null null
+2024-12-03 06:33:57.645 +03:00 [INF] The file /libs/bootstrap/css/bootstrap.css was not modified
+2024-12-03 06:33:57.645 +03:00 [INF] The file /blazor-global-styles.css was not modified
+2024-12-03 06:33:57.645 +03:00 [INF] The file /libs/@fortawesome/fontawesome-free/css/v4-shims.css was not modified
+2024-12-03 06:33:57.645 +03:00 [INF] The file /libs/@fortawesome/fontawesome-free/css/all.css was not modified
+2024-12-03 06:33:57.648 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/_framework/aspnetcore-browser-refresh.js - 200 13830 application/javascript; charset=utf-8 12.2778ms
+2024-12-03 06:33:57.653 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/@fortawesome/fontawesome-free/css/all.css?_v=638684962103807654 - 304 null text/css 30.8772ms
+2024-12-03 06:33:57.653 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/bootstrap/css/bootstrap.css?_v=638684962105956713 - 304 null text/css 30.5726ms
+2024-12-03 06:33:57.653 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/blazor-global-styles.css?_v=638684962103707580 - 304 null text/css 31.8306ms
+2024-12-03 06:33:57.654 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/@fortawesome/fontawesome-free/css/v4-shims.css?_v=638684962103817557 - 304 null text/css 33.7245ms
+2024-12-03 06:33:57.660 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/ - 200 null text/html; charset=utf-8 6396.2376ms
+2024-12-03 06:33:57.671 +03:00 [INF] Sending file. Request path: '/EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host.styles.css'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicMenu\demo\host\EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host\obj\Debug\net8.0\scopedcss\bundle\EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host.styles.css'
+2024-12-03 06:33:57.672 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host.styles.css?_v=638687852779278314 - 200 142 text/css 51.2687ms
+2024-12-03 06:33:57.712 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/_blazor/initializers - null null
+2024-12-03 06:33:57.733 +03:00 [INF] Executing endpoint 'Blazor initializers'
+2024-12-03 06:33:57.738 +03:00 [INF] Executed endpoint 'Blazor initializers'
+2024-12-03 06:33:57.739 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/_blazor/initializers - 200 null application/json; charset=utf-8 27.3438ms
+2024-12-03 06:33:57.748 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/_vs/browserLink - 200 null text/javascript; charset=UTF-8 116.8095ms
+2024-12-03 06:33:57.749 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44313/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-12-03 06:33:57.768 +03:00 [INF] No CORS policy found for the specified request.
+2024-12-03 06:33:57.772 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2024-12-03 06:33:57.785 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2024-12-03 06:33:57.785 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44313/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 36.9291ms
+2024-12-03 06:33:57.801 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44313/_blazor?id=zXhvMz2FpztfBb9K31qkRA - null null
+2024-12-03 06:33:57.810 +03:00 [INF] No CORS policy found for the specified request.
+2024-12-03 06:33:57.813 +03:00 [INF] Executing endpoint '/_blazor'
+2024-12-03 06:33:58.591 +03:00 [INF] Authorization failed. These requirements were not met:
+PermissionRequirement: SettingManagement.Emailing
+2024-12-03 06:33:58.597 +03:00 [INF] Authorization failed. These requirements were not met:
+PermissionRequirement: SettingManagement.TimeZone
+2024-12-03 06:33:58.600 +03:00 [INF] Authorization failed. These requirements were not met:
+PermissionRequirement: FeatureManagement.ManageHostFeatures
+2024-12-03 06:33:59.372 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-12-03 06:33:59.575 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2 - null null
+2024-12-03 06:33:59.577 +03:00 [INF] The file /libs/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2 was not modified
+2024-12-03 06:33:59.577 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2 - 304 null font/woff2 2.3188ms
+2024-12-03 06:33:59.739 +03:00 [INF] Authorization failed. These requirements were not met:
+PermissionRequirement: EasyAbp.Abp.DynamicMenu.MenuItem
+2024-12-03 06:34:05.080 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-12-03 06:34:05.128 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/Account/Login - null null
+2024-12-03 06:34:05.231 +03:00 [INF] Executing endpoint '/Account/Login'
+2024-12-03 06:34:05.260 +03:00 [INF] Route matched with {page = "/Account/Login", area = "", action = "", controller = ""}. Executing page /Account/Login
+2024-12-03 06:34:05.260 +03:00 [INF] Skipping the execution of current filter as its not the most effective filter implementing the policy Microsoft.AspNetCore.Mvc.ViewFeatures.IAntiforgeryPolicy
+2024-12-03 06:34:06.999 +03:00 [INF] Executing handler method Volo.Abp.Account.Web.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2024-12-03 06:34:07.018 +03:00 [INF] Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2024-12-03 06:34:07.478 +03:00 [DBG] Added bundle 'LeptonXLite.Global' to the page in 11.20 ms.
+2024-12-03 06:34:07.624 +03:00 [DBG] Added bundle 'LeptonXLite.Global' to the page in 17.58 ms.
+2024-12-03 06:34:07.640 +03:00 [DBG] Added bundle 'Volo.Abp.Account.Web.Pages.Account.LoginModel' to the page in 1.10 ms.
+2024-12-03 06:34:07.654 +03:00 [INF] Executed page /Account/Login in 2393.6267ms
+2024-12-03 06:34:07.656 +03:00 [INF] Executed endpoint '/Account/Login'
+2024-12-03 06:34:07.675 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44313/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundaryENk7u0E46l4E3CBO 359
+2024-12-03 06:34:07.679 +03:00 [INF] No CORS policy found for the specified request.
+2024-12-03 06:34:07.682 +03:00 [INF] Executing endpoint 'Blazor disconnect'
+2024-12-03 06:34:07.689 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/Account/Login - 200 null text/html; charset=utf-8 2560.0942ms
+2024-12-03 06:34:07.690 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/Abp/ApplicationConfigurationScript - null null
+2024-12-03 06:34:07.701 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/abp/core/abp.js?_v=638684962104142926 - null null
+2024-12-03 06:34:07.702 +03:00 [INF] Executing endpoint 'Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc)'
+2024-12-03 06:34:07.702 +03:00 [INF] The file /libs/abp/core/abp.js was not modified
+2024-12-03 06:34:07.702 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/abp/core/abp.js?_v=638684962104142926 - 304 null application/javascript 1.1809ms
+2024-12-03 06:34:07.710 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/Abp/ServiceProxyScript - null null
+2024-12-03 06:34:07.723 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/select2/css/select2.min.css?_v=638684962111217859 - null null
+2024-12-03 06:34:07.724 +03:00 [INF] The file /libs/select2/css/select2.min.css was not modified
+2024-12-03 06:34:07.725 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/select2/css/select2.min.css?_v=638684962111217859 - 304 null text/css 1.3767ms
+2024-12-03 06:34:07.725 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/global-styles.css?_v=638684962103747570 - null null
+2024-12-03 06:34:07.728 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/datatables.net-bs5/css/dataTables.bootstrap5.css?_v=638684962106381995 - null null
+2024-12-03 06:34:07.729 +03:00 [INF] The file /libs/datatables.net-bs5/css/dataTables.bootstrap5.css was not modified
+2024-12-03 06:34:07.730 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/datatables.net-bs5/css/dataTables.bootstrap5.css?_v=638684962106381995 - 304 null text/css 1.325ms
+2024-12-03 06:34:07.730 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/bootstrap-datepicker/bootstrap-datepicker.min.css?_v=638684962104362930 - null null
+2024-12-03 06:34:07.732 +03:00 [INF] The file /libs/bootstrap-datepicker/bootstrap-datepicker.min.css was not modified
+2024-12-03 06:34:07.732 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/bootstrap-datepicker/bootstrap-datepicker.min.css?_v=638684962104362930 - 304 null text/css 2.383ms
+2024-12-03 06:34:07.733 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-03 06:34:07.734 +03:00 [INF] The file /global-styles.css was not modified
+2024-12-03 06:34:07.734 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/global-styles.css?_v=638684962103747570 - 304 null text/css 9.0741ms
+2024-12-03 06:34:07.734 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/Abp/ApplicationLocalizationScript?cultureName=en - null null
+2024-12-03 06:34:07.736 +03:00 [INF] Executing endpoint 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc)'
+2024-12-03 06:34:07.745 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/abp/core/abp.css?_v=638684962104122937 - null null
+2024-12-03 06:34:07.749 +03:00 [INF] The file /libs/abp/core/abp.css was not modified
+2024-12-03 06:34:07.753 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/abp/core/abp.css?_v=638684962104122937 - 304 null text/css 9.2404ms
+2024-12-03 06:34:07.756 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/jquery/jquery.js?_v=638684962108838210 - null null
+2024-12-03 06:34:07.756 +03:00 [INF] Executing endpoint 'Volo.Abp.AspNetCore.Mvc.Localization.AbpApplicationLocalizationScriptController.GetAsync (Volo.Abp.AspNetCore.Mvc)'
+2024-12-03 06:34:07.757 +03:00 [INF] The file /libs/jquery/jquery.js was not modified
+2024-12-03 06:34:07.757 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/jquery/jquery.js?_v=638684962108838210 - 304 null application/javascript 1.3649ms
+2024-12-03 06:34:07.757 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js?_v=638684962106502365 - null null
+2024-12-03 06:34:07.764 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/_framework/aspnetcore-browser-refresh.js - 200 13830 application/javascript; charset=utf-8 31.0455ms
+2024-12-03 06:34:07.764 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/bootstrap-daterangepicker/daterangepicker.css?_v=638684962105906725 - null null
+2024-12-03 06:34:07.765 +03:00 [INF] The file /libs/bootstrap-daterangepicker/daterangepicker.css was not modified
+2024-12-03 06:34:07.765 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/bootstrap-daterangepicker/daterangepicker.css?_v=638684962105906725 - 304 null text/css 1.2006ms
+2024-12-03 06:34:07.773 +03:00 [INF] The file /libs/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js was not modified
+2024-12-03 06:34:07.773 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/datatables.net/js/dataTables.min.js?_v=638684962106447236 - null null
+2024-12-03 06:34:07.773 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js?_v=638684962106502365 - 304 null application/javascript 16.008ms
+2024-12-03 06:34:07.779 +03:00 [INF] The file /libs/datatables.net/js/dataTables.min.js was not modified
+2024-12-03 06:34:07.783 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css?_v=638684962109028328 - null null
+2024-12-03 06:34:07.783 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/datatables.net/js/dataTables.min.js?_v=638684962106447236 - 304 null application/javascript 9.7546ms
+2024-12-03 06:34:07.784 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/toastr/toastr.min.css?_v=638684962113451803 - null null
+2024-12-03 06:34:07.785 +03:00 [INF] Route matched with {area = "Abp", action = "Get", controller = "AbpApplicationConfigurationScript", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Get() on controller Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController (Volo.Abp.AspNetCore.Mvc).
+2024-12-03 06:34:07.785 +03:00 [INF] The file /libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css was not modified
+2024-12-03 06:34:07.785 +03:00 [INF] Route matched with {area = "Abp", action = "Get", controller = "AbpApplicationLocalizationScript", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetAsync(Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ApplicationLocalizationRequestDto) on controller Volo.Abp.AspNetCore.Mvc.Localization.AbpApplicationLocalizationScriptController (Volo.Abp.AspNetCore.Mvc).
+2024-12-03 06:34:07.785 +03:00 [INF] Route matched with {area = "Abp", action = "GetAll", controller = "AbpServiceProxyScript", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAll(Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel) on controller Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController (Volo.Abp.AspNetCore.Mvc).
+2024-12-03 06:34:07.785 +03:00 [INF] The file /libs/toastr/toastr.min.css was not modified
+2024-12-03 06:34:07.786 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/toastr/toastr.min.css?_v=638684962113451803 - 304 null text/css 2.3052ms
+2024-12-03 06:34:07.787 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/jquery-form/jquery.form.min.js?_v=638684962106477255 - null null
+2024-12-03 06:34:07.787 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css?_v=638684962109028328 - 304 null text/css 3.0649ms
+2024-12-03 06:34:07.787 +03:00 [INF] The file /libs/jquery-form/jquery.form.min.js was not modified
+2024-12-03 06:34:07.788 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/lodash/lodash.min.js?_v=638684962108868228 - null null
+2024-12-03 06:34:07.788 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/jquery-form/jquery.form.min.js?_v=638684962106477255 - 304 null application/javascript 1.5743ms
+2024-12-03 06:34:07.788 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/datatables.net-bs5/js/dataTables.bootstrap5.js?_v=638684962106417231 - null null
+2024-12-03 06:34:07.788 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/select2/js/select2.min.js?_v=638684962112189955 - null null
+2024-12-03 06:34:07.789 +03:00 [INF] The file /libs/lodash/lodash.min.js was not modified
+2024-12-03 06:34:07.789 +03:00 [INF] The file /libs/datatables.net-bs5/js/dataTables.bootstrap5.js was not modified
+2024-12-03 06:34:07.789 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/datatables.net-bs5/js/dataTables.bootstrap5.js?_v=638684962106417231 - 304 null application/javascript 0.9218ms
+2024-12-03 06:34:07.789 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/lodash/lodash.min.js?_v=638684962108868228 - 304 null application/javascript 1.9331ms
+2024-12-03 06:34:07.789 +03:00 [INF] The file /libs/select2/js/select2.min.js was not modified
+2024-12-03 06:34:07.789 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/abp/utils/abp-utils.umd.min.js?_v=638684962104292904 - null null
+2024-12-03 06:34:07.790 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/jquery-validation/jquery.validate.js?_v=638684962106532494 - null null
+2024-12-03 06:34:07.791 +03:00 [INF] The file /libs/abp/utils/abp-utils.umd.min.js was not modified
+2024-12-03 06:34:07.791 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/select2/js/select2.min.js?_v=638684962112189955 - 304 null application/javascript 2.2323ms
+2024-12-03 06:34:07.791 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/abp/utils/abp-utils.umd.min.js?_v=638684962104292904 - 304 null application/javascript 1.7086ms
+2024-12-03 06:34:07.791 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/abp/luxon/abp.luxon.js?_v=638684962104202936 - null null
+2024-12-03 06:34:07.791 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/sweetalert2/sweetalert2.all.min.js?_v=638684962112239944 - null null
+2024-12-03 06:34:07.792 +03:00 [INF] The file /libs/sweetalert2/sweetalert2.all.min.js was not modified
+2024-12-03 06:34:07.792 +03:00 [INF] The file /libs/abp/luxon/abp.luxon.js was not modified
+2024-12-03 06:34:07.793 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/sweetalert2/sweetalert2.all.min.js?_v=638684962112239944 - 304 null application/javascript 1.0158ms
+2024-12-03 06:34:07.792 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/abp/luxon/abp.luxon.js?_v=638684962104202936 - 304 null application/javascript 1.4005ms
+2024-12-03 06:34:07.793 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/moment/moment.min.js?_v=638684962111187906 - null null
+2024-12-03 06:34:07.793 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/toastr/toastr.min.js?_v=638684962113461822 - null null
+2024-12-03 06:34:07.795 +03:00 [INF] The file /libs/moment/moment.min.js was not modified
+2024-12-03 06:34:07.795 +03:00 [INF] The file /libs/toastr/toastr.min.js was not modified
+2024-12-03 06:34:07.795 +03:00 [INF] The file /libs/jquery-validation/jquery.validate.js was not modified
+2024-12-03 06:34:07.796 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/toastr/toastr.min.js?_v=638684962113461822 - 304 null application/javascript 2.7976ms
+2024-12-03 06:34:07.797 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/jquery-validation/jquery.validate.js?_v=638684962106532494 - 304 null application/javascript 8.1702ms
+2024-12-03 06:34:07.798 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/moment/moment.min.js?_v=638684962111187906 - 304 null application/javascript 2.2363ms
+2024-12-03 06:34:07.798 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/timeago/jquery.timeago.js?_v=638684962112329935 - null null
+2024-12-03 06:34:07.798 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/bootstrap-datepicker/bootstrap-datepicker.min.js?_v=638684962104382913 - null null
+2024-12-03 06:34:07.798 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/luxon/luxon.min.js?_v=638684962108958325 - null null
+2024-12-03 06:34:07.799 +03:00 [INF] The file /libs/luxon/luxon.min.js was not modified
+2024-12-03 06:34:07.799 +03:00 [INF] The file /libs/timeago/jquery.timeago.js was not modified
+2024-12-03 06:34:07.800 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/timeago/jquery.timeago.js?_v=638684962112329935 - 304 null application/javascript 1.8142ms
+2024-12-03 06:34:07.800 +03:00 [INF] The file /libs/bootstrap-datepicker/bootstrap-datepicker.min.js was not modified
+2024-12-03 06:34:07.800 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/luxon/luxon.min.js?_v=638684962108958325 - 304 null application/javascript 1.3123ms
+2024-12-03 06:34:07.800 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/timeago/locales/jquery.timeago.en.js?_v=638684962112616581 - null null
+2024-12-03 06:34:07.800 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js?_v=638684962109008321 - null null
+2024-12-03 06:34:07.801 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/bootstrap-datepicker/bootstrap-datepicker.min.js?_v=638684962104382913 - 304 null application/javascript 2.6566ms
+2024-12-03 06:34:07.802 +03:00 [INF] The file /libs/timeago/locales/jquery.timeago.en.js was not modified
+2024-12-03 06:34:07.802 +03:00 [INF] The file /libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js was not modified
+2024-12-03 06:34:07.802 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/timeago/locales/jquery.timeago.en.js?_v=638684962112616581 - 304 null application/javascript 2.0308ms
+2024-12-03 06:34:07.803 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/abp/jquery/abp.jquery.js?_v=638684962104172927 - null null
+2024-12-03 06:34:07.803 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/select2/js/i18n/en.js?_v=638684962111447858 - null null
+2024-12-03 06:34:07.803 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js?_v=638684962109008321 - 304 null application/javascript 2.8816ms
+2024-12-03 06:34:07.804 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/bootstrap/js/bootstrap.bundle.js?_v=638684962106222011 - null null
+2024-12-03 06:34:07.804 +03:00 [INF] The file /libs/select2/js/i18n/en.js was not modified
+2024-12-03 06:34:07.805 +03:00 [INF] The file /libs/bootstrap/js/bootstrap.bundle.js was not modified
+2024-12-03 06:34:07.805 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/select2/js/i18n/en.js?_v=638684962111447858 - 304 null application/javascript 2.7183ms
+2024-12-03 06:34:07.806 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/bootstrap/js/bootstrap.bundle.js?_v=638684962106222011 - 304 null application/javascript 2.095ms
+2024-12-03 06:34:07.806 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/bootstrap-daterangepicker/daterangepicker.js?_v=638684962105926702 - null null
+2024-12-03 06:34:07.806 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/_vs/browserLink - null null
+2024-12-03 06:34:07.807 +03:00 [INF] The file /libs/bootstrap-daterangepicker/daterangepicker.js was not modified
+2024-12-03 06:34:07.813 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/bootstrap-daterangepicker/daterangepicker.js?_v=638684962105926702 - 304 null application/javascript 1.9272ms
+2024-12-03 06:34:07.818 +03:00 [INF] Executed endpoint '/_blazor'
+2024-12-03 06:34:07.820 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44313/_blazor?id=zXhvMz2FpztfBb9K31qkRA - 101 null null 10019.1652ms
+2024-12-03 06:34:07.821 +03:00 [INF] The file /libs/abp/jquery/abp.jquery.js was not modified
+2024-12-03 06:34:07.849 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/abp/jquery/abp.jquery.js?_v=638684962104172927 - 304 null application/javascript 36.0742ms
+2024-12-03 06:34:08.109 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2 - null null
+2024-12-03 06:34:08.114 +03:00 [INF] The file /libs/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2 was not modified
+2024-12-03 06:34:08.114 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2 - 304 null font/woff2 5.0685ms
+2024-12-03 06:34:08.114 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/_vs/browserLink - 200 null text/javascript; charset=UTF-8 308.4237ms
+2024-12-03 06:34:08.246 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44313/libs/abp/utils/abp-utils.umd.min.js.map - null null
+2024-12-03 06:34:08.298 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44313/libs/moment/moment.min.js.map - null null
+2024-12-03 06:34:08.304 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44313/libs/toastr/toastr.js.map - null null
+2024-12-03 06:34:08.304 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44313/libs/bootstrap/js/bootstrap.bundle.js.map - null null
+2024-12-03 06:34:08.474 +03:00 [INF] Executing action method Volo.Abp.AspNetCore.Mvc.Localization.AbpApplicationLocalizationScriptController.GetAsync (Volo.Abp.AspNetCore.Mvc) - Validation state: "Valid"
+2024-12-03 06:34:08.474 +03:00 [INF] Executing action method Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc) - Validation state: "Valid"
+2024-12-03 06:34:08.474 +03:00 [INF] Executing action method Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc) - Validation state: "Valid"
+2024-12-03 06:34:08.544 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44313/libs/moment/moment.min.js.map - 404 null null 246.1737ms
+2024-12-03 06:34:08.553 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44313/libs/moment/moment.min.js.map, Response status code: 404
+2024-12-03 06:34:08.572 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/libs/moment/moment.min.js.map - null null
+2024-12-03 06:34:08.576 +03:00 [INF] Sending file. Request path: '/libs/toastr/toastr.js.map'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicMenu\demo\host\EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host\wwwroot\libs\toastr\toastr.js.map'
+2024-12-03 06:34:08.576 +03:00 [INF] Sending file. Request path: '/libs/abp/utils/abp-utils.umd.min.js.map'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicMenu\demo\host\EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host\wwwroot\libs\abp\utils\abp-utils.umd.min.js.map'
+2024-12-03 06:34:08.577 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44313/libs/toastr/toastr.js.map - 200 25633 text/plain 276.5629ms
+2024-12-03 06:34:08.584 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44313/libs/abp/utils/abp-utils.umd.min.js.map - 200 34305 text/plain 352.9812ms
+2024-12-03 06:34:08.711 +03:00 [INF] Sending file. Request path: '/libs/bootstrap/js/bootstrap.bundle.js.map'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicMenu\demo\host\EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host\wwwroot\libs\bootstrap\js\bootstrap.bundle.js.map'
+2024-12-03 06:34:08.760 +03:00 [DBG] Executing AbpApplicationConfigurationAppService.GetAsync()...
+2024-12-03 06:34:08.836 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44313/libs/bootstrap/js/bootstrap.bundle.js.map - 200 444579 text/plain 535.4864ms
+2024-12-03 06:34:08.957 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/libs/moment/moment.min.js.map - 404 null null 384.9865ms
+2024-12-03 06:34:08.961 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44313/libs/moment/moment.min.js.map, Response status code: 404
+2024-12-03 06:34:09.433 +03:00 [DBG] ActionApiDescriptionModel.Create: MenuItem.CreateAsyncByInput
+2024-12-03 06:34:09.435 +03:00 [INF] Executed endpoint 'Blazor disconnect'
+2024-12-03 06:34:09.435 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44313/_blazor/disconnect - 200 null null 1760.3077ms
+2024-12-03 06:34:09.451 +03:00 [DBG] ActionApiDescriptionModel.Create: MenuItem.UpdateAsyncByIdAndInput
+2024-12-03 06:34:09.452 +03:00 [DBG] ActionApiDescriptionModel.Create: MenuItem.DeleteAsyncById
+2024-12-03 06:34:09.452 +03:00 [DBG] ActionApiDescriptionModel.Create: MenuItem.GetAsyncById
+2024-12-03 06:34:09.453 +03:00 [DBG] ActionApiDescriptionModel.Create: MenuItem.GetListAsyncByInput
+2024-12-03 06:34:09.453 +03:00 [DBG] ActionApiDescriptionModel.Create: Account.RegisterAsyncByInput
+2024-12-03 06:34:09.454 +03:00 [DBG] ActionApiDescriptionModel.Create: Account.SendPasswordResetCodeAsyncByInput
+2024-12-03 06:34:09.454 +03:00 [DBG] ActionApiDescriptionModel.Create: Account.VerifyPasswordResetTokenAsyncByInput
+2024-12-03 06:34:09.454 +03:00 [DBG] ActionApiDescriptionModel.Create: Account.ResetPasswordAsyncByInput
+2024-12-03 06:34:09.455 +03:00 [DBG] ActionApiDescriptionModel.Create: Account.LoginByLogin
+2024-12-03 06:34:09.456 +03:00 [DBG] ActionApiDescriptionModel.Create: Account.Logout
+2024-12-03 06:34:09.456 +03:00 [DBG] ActionApiDescriptionModel.Create: Account.CheckPasswordByLogin
+2024-12-03 06:34:09.456 +03:00 [DBG] ActionApiDescriptionModel.Create: DynamicClaims.RefreshAsync
+2024-12-03 06:34:09.457 +03:00 [DBG] ActionApiDescriptionModel.Create: Profile.GetAsync
+2024-12-03 06:34:09.457 +03:00 [DBG] ActionApiDescriptionModel.Create: Profile.UpdateAsyncByInput
+2024-12-03 06:34:09.457 +03:00 [DBG] ActionApiDescriptionModel.Create: Profile.ChangePasswordAsyncByInput
+2024-12-03 06:34:09.458 +03:00 [DBG] ActionApiDescriptionModel.Create: AbpTenant.FindTenantByNameAsyncByName
+2024-12-03 06:34:09.458 +03:00 [DBG] ActionApiDescriptionModel.Create: AbpTenant.FindTenantByIdAsyncById
+2024-12-03 06:34:09.459 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.GetAllListAsync
+2024-12-03 06:34:09.459 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.GetListAsyncByInput
+2024-12-03 06:34:09.459 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.GetAsyncById
+2024-12-03 06:34:09.460 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.CreateAsyncByInput
+2024-12-03 06:34:09.460 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.UpdateAsyncByIdAndInput
+2024-12-03 06:34:09.461 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.DeleteAsyncById
+2024-12-03 06:34:09.462 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.GetAsyncById
+2024-12-03 06:34:09.463 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.GetListAsyncByInput
+2024-12-03 06:34:09.463 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.CreateAsyncByInput
+2024-12-03 06:34:09.464 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.UpdateAsyncByIdAndInput
+2024-12-03 06:34:09.464 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.DeleteAsyncById
+2024-12-03 06:34:09.464 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.GetRolesAsyncById
+2024-12-03 06:34:09.464 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.GetAssignableRolesAsync
+2024-12-03 06:34:09.465 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.UpdateRolesAsyncByIdAndInput
+2024-12-03 06:34:09.465 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.FindByUsernameAsyncByUserName
+2024-12-03 06:34:09.466 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.FindByEmailAsyncByEmail
+2024-12-03 06:34:09.466 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUserLookup.FindByIdAsyncById
+2024-12-03 06:34:09.467 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUserLookup.FindByUserNameAsyncByUserName
+2024-12-03 06:34:09.467 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUserLookup.SearchAsyncByInput
+2024-12-03 06:34:09.467 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUserLookup.GetCountAsyncByInput
+2024-12-03 06:34:09.468 +03:00 [DBG] ActionApiDescriptionModel.Create: Permissions.GetAsyncByProviderNameAndProviderKey
+2024-12-03 06:34:09.468 +03:00 [DBG] ActionApiDescriptionModel.Create: Permissions.UpdateAsyncByProviderNameAndProviderKeyAndInput
+2024-12-03 06:34:09.469 +03:00 [DBG] ActionApiDescriptionModel.Create: EmailSettings.GetAsync
+2024-12-03 06:34:09.469 +03:00 [DBG] ActionApiDescriptionModel.Create: EmailSettings.UpdateAsyncByInput
+2024-12-03 06:34:09.469 +03:00 [DBG] ActionApiDescriptionModel.Create: EmailSettings.SendTestEmailAsyncByInput
+2024-12-03 06:34:09.470 +03:00 [DBG] ActionApiDescriptionModel.Create: TimeZoneSettings.GetAsync
+2024-12-03 06:34:09.470 +03:00 [DBG] ActionApiDescriptionModel.Create: TimeZoneSettings.GetTimezonesAsync
+2024-12-03 06:34:09.470 +03:00 [DBG] ActionApiDescriptionModel.Create: TimeZoneSettings.UpdateAsyncByTimezone
+2024-12-03 06:34:09.471 +03:00 [DBG] ActionApiDescriptionModel.Create: Tenant.GetAsyncById
+2024-12-03 06:34:09.471 +03:00 [DBG] ActionApiDescriptionModel.Create: Tenant.GetListAsyncByInput
+2024-12-03 06:34:09.472 +03:00 [DBG] ActionApiDescriptionModel.Create: Tenant.CreateAsyncByInput
+2024-12-03 06:34:09.472 +03:00 [DBG] ActionApiDescriptionModel.Create: Tenant.UpdateAsyncByIdAndInput
+2024-12-03 06:34:09.473 +03:00 [DBG] ActionApiDescriptionModel.Create: Tenant.DeleteAsyncById
+2024-12-03 06:34:09.473 +03:00 [DBG] ActionApiDescriptionModel.Create: Tenant.GetDefaultConnectionStringAsyncById
+2024-12-03 06:34:09.475 +03:00 [DBG] ActionApiDescriptionModel.Create: Tenant.UpdateDefaultConnectionStringAsyncByIdAndDefaultConnectionString
+2024-12-03 06:34:09.479 +03:00 [DBG] ActionApiDescriptionModel.Create: Tenant.DeleteDefaultConnectionStringAsyncById
+2024-12-03 06:34:09.480 +03:00 [DBG] ActionApiDescriptionModel.Create: Features.GetAsyncByProviderNameAndProviderKey
+2024-12-03 06:34:09.480 +03:00 [DBG] ActionApiDescriptionModel.Create: Features.UpdateAsyncByProviderNameAndProviderKeyAndInput
+2024-12-03 06:34:09.481 +03:00 [DBG] ActionApiDescriptionModel.Create: Features.DeleteAsyncByProviderNameAndProviderKey
+2024-12-03 06:34:09.481 +03:00 [DBG] ActionApiDescriptionModel.Create: AbpApplicationConfiguration.GetAsyncByOptions
+2024-12-03 06:34:09.482 +03:00 [DBG] ActionApiDescriptionModel.Create: AbpApplicationLocalization.GetAsyncByInput
+2024-12-03 06:34:09.482 +03:00 [DBG] ActionApiDescriptionModel.Create: AbpApiDefinition.GetByModel
+2024-12-03 06:34:09.537 +03:00 [INF] Executed action method Volo.Abp.AspNetCore.Mvc.Localization.AbpApplicationLocalizationScriptController.GetAsync (Volo.Abp.AspNetCore.Mvc), returned result Microsoft.AspNetCore.Mvc.ContentResult in 1047.0362ms.
+2024-12-03 06:34:09.562 +03:00 [INF] Executing ContentResult with HTTP Response ContentType of application/javascript
+2024-12-03 06:34:09.571 +03:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.Localization.AbpApplicationLocalizationScriptController.GetAsync (Volo.Abp.AspNetCore.Mvc) in 1785.9287ms
+2024-12-03 06:34:09.571 +03:00 [INF] Executed endpoint 'Volo.Abp.AspNetCore.Mvc.Localization.AbpApplicationLocalizationScriptController.GetAsync (Volo.Abp.AspNetCore.Mvc)'
+2024-12-03 06:34:09.579 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/Abp/ApplicationLocalizationScript?cultureName=en - 200 41350 application/javascript 1844.4688ms
+2024-12-03 06:34:09.587 +03:00 [INF] Executed action method Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc), returned result Microsoft.AspNetCore.Mvc.ContentResult in 1079.0836ms.
+2024-12-03 06:34:09.588 +03:00 [INF] Executing ContentResult with HTTP Response ContentType of application/javascript
+2024-12-03 06:34:09.589 +03:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc) in 1803.8382ms
+2024-12-03 06:34:09.589 +03:00 [INF] Executed endpoint 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc)'
+2024-12-03 06:34:09.589 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/Abp/ServiceProxyScript - 200 1966 application/javascript 1879.4516ms
+2024-12-03 06:34:10.040 +03:00 [DBG] Executed AbpApplicationConfigurationAppService.GetAsync().
+2024-12-03 06:34:10.074 +03:00 [INF] Executed action method Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc), returned result Microsoft.AspNetCore.Mvc.ContentResult in 1599.9674ms.
+2024-12-03 06:34:10.079 +03:00 [INF] Executing ContentResult with HTTP Response ContentType of application/javascript
+2024-12-03 06:34:10.080 +03:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc) in 2295.2735ms
+2024-12-03 06:34:10.080 +03:00 [INF] Executed endpoint 'Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc)'
+2024-12-03 06:34:10.084 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/Abp/ApplicationConfigurationScript - 200 6998 application/javascript 2393.965ms
+2024-12-03 06:34:11.967 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44313/Account/Login - application/x-www-form-urlencoded 291
+2024-12-03 06:34:12.051 +03:00 [INF] No CORS policy found for the specified request.
+2024-12-03 06:34:12.052 +03:00 [INF] Executing endpoint '/Account/Login'
+2024-12-03 06:34:12.053 +03:00 [INF] Route matched with {page = "/Account/Login", area = "", action = "", controller = ""}. Executing page /Account/Login
+2024-12-03 06:34:12.053 +03:00 [INF] Skipping the execution of current filter as its not the most effective filter implementing the policy Microsoft.AspNetCore.Mvc.ViewFeatures.IAntiforgeryPolicy
+2024-12-03 06:34:12.093 +03:00 [INF] Executing handler method Volo.Abp.Account.Web.Pages.Account.LoginModel.OnPostAsync - ModelState is "Valid"
+2024-12-03 06:34:13.093 +03:00 [DBG] Augmenting SignInContext
+2024-12-03 06:34:13.095 +03:00 [DBG] Adding idp claim with value: local
+2024-12-03 06:34:13.095 +03:00 [DBG] Adding auth_time claim with value: 1733196853
+2024-12-03 06:34:13.125 +03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2024-12-03 06:34:13.417 +03:00 [INF] {"Username":"admin","Provider":null,"ProviderUserId":null,"SubjectId":"294b4707-a873-b345-de0b-3a169c2dc490","DisplayName":"admin","Endpoint":"UI","ClientId":null,"Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"40000044-0005-fc00-b63f-84710c7967bb","TimeStamp":"2024-12-03T03:34:13.0000000Z","ProcessId":35088,"LocalIpAddress":"::1:44313","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2024-12-03 06:34:13.418 +03:00 [DBG] Remove dynamic claims cache for user: 294b4707-a873-b345-de0b-3a169c2dc490
+2024-12-03 06:34:13.429 +03:00 [INF] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.RedirectResult.
+2024-12-03 06:34:13.436 +03:00 [INF] Executing RedirectResult, redirecting to /.
+2024-12-03 06:34:13.437 +03:00 [INF] Executed page /Account/Login in 1384.1298ms
+2024-12-03 06:34:13.437 +03:00 [INF] Executed endpoint '/Account/Login'
+2024-12-03 06:34:13.441 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44313/Account/Login - 302 null null 1473.812ms
+2024-12-03 06:34:13.446 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/ - null null
+2024-12-03 06:34:13.506 +03:00 [INF] Executing endpoint '/_Host'
+2024-12-03 06:34:13.506 +03:00 [INF] Route matched with {page = "/_Host", area = "", action = "", controller = ""}. Executing page /_Host
+2024-12-03 06:34:13.506 +03:00 [INF] Skipping the execution of current filter as its not the most effective filter implementing the policy Microsoft.AspNetCore.Mvc.ViewFeatures.IAntiforgeryPolicy
+2024-12-03 06:34:13.507 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2024-12-03 06:34:13.507 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2024-12-03 06:34:13.509 +03:00 [DBG] Added bundle 'Blazor.BasicTheme.Global' to the page in 1.05 ms.
+2024-12-03 06:34:13.512 +03:00 [DBG] Added bundle 'Blazor.BasicTheme.Global' to the page in 0.62 ms.
+2024-12-03 06:34:13.514 +03:00 [INF] Executed page /_Host in 8.1268ms
+2024-12-03 06:34:13.514 +03:00 [INF] Executed endpoint '/_Host'
+2024-12-03 06:34:13.515 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/ - 200 null text/html; charset=utf-8 69.2389ms
+2024-12-03 06:34:13.530 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-03 06:34:13.530 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/_vs/browserLink - null null
+2024-12-03 06:34:13.532 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/_framework/aspnetcore-browser-refresh.js - 200 13830 application/javascript; charset=utf-8 1.9164ms
+2024-12-03 06:34:13.557 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/_blazor/initializers - null null
+2024-12-03 06:34:13.570 +03:00 [INF] Executing endpoint 'Blazor initializers'
+2024-12-03 06:34:13.570 +03:00 [INF] Executed endpoint 'Blazor initializers'
+2024-12-03 06:34:13.571 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/_blazor/initializers - 200 null application/json; charset=utf-8 13.4499ms
+2024-12-03 06:34:13.577 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44313/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-12-03 06:34:13.586 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/_vs/browserLink - 200 null text/javascript; charset=UTF-8 55.5179ms
+2024-12-03 06:34:13.588 +03:00 [INF] No CORS policy found for the specified request.
+2024-12-03 06:34:13.589 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2024-12-03 06:34:13.591 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2024-12-03 06:34:13.592 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44313/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 14.4988ms
+2024-12-03 06:34:13.628 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44313/_blazor?id=15nBQb1RzozMhtf0WLI-Mg - null null
+2024-12-03 06:34:13.646 +03:00 [INF] No CORS policy found for the specified request.
+2024-12-03 06:34:13.648 +03:00 [INF] Executing endpoint '/_blazor'
+2024-12-03 06:34:13.688 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:SettingManagement.Emailing
+2024-12-03 06:34:13.688 +03:00 [DBG] Not found in the cache: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:SettingManagement.Emailing
+2024-12-03 06:34:13.694 +03:00 [DBG] Getting all granted permissions from the repository for this provider name,key: U,294b4707-a873-b345-de0b-3a169c2dc490
+2024-12-03 06:34:13.824 +03:00 [DBG] Setting the cache items. Count: 27
+2024-12-03 06:34:13.827 +03:00 [DBG] Finished setting the cache items. Count: 27
+2024-12-03 06:34:13.836 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:R,pk:admin,n:SettingManagement.Emailing
+2024-12-03 06:34:13.836 +03:00 [DBG] Not found in the cache: pn:R,pk:admin,n:SettingManagement.Emailing
+2024-12-03 06:34:13.836 +03:00 [DBG] Getting all granted permissions from the repository for this provider name,key: R,admin
+2024-12-03 06:34:13.929 +03:00 [DBG] Setting the cache items. Count: 27
+2024-12-03 06:34:13.930 +03:00 [DBG] Finished setting the cache items. Count: 27
+2024-12-03 06:34:13.975 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:EasyAbp.Abp.DynamicMenu.MenuItem
+2024-12-03 06:34:13.978 +03:00 [DBG] Found in the cache: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:EasyAbp.Abp.DynamicMenu.MenuItem
+2024-12-03 06:34:13.979 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:R,pk:admin,n:EasyAbp.Abp.DynamicMenu.MenuItem
+2024-12-03 06:34:13.979 +03:00 [DBG] Found in the cache: pn:R,pk:admin,n:EasyAbp.Abp.DynamicMenu.MenuItem
+2024-12-03 06:34:13.985 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Roles,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Users,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpTenantManagement.Tenants
+2024-12-03 06:34:13.987 +03:00 [DBG] Found in the cache: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Roles,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Users,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpTenantManagement.Tenants
+2024-12-03 06:34:13.988 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:R,pk:admin,n:AbpIdentity.Roles,pn:R,pk:admin,n:AbpIdentity.Users,pn:R,pk:admin,n:AbpTenantManagement.Tenants
+2024-12-03 06:34:13.988 +03:00 [DBG] Found in the cache: pn:R,pk:admin,n:AbpIdentity.Roles,pn:R,pk:admin,n:AbpIdentity.Users,pn:R,pk:admin,n:AbpTenantManagement.Tenants
+2024-12-03 06:34:23.225 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/Abp/DynamicMenu/MenuItems/MenuItem - null null
+2024-12-03 06:34:23.297 +03:00 [INF] Executing endpoint '/Abp/DynamicMenu/MenuItems/MenuItem/Index'
+2024-12-03 06:34:23.303 +03:00 [INF] Route matched with {page = "/Abp/DynamicMenu/MenuItems/MenuItem/Index", area = "", action = "", controller = ""}. Executing page /Abp/DynamicMenu/MenuItems/MenuItem/Index
+2024-12-03 06:34:23.304 +03:00 [INF] Skipping the execution of current filter as its not the most effective filter implementing the policy Microsoft.AspNetCore.Mvc.ViewFeatures.IAntiforgeryPolicy
+2024-12-03 06:34:23.307 +03:00 [INF] Executing handler method EasyAbp.Abp.DynamicMenu.Web.Pages.Abp.DynamicMenu.MenuItems.MenuItem.IndexModel.OnGetAsync - ModelState is "Valid"
+2024-12-03 06:34:23.309 +03:00 [INF] Executed handler method OnGetAsync, returned result .
+2024-12-03 06:34:23.309 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2024-12-03 06:34:23.309 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2024-12-03 06:34:23.328 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:EasyAbp.Abp.DynamicMenu.MenuItem.Create
+2024-12-03 06:34:23.328 +03:00 [DBG] Found in the cache: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:EasyAbp.Abp.DynamicMenu.MenuItem.Create
+2024-12-03 06:34:23.328 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:R,pk:admin,n:EasyAbp.Abp.DynamicMenu.MenuItem.Create
+2024-12-03 06:34:23.328 +03:00 [DBG] Found in the cache: pn:R,pk:admin,n:EasyAbp.Abp.DynamicMenu.MenuItem.Create
+2024-12-03 06:34:23.676 +03:00 [DBG] Added bundle 'LeptonXLite.Global' to the page in 4.39 ms.
+2024-12-03 06:34:23.682 +03:00 [DBG] Added bundle 'Pages.Abp.DynamicMenu.MenuItems.MenuItem.index' to the page in 0.74 ms.
+2024-12-03 06:34:23.707 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:SettingManagement.Emailing
+2024-12-03 06:34:23.707 +03:00 [DBG] Found in the cache: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:SettingManagement.Emailing
+2024-12-03 06:34:23.707 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:R,pk:admin,n:SettingManagement.Emailing
+2024-12-03 06:34:23.707 +03:00 [DBG] Found in the cache: pn:R,pk:admin,n:SettingManagement.Emailing
+2024-12-03 06:34:23.729 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:EasyAbp.Abp.DynamicMenu.MenuItem
+2024-12-03 06:34:23.729 +03:00 [DBG] Found in the cache: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:EasyAbp.Abp.DynamicMenu.MenuItem
+2024-12-03 06:34:23.729 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:R,pk:admin,n:EasyAbp.Abp.DynamicMenu.MenuItem
+2024-12-03 06:34:23.729 +03:00 [DBG] Found in the cache: pn:R,pk:admin,n:EasyAbp.Abp.DynamicMenu.MenuItem
+2024-12-03 06:34:23.730 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Roles,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Users,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpTenantManagement.Tenants
+2024-12-03 06:34:23.730 +03:00 [DBG] Found in the cache: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Roles,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Users,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpTenantManagement.Tenants
+2024-12-03 06:34:23.730 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:R,pk:admin,n:AbpIdentity.Roles,pn:R,pk:admin,n:AbpIdentity.Users,pn:R,pk:admin,n:AbpTenantManagement.Tenants
+2024-12-03 06:34:23.731 +03:00 [DBG] Found in the cache: pn:R,pk:admin,n:AbpIdentity.Roles,pn:R,pk:admin,n:AbpIdentity.Users,pn:R,pk:admin,n:AbpTenantManagement.Tenants
+2024-12-03 06:34:23.774 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:SettingManagement.Emailing
+2024-12-03 06:34:23.774 +03:00 [DBG] Found in the cache: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:SettingManagement.Emailing
+2024-12-03 06:34:23.774 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:R,pk:admin,n:SettingManagement.Emailing
+2024-12-03 06:34:23.774 +03:00 [DBG] Found in the cache: pn:R,pk:admin,n:SettingManagement.Emailing
+2024-12-03 06:34:23.798 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:EasyAbp.Abp.DynamicMenu.MenuItem
+2024-12-03 06:34:23.798 +03:00 [DBG] Found in the cache: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:EasyAbp.Abp.DynamicMenu.MenuItem
+2024-12-03 06:34:23.798 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:R,pk:admin,n:EasyAbp.Abp.DynamicMenu.MenuItem
+2024-12-03 06:34:23.798 +03:00 [DBG] Found in the cache: pn:R,pk:admin,n:EasyAbp.Abp.DynamicMenu.MenuItem
+2024-12-03 06:34:23.799 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Roles,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Users,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpTenantManagement.Tenants
+2024-12-03 06:34:23.799 +03:00 [DBG] Found in the cache: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Roles,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Users,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpTenantManagement.Tenants
+2024-12-03 06:34:23.799 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:R,pk:admin,n:AbpIdentity.Roles,pn:R,pk:admin,n:AbpIdentity.Users,pn:R,pk:admin,n:AbpTenantManagement.Tenants
+2024-12-03 06:34:23.799 +03:00 [DBG] Found in the cache: pn:R,pk:admin,n:AbpIdentity.Roles,pn:R,pk:admin,n:AbpIdentity.Users,pn:R,pk:admin,n:AbpTenantManagement.Tenants
+2024-12-03 06:34:23.820 +03:00 [DBG] Added bundle 'LeptonXLite.Global' to the page in 5.39 ms.
+2024-12-03 06:34:23.825 +03:00 [DBG] Added bundle 'Pages.Abp.DynamicMenu.MenuItems.MenuItem.index' to the page in 0.50 ms.
+2024-12-03 06:34:23.829 +03:00 [INF] Executed page /Abp/DynamicMenu/MenuItems/MenuItem/Index in 525.5958ms
+2024-12-03 06:34:23.829 +03:00 [INF] Executed endpoint '/Abp/DynamicMenu/MenuItems/MenuItem/Index'
+2024-12-03 06:34:23.833 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/Abp/DynamicMenu/MenuItems/MenuItem - 200 null text/html; charset=utf-8 608.7444ms
+2024-12-03 06:34:23.837 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44313/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundaryxqBVvAtd0uzgXhYj 359
+2024-12-03 06:34:23.847 +03:00 [INF] Executed endpoint '/_blazor'
+2024-12-03 06:34:23.849 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44313/_blazor?id=15nBQb1RzozMhtf0WLI-Mg - 101 null null 10219.9909ms
+2024-12-03 06:34:23.854 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/Abp/ApplicationConfigurationScript - null null
+2024-12-03 06:34:23.856 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/Pages/Abp/DynamicMenu/MenuItems/MenuItem/index.js?_v=638687920005214599 - null null
+2024-12-03 06:34:23.857 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-03 06:34:23.860 +03:00 [INF] No CORS policy found for the specified request.
+2024-12-03 06:34:23.866 +03:00 [INF] Sending file. Request path: '/Pages/Abp/DynamicMenu/MenuItems/MenuItem/index.js'. Physical path: 'N/A'
+2024-12-03 06:34:23.867 +03:00 [INF] Executing endpoint 'Blazor disconnect'
+2024-12-03 06:34:23.868 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/Pages/Abp/DynamicMenu/MenuItems/MenuItem/index.js?_v=638687920005214599 - 200 3454 application/javascript 12.781ms
+2024-12-03 06:34:23.868 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/_framework/aspnetcore-browser-refresh.js - 200 13830 application/javascript; charset=utf-8 11.5655ms
+2024-12-03 06:34:23.868 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/Abp/ApplicationLocalizationScript?cultureName=en - null null
+2024-12-03 06:34:23.869 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/Abp/ServiceProxyScript - null null
+2024-12-03 06:34:23.885 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/_vs/browserLink - null null
+2024-12-03 06:34:23.952 +03:00 [INF] Executing endpoint 'Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc)'
+2024-12-03 06:34:23.955 +03:00 [INF] Route matched with {area = "Abp", action = "Get", controller = "AbpApplicationConfigurationScript", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Get() on controller Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController (Volo.Abp.AspNetCore.Mvc).
+2024-12-03 06:34:24.015 +03:00 [INF] Executing endpoint 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc)'
+2024-12-03 06:34:24.015 +03:00 [INF] Route matched with {area = "Abp", action = "GetAll", controller = "AbpServiceProxyScript", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAll(Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel) on controller Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController (Volo.Abp.AspNetCore.Mvc).
+2024-12-03 06:34:24.016 +03:00 [INF] Executing endpoint 'Volo.Abp.AspNetCore.Mvc.Localization.AbpApplicationLocalizationScriptController.GetAsync (Volo.Abp.AspNetCore.Mvc)'
+2024-12-03 06:34:24.016 +03:00 [INF] Route matched with {area = "Abp", action = "Get", controller = "AbpApplicationLocalizationScript", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetAsync(Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ApplicationLocalizationRequestDto) on controller Volo.Abp.AspNetCore.Mvc.Localization.AbpApplicationLocalizationScriptController (Volo.Abp.AspNetCore.Mvc).
+2024-12-03 06:34:24.075 +03:00 [INF] Executing action method Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc) - Validation state: "Valid"
+2024-12-03 06:34:24.115 +03:00 [INF] Executing action method Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc) - Validation state: "Valid"
+2024-12-03 06:34:24.115 +03:00 [INF] Executed action method Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc), returned result Microsoft.AspNetCore.Mvc.ContentResult in 0.6368ms.
+2024-12-03 06:34:24.116 +03:00 [INF] Executing ContentResult with HTTP Response ContentType of application/javascript
+2024-12-03 06:34:24.116 +03:00 [DBG] Executing AbpApplicationConfigurationAppService.GetAsync()...
+2024-12-03 06:34:24.187 +03:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc) in 138.6478ms
+2024-12-03 06:34:24.187 +03:00 [INF] Executed endpoint 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc)'
+2024-12-03 06:34:24.188 +03:00 [INF] Executing action method Volo.Abp.AspNetCore.Mvc.Localization.AbpApplicationLocalizationScriptController.GetAsync (Volo.Abp.AspNetCore.Mvc) - Validation state: "Valid"
+2024-12-03 06:34:24.191 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/Abp/ServiceProxyScript - 200 1966 application/javascript 322.0031ms
+2024-12-03 06:34:24.191 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Roles,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Roles.Create,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Roles.Update,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Roles.Delete,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Roles.ManagePermissions,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Users,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Users.Create,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Users.Update,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Users.Update.ManageRoles,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Users.Delete,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Users.ManagePermissions,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpTenantManagement.Tenants,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpTenantManagement.Tenants.Create,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpTenantManagement.Tenants.Update,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpTenantManagement.Tenants.Delete,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpTenantManagement.Tenants.ManageFeatures,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpTenantManagement.Tenants.ManageConnectionStrings,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:FeatureManagement.ManageHostFeatures,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:SettingManagement.Emailing,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:SettingManagement.Emailing.Test,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:SettingManagement.TimeZone,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:EasyAbp.Abp.DynamicMenu.MenuItem,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:EasyAbp.Abp.DynamicMenu.MenuItem.Create,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:EasyAbp.Abp.DynamicMenu.MenuItem.Update,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:EasyAbp.Abp.DynamicMenu.MenuItem.Delete,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:Demo
+2024-12-03 06:34:24.192 +03:00 [DBG] Found in the cache: pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Roles,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Roles.Create,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Roles.Update,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Roles.Delete,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Roles.ManagePermissions,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Users,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Users.Create,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Users.Update,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Users.Update.ManageRoles,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Users.Delete,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpIdentity.Users.ManagePermissions,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpTenantManagement.Tenants,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpTenantManagement.Tenants.Create,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpTenantManagement.Tenants.Update,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpTenantManagement.Tenants.Delete,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpTenantManagement.Tenants.ManageFeatures,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:AbpTenantManagement.Tenants.ManageConnectionStrings,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:FeatureManagement.ManageHostFeatures,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:SettingManagement.Emailing,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:SettingManagement.Emailing.Test,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:SettingManagement.TimeZone,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:EasyAbp.Abp.DynamicMenu.MenuItem,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:EasyAbp.Abp.DynamicMenu.MenuItem.Create,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:EasyAbp.Abp.DynamicMenu.MenuItem.Update,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:EasyAbp.Abp.DynamicMenu.MenuItem.Delete,pn:U,pk:294b4707-a873-b345-de0b-3a169c2dc490,n:Demo
+2024-12-03 06:34:24.192 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:R,pk:admin,n:AbpIdentity.Roles,pn:R,pk:admin,n:AbpIdentity.Roles.Create,pn:R,pk:admin,n:AbpIdentity.Roles.Update,pn:R,pk:admin,n:AbpIdentity.Roles.Delete,pn:R,pk:admin,n:AbpIdentity.Roles.ManagePermissions,pn:R,pk:admin,n:AbpIdentity.Users,pn:R,pk:admin,n:AbpIdentity.Users.Create,pn:R,pk:admin,n:AbpIdentity.Users.Update,pn:R,pk:admin,n:AbpIdentity.Users.Update.ManageRoles,pn:R,pk:admin,n:AbpIdentity.Users.Delete,pn:R,pk:admin,n:AbpIdentity.Users.ManagePermissions,pn:R,pk:admin,n:AbpTenantManagement.Tenants,pn:R,pk:admin,n:AbpTenantManagement.Tenants.Create,pn:R,pk:admin,n:AbpTenantManagement.Tenants.Update,pn:R,pk:admin,n:AbpTenantManagement.Tenants.Delete,pn:R,pk:admin,n:AbpTenantManagement.Tenants.ManageFeatures,pn:R,pk:admin,n:AbpTenantManagement.Tenants.ManageConnectionStrings,pn:R,pk:admin,n:FeatureManagement.ManageHostFeatures,pn:R,pk:admin,n:SettingManagement.Emailing,pn:R,pk:admin,n:SettingManagement.Emailing.Test,pn:R,pk:admin,n:SettingManagement.TimeZone,pn:R,pk:admin,n:EasyAbp.Abp.DynamicMenu.MenuItem,pn:R,pk:admin,n:EasyAbp.Abp.DynamicMenu.MenuItem.Create,pn:R,pk:admin,n:EasyAbp.Abp.DynamicMenu.MenuItem.Update,pn:R,pk:admin,n:EasyAbp.Abp.DynamicMenu.MenuItem.Delete,pn:R,pk:admin,n:Demo
+2024-12-03 06:34:24.192 +03:00 [DBG] Found in the cache: pn:R,pk:admin,n:AbpIdentity.Roles,pn:R,pk:admin,n:AbpIdentity.Roles.Create,pn:R,pk:admin,n:AbpIdentity.Roles.Update,pn:R,pk:admin,n:AbpIdentity.Roles.Delete,pn:R,pk:admin,n:AbpIdentity.Roles.ManagePermissions,pn:R,pk:admin,n:AbpIdentity.Users,pn:R,pk:admin,n:AbpIdentity.Users.Create,pn:R,pk:admin,n:AbpIdentity.Users.Update,pn:R,pk:admin,n:AbpIdentity.Users.Update.ManageRoles,pn:R,pk:admin,n:AbpIdentity.Users.Delete,pn:R,pk:admin,n:AbpIdentity.Users.ManagePermissions,pn:R,pk:admin,n:AbpTenantManagement.Tenants,pn:R,pk:admin,n:AbpTenantManagement.Tenants.Create,pn:R,pk:admin,n:AbpTenantManagement.Tenants.Update,pn:R,pk:admin,n:AbpTenantManagement.Tenants.Delete,pn:R,pk:admin,n:AbpTenantManagement.Tenants.ManageFeatures,pn:R,pk:admin,n:AbpTenantManagement.Tenants.ManageConnectionStrings,pn:R,pk:admin,n:FeatureManagement.ManageHostFeatures,pn:R,pk:admin,n:SettingManagement.Emailing,pn:R,pk:admin,n:SettingManagement.Emailing.Test,pn:R,pk:admin,n:SettingManagement.TimeZone,pn:R,pk:admin,n:EasyAbp.Abp.DynamicMenu.MenuItem,pn:R,pk:admin,n:EasyAbp.Abp.DynamicMenu.MenuItem.Create,pn:R,pk:admin,n:EasyAbp.Abp.DynamicMenu.MenuItem.Update,pn:R,pk:admin,n:EasyAbp.Abp.DynamicMenu.MenuItem.Delete,pn:R,pk:admin,n:Demo
+2024-12-03 06:34:24.341 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/_vs/browserLink - 200 null text/javascript; charset=UTF-8 459.7048ms
+2024-12-03 06:34:24.368 +03:00 [INF] Executed action method Volo.Abp.AspNetCore.Mvc.Localization.AbpApplicationLocalizationScriptController.GetAsync (Volo.Abp.AspNetCore.Mvc), returned result Microsoft.AspNetCore.Mvc.ContentResult in 180.5398ms.
+2024-12-03 06:34:24.368 +03:00 [INF] Executing ContentResult with HTTP Response ContentType of application/javascript
+2024-12-03 06:34:24.370 +03:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.Localization.AbpApplicationLocalizationScriptController.GetAsync (Volo.Abp.AspNetCore.Mvc) in 353.6893ms
+2024-12-03 06:34:24.370 +03:00 [INF] Executed endpoint 'Volo.Abp.AspNetCore.Mvc.Localization.AbpApplicationLocalizationScriptController.GetAsync (Volo.Abp.AspNetCore.Mvc)'
+2024-12-03 06:34:24.371 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/Abp/ApplicationLocalizationScript?cultureName=en - 200 41350 application/javascript 502.8288ms
+2024-12-03 06:34:25.549 +03:00 [DBG] Executed AbpApplicationConfigurationAppService.GetAsync().
+2024-12-03 06:34:25.604 +03:00 [INF] Executed endpoint 'Blazor disconnect'
+2024-12-03 06:34:25.609 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44313/_blazor/disconnect - 200 null null 1771.4114ms
+2024-12-03 06:34:25.615 +03:00 [INF] Executed action method Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc), returned result Microsoft.AspNetCore.Mvc.ContentResult in 1540.4796ms.
+2024-12-03 06:34:25.616 +03:00 [INF] Executing ContentResult with HTTP Response ContentType of application/javascript
+2024-12-03 06:34:25.617 +03:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc) in 1661.9842ms
+2024-12-03 06:34:25.617 +03:00 [INF] Executed endpoint 'Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc)'
+2024-12-03 06:34:25.618 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/Abp/ApplicationConfigurationScript - 200 8293 application/javascript 1763.8956ms
+2024-12-03 06:34:25.684 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44313/api/dynamic-menu/menu-item?parentId=&sorting=&skipCount=0&maxResultCount=10 - application/json null
+2024-12-03 06:34:25.694 +03:00 [INF] Executing endpoint 'EasyAbp.Abp.DynamicMenu.MenuItems.MenuItemController.GetListAsync (EasyAbp.Abp.DynamicMenu.HttpApi)'
+2024-12-03 06:34:25.701 +03:00 [INF] Route matched with {area = "easyAbpAbpDynamicMenu", action = "GetList", controller = "MenuItem", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Volo.Abp.Application.Dtos.PagedResultDto`1[EasyAbp.Abp.DynamicMenu.MenuItems.Dtos.MenuItemDto]] GetListAsync(EasyAbp.Abp.DynamicMenu.MenuItems.Dtos.GetMenuItemListInput) on controller EasyAbp.Abp.DynamicMenu.MenuItems.MenuItemController (EasyAbp.Abp.DynamicMenu.HttpApi).
+2024-12-03 06:34:25.738 +03:00 [INF] Executing action method EasyAbp.Abp.DynamicMenu.MenuItems.MenuItemController.GetListAsync (EasyAbp.Abp.DynamicMenu.HttpApi) - Validation state: "Valid"
+2024-12-03 06:34:25.774 +03:00 [INF] Executed action method EasyAbp.Abp.DynamicMenu.MenuItems.MenuItemController.GetListAsync (EasyAbp.Abp.DynamicMenu.HttpApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 35.082ms.
+2024-12-03 06:34:25.781 +03:00 [INF] Executing ObjectResult, writing value of type 'Volo.Abp.Application.Dtos.PagedResultDto`1[[EasyAbp.Abp.DynamicMenu.MenuItems.Dtos.MenuItemDto, EasyAbp.Abp.DynamicMenu.Application.Contracts, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-03 06:34:25.793 +03:00 [INF] Executed action EasyAbp.Abp.DynamicMenu.MenuItems.MenuItemController.GetListAsync (EasyAbp.Abp.DynamicMenu.HttpApi) in 91.4399ms
+2024-12-03 06:34:25.793 +03:00 [INF] Executed endpoint 'EasyAbp.Abp.DynamicMenu.MenuItems.MenuItemController.GetListAsync (EasyAbp.Abp.DynamicMenu.HttpApi)'
+2024-12-03 06:34:25.794 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44313/api/dynamic-menu/menu-item?parentId=&sorting=&skipCount=0&maxResultCount=10 - 200 null application/json; charset=utf-8 110.0668ms

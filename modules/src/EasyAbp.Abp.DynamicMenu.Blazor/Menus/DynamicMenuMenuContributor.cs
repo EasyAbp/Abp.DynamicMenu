@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Security.Claims;
+using System.Security.Principal;
 using System.Threading.Tasks;
 using EasyAbp.Abp.DynamicMenu.Localization;
 using EasyAbp.Abp.DynamicMenu.MenuItems;
@@ -16,6 +19,32 @@ using Volo.Abp.UI.Navigation;
 
 namespace EasyAbp.Abp.DynamicMenu.Blazor.Menus
 {
+    public static class IdentityExtensions
+    {
+        /// <summary>
+        ///     Return the user id using the UserIdClaimType
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="identity"></param>
+        /// <returns></returns>
+        public static T GetUserId<T>(this IIdentity identity) where T : IConvertible
+        {
+            if (identity == null)
+            {
+                throw new ArgumentNullException("identity");
+            }
+            var ci = identity as ClaimsIdentity;
+            if (ci != null)
+            {
+                var id = ci.FindFirst("sub");
+                if (id != null)
+                {
+                    return (T)Convert.ChangeType(id.Value, typeof(T), CultureInfo.InvariantCulture);
+                }
+            }
+            return default(T);
+        }
+    }
     public class DynamicMenuMenuContributor : IMenuContributor
     {
         private ILogger<DynamicMenuMenuContributor> _logger;
@@ -25,7 +54,7 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.Menus
         private IDynamicMenuStringLocalizerProvider _stringLocalizerProvider;
 
         private Dictionary<string, StringLocalizerModel> ModuleNameStringLocalizers { get; set; } = new();
-
+        private string userId;
         public async Task ConfigureMenuAsync(MenuConfigurationContext context)
         {
             var loggerFactory = context.ServiceProvider.GetRequiredService<ILoggerFactory>();
@@ -35,7 +64,11 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.Menus
             _menuItemAppService = context.ServiceProvider.GetRequiredService<IMenuItemAppService>();
             _stringLocalizerProvider =
                 context.ServiceProvider.GetRequiredService<IDynamicMenuStringLocalizerProvider>();
-
+            var id = _currentPrincipalAccessor.Principal.Identity;
+            if (id != null)
+            {
+                userId = _currentPrincipalAccessor.Principal.Identity.GetUserId<string>();
+            }
             if (context.Menu.Name == StandardMenus.Main)
             {
                 await ConfigureMainMenuAsync(context);
@@ -47,7 +80,7 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.Menus
             var menuItems = await _menuItemAppService.GetListAsync(new GetMenuItemListInput
             {
                 MaxResultCount = LimitedResultRequestDto.MaxMaxResultCount,
-                ParentName = null
+                ParentId = null
             });
 
             await AddDynamicMenuItemsAsync(menuItems.Items, context);
@@ -58,7 +91,7 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.Menus
         {
             var l = context.GetLocalizer<DynamicMenuResource>();
 
-            var dynamicMenu = new ApplicationMenuItem(DynamicMenuMenus.Prefix, displayName: "DynamicMenu",
+            var dynamicMenu = new ApplicationMenuItem(DynamicMenuMenus.Prefix, displayName: l["Menu:DynamicMenu"],
                 "~/Abp/DynamicMenu", icon: "fa fa-bars");
 
             if (await context.IsGrantedAsync(DynamicMenuPermissions.MenuItem.Default))
@@ -82,7 +115,10 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.Menus
                 menuItems.Where(x => !x.InAdministration), context);
 
             await AddDynamicMenuItemsAsync(context.Menu.GetAdministration(),
-                menuItems.Where(x => x.InAdministration), context);
+                menuItems.Where(x => x.InAdministration && x.IsPublic), context);
+            //get non public menus
+            await AddDynamicMenuItemsAsync(context.Menu.GetAdministration(),
+                menuItems.Where(x => x.InAdministration && !x.IsPublic && x.CreatorId.ToString() == userId), context);
         }
 
         protected virtual async Task AddDynamicMenuItemsAsync(IHasMenuItems parent, IEnumerable<MenuItemDto> menuItems,
@@ -90,14 +126,14 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.Menus
         {
             foreach (var menuItem in menuItems.Where(x => !x.IsDisabled))
             {
-                if (menuItem.Permission != null && !await IsFoundAndGrantedAsync(menuItem.Permission, context))
+                if (!await IsFoundAndGrantedAsync(menuItem.Permission, menuItem.CreatorId == null ? null : menuItem.CreatorId.ToString(), menuItem.IsPublic, context))
                 {
                     continue;
                 }
 
                 var l = await GetOrCreateStringLocalizerAsync(menuItem, _stringLocalizerProvider);
 
-                var child = new ApplicationMenuItem(menuItem.Name, l[menuItem.DisplayName],
+                var child = new ApplicationMenuItem(menuItem.Id, l[menuItem.DisplayName],
                     order: menuItem.Order ?? default, icon: menuItem.Icon);
 
                 if (menuItem.MenuItems.IsNullOrEmpty())
@@ -114,42 +150,47 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.Menus
             }
         }
 
-        protected virtual async Task<bool> IsFoundAndGrantedAsync(string policyName, MenuConfigurationContext context)
+        protected virtual async Task<bool> IsFoundAndGrantedAsync(string policyName, string creatorId, bool isPublic, MenuConfigurationContext context)
         {
-            if (policyName == null)
+            if (policyName != null)
             {
-                throw new ArgumentNullException(nameof(policyName));
+                var policy = await _policyProvider.GetPolicyAsync(policyName);
+
+                if (policy == null)
+                {
+                    _logger.LogWarning($"[Entity UI] No policy found: {policyName}.");
+
+                    return false;
+                }
+
+                return (await context.AuthorizationService.AuthorizeAsync(
+                    _currentPrincipalAccessor.Principal,
+                    null,
+                    policyName)).Succeeded;
             }
 
-            var policy = await _policyProvider.GetPolicyAsync(policyName);
-
-            if (policy == null)
+            if (!isPublic && creatorId != null)
             {
-                _logger.LogWarning($"[Entity UI] No policy found: {policyName}.");
+                return creatorId == userId;
 
-                return false;
             }
-
-            return (await context.AuthorizationService.AuthorizeAsync(
-                _currentPrincipalAccessor.Principal,
-                null,
-                policyName)).Succeeded;
+            return creatorId == null ? true : isPublic;
         }
 
         protected virtual async Task<IStringLocalizer> GetOrCreateStringLocalizerAsync(MenuItemDto menuItem,
             IDynamicMenuStringLocalizerProvider stringLocalizerProvider)
         {
-            if (ModuleNameStringLocalizers.ContainsKey(menuItem.Name) &&
-                ModuleNameStringLocalizers[menuItem.Name].LResourceTypeName == menuItem.LResourceTypeName &&
-                ModuleNameStringLocalizers[menuItem.Name].LResourceTypeAssemblyName ==
+            if (ModuleNameStringLocalizers.ContainsKey(menuItem.Id) &&
+                ModuleNameStringLocalizers[menuItem.Id].LResourceTypeName == menuItem.LResourceTypeName &&
+                ModuleNameStringLocalizers[menuItem.Id].LResourceTypeAssemblyName ==
                 menuItem.LResourceTypeAssemblyName)
             {
-                return ModuleNameStringLocalizers[menuItem.Name].StringLocalizer;
+                return ModuleNameStringLocalizers[menuItem.Id].StringLocalizer;
             }
 
             var localizer = await stringLocalizerProvider.GetAsync(menuItem);
 
-            ModuleNameStringLocalizers[menuItem.Name] = new StringLocalizerModel
+            ModuleNameStringLocalizers[menuItem.Id] = new StringLocalizerModel
             {
                 LResourceTypeName = menuItem.LResourceTypeName,
                 LResourceTypeAssemblyName = menuItem.LResourceTypeAssemblyName,

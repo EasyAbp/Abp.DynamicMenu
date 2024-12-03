@@ -6,11 +6,11 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
     [Serializable]
     public class TryCreateMenuItemEto : ExtensibleObject, IMenuItem
     {
-        public string ParentName { get; set; }
+        public string ParentId { get; set; }
 
         public bool InAdministration { get; set; }
 
-        public string Name { get; set; }
+        public string Id { get; set; }
 
         public string DisplayName { get; set; }
 
@@ -30,6 +30,8 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
 
         public string Target { get; set; }
 
+        public bool IsPublic { get; set; }
+
         public bool IsDisabled { get; set; }
 
         public string LResourceTypeName { get; set; }
@@ -40,13 +42,13 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
         {
         }
 
-        public TryCreateMenuItemEto(string parentName, bool inAdministration, string name, string displayName,
+        public TryCreateMenuItemEto(string parentId, bool inAdministration, string id, string displayName,
             string url, string urlMvc, string urlBlazor, string urlAngular, string permission, int? order, string icon,
-            string target, bool isDisabled, string lResourceTypeName, string lResourceTypeAssemblyName)
+            string target, bool isPublic, bool isDisabled, string lResourceTypeName, string lResourceTypeAssemblyName)
         {
-            ParentName = parentName;
+            ParentId = parentId;
             InAdministration = inAdministration;
-            Name = name;
+            Id = id;
             DisplayName = displayName;
             Url = url;
             UrlMvc = urlMvc;
@@ -56,6 +58,7 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             Order = order;
             Icon = icon;
             Target = target;
+            IsPublic = isPublic;
             IsDisabled = isDisabled;
             LResourceTypeName = lResourceTypeName;
             LResourceTypeAssemblyName = lResourceTypeAssemblyName;

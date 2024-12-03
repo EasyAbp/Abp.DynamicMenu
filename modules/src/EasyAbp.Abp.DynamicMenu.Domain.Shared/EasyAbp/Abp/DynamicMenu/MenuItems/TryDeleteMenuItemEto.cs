@@ -8,11 +8,11 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
     public class TryDeleteMenuItemEto : ExtensibleObject
     {
         [NotNull]
-        public string Name { get; set; }
+        public string Id { get; set; }
 
-        public TryDeleteMenuItemEto([NotNull] string name)
+        public TryDeleteMenuItemEto([NotNull] string id)
         {
-            Name = name;
+            Id = id;
         }
     }
 }

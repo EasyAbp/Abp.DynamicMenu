@@ -52,7 +52,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server\EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.csproj" />
+		<!--<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server\EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.csproj" />-->
 		<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.HttpApi\EasyAbp.Abp.DynamicMenu.Demo.HttpApi.csproj" />
 		<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.Application\EasyAbp.Abp.DynamicMenu.Demo.Application.csproj" />
 		<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.EntityFrameworkCore\EasyAbp.Abp.DynamicMenu.Demo.EntityFrameworkCore.csproj" />

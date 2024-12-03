@@ -19,31 +19,31 @@ namespace EasyAbp.Abp.DynamicMenu.Data
         [UnitOfWork]
         public async Task SeedAsync(DataSeedContext context)
         {
-            if (await _menuItemRepository.FindAsync(x => x.Name == "DemoMenu") != null)
+            if (await _menuItemRepository.FindAsync(x => x.Id == "DemoMenu") != null)
             {
                 return;
             }
 
             var demoMenu = new MenuItem(null, false, "DemoMenu", "Demo menu", null, null, null, null, null,
-                200, "fa-compass", null, false, DynamicMenuConsts.DefaultLResourceTypeName,
+                200, "fa-compass", null, false, false, DynamicMenuConsts.DefaultLResourceTypeName,
                 DynamicMenuConsts.DefaultLResourceTypeAssemblyName, new List<MenuItem>
                 {
-                    new("DemoMenu", false, "ChangePassword", "Change password", "~/Account/Manage", null, null, null,
-                        null, null, "fa-compass", null, false, DynamicMenuConsts.DefaultLResourceTypeName,
+                    new( "DemoMenu", false, "ChangePassword", "Change password", "~/Account/Manage", null, null, null,
+                        null, null, "fa-compass", null,false, false, DynamicMenuConsts.DefaultLResourceTypeName,
                         DynamicMenuConsts.DefaultLResourceTypeAssemblyName, null)
                 });
 
             await _menuItemRepository.InsertAsync(demoMenu, true);
 
             var demoMenu2 = new MenuItem(null, true, "DemoMenu2", "Demo menu 2", null, null, null, null, null,
-                100000, null, null, false, DynamicMenuConsts.DefaultLResourceTypeName,
+                100000, null, null, false, false, DynamicMenuConsts.DefaultLResourceTypeName,
                 DynamicMenuConsts.DefaultLResourceTypeAssemblyName, new List<MenuItem>
                 {
                     new("DemoMenu2", false, "Google", "Google", "https://google.com", null, null, null, null,
-                        null, null, "_blank", false, DynamicMenuConsts.DefaultLResourceTypeName,
+                        null, null, "_blank",false, false, DynamicMenuConsts.DefaultLResourceTypeName,
                         DynamicMenuConsts.DefaultLResourceTypeAssemblyName, null),
-                    new("DemoMenu2", false, "Disabled", "Disabled", "https://github.com", null, null, null, null,
-                        null, null, null, true, DynamicMenuConsts.DefaultLResourceTypeName,
+                    new( "DemoMenu2", false, "Disabled", "Disabled", "https://github.com", null, null, null, null,
+                        null, null, null,false, true, DynamicMenuConsts.DefaultLResourceTypeName,
                         DynamicMenuConsts.DefaultLResourceTypeAssemblyName, null),
                 });
 

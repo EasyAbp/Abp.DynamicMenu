@@ -11,7 +11,7 @@ namespace EasyAbp.Abp.DynamicMenu.Web.Pages.Abp.DynamicMenu.MenuItems.MenuItem
     {
         [HiddenInput]
         [BindProperty(SupportsGet = true)]
-        public MenuItemKey Id { get; set; }
+        public string Id { get; set; }
 
         [BindProperty]
         public EditMenuItemViewModel ViewModel { get; set; }

@@ -22,20 +22,20 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             var handler = ServiceProvider.GetRequiredService<CreateMenuItemEventHandler>();
 
             var eto = new TryCreateMenuItemEto(null, false, "GoogleLink", "Google", "https://google.com", null, null,
-                null, null, null, null, null, false, null, null);
+                null, null, null, null, null, false, false, null, null);
 
             // Act
 
             await handler.HandleEventAsync(eto);
 
-            var menuItem = await repository.FindAsync(x => x.Name == eto.Name);
+            var menuItem = await repository.FindAsync(x => x.Id == eto.Id);
 
             // Assert
 
             menuItem.ShouldNotBeNull();
-            menuItem.ParentName.ShouldBeNull();
+            menuItem.ParentId.ShouldBeNull();
             menuItem.InAdministration.ShouldBeFalse();
-            menuItem.Name.ShouldBe("GoogleLink");
+            menuItem.Id.ShouldBe("GoogleLink");
             menuItem.DisplayName.ShouldBe("Google");
             menuItem.Url.ShouldBe("https://google.com");
         }
@@ -50,20 +50,20 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             var handler = ServiceProvider.GetRequiredService<CreateMenuItemEventHandler>();
 
             var eto = new TryCreateMenuItemEto(null, true, "GoogleLink", "Google", "https://google.com", null, null,
-                null, null, null, null, null, false, null, null);
+                null, null, null, null, null, false, false, null, null);
 
             // Act
 
             await handler.HandleEventAsync(eto);
 
-            var menuItem = await repository.FindAsync(x => x.Name == eto.Name);
+            var menuItem = await repository.FindAsync(x => x.Id == eto.Id);
 
             // Assert
 
             menuItem.ShouldNotBeNull();
-            menuItem.ParentName.ShouldBeNull();
+            menuItem.ParentId.ShouldBeNull();
             menuItem.InAdministration.ShouldBeTrue();
-            menuItem.Name.ShouldBe("GoogleLink");
+            menuItem.Id.ShouldBe("GoogleLink");
             menuItem.DisplayName.ShouldBe("Google");
             menuItem.Url.ShouldBe("https://google.com");
         }
@@ -78,10 +78,10 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             var handler = ServiceProvider.GetRequiredService<CreateMenuItemEventHandler>();
 
             var itemEto1 = new TryCreateMenuItemEto(null, false, "SearchEngines", "Search engines", null, null, null,
-                null, null, null, null, null, false, null, null);
+                null, null, null, null, null, false, false, null, null);
 
-            var itemEto2 = new TryCreateMenuItemEto(itemEto1.Name, false, "GoogleLink", "Google", "https://google.com",
-                null, null, null, null, null, null, null, false, null, null);
+            var itemEto2 = new TryCreateMenuItemEto(itemEto1.Id, false, "GoogleLink", "Google", "https://google.com",
+                null, null, null, null, null, null, null, false, false, null, null);
 
             var eto = new TryCreateMenuItemsEto(new List<TryCreateMenuItemEto> { itemEto1, itemEto2 });
 
@@ -89,20 +89,20 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
 
             await handler.HandleEventAsync(eto);
 
-            var menuItem1 = await repository.FindAsync(x => x.Name == itemEto1.Name);
-            var menuItem2 = await repository.FindAsync(x => x.Name == itemEto2.Name);
+            var menuItem1 = await repository.FindAsync(x => x.Id == itemEto1.Id);
+            var menuItem2 = await repository.FindAsync(x => x.Id == itemEto2.Id);
 
             // Assert
 
             menuItem1.ShouldNotBeNull();
-            menuItem1.ParentName.ShouldBeNull();
-            menuItem1.Name.ShouldBe("SearchEngines");
+            menuItem1.ParentId.ShouldBeNull();
+            menuItem1.Id.ShouldBe("SearchEngines");
             menuItem1.DisplayName.ShouldBe("Search engines");
             menuItem1.Url.ShouldBeNull();
 
             menuItem2.ShouldNotBeNull();
-            menuItem2.ParentName.ShouldBe(menuItem1.Name);
-            menuItem2.Name.ShouldBe("GoogleLink");
+            menuItem2.ParentId.ShouldBe(menuItem1.Id);
+            menuItem2.Id.ShouldBe("GoogleLink");
             menuItem2.DisplayName.ShouldBe("Google");
             menuItem2.Url.ShouldBe("https://google.com");
         }
@@ -117,18 +117,18 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             var handler = ServiceProvider.GetRequiredService<CreateMenuItemEventHandler>();
 
             var existingMenuItem = new MenuItem(null, false, "GoogleLink", "Google1", "https://google.com", null, null,
-                null, null, null, null, null, false, null, null, new List<MenuItem>());
+                null, null, null, null, null, false, false, null, null, new List<MenuItem>());
 
             await repository.InsertAsync(existingMenuItem, true);
 
             var eto = new TryCreateMenuItemEto(null, false, "GoogleLink", "Google2", "https://google.com", null, null,
-                null, null, null, null, null, false, null, null);
+                null, null, null, null, null, false, false, null, null);
 
             // Act
 
             await handler.HandleEventAsync(eto);
 
-            var menuItem = await repository.FindAsync(x => x.Name == "GoogleLink");
+            var menuItem = await repository.FindAsync(x => x.Id == "GoogleLink");
 
             // Assert
 
@@ -147,10 +147,10 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             var handler = ServiceProvider.GetRequiredService<DeleteMenuItemEventHandler>();
 
             var existingMenuItem1 = new MenuItem(null, false, "GoogleLink1", "Google1", "https://google.com", null,
-                null, null, null, null, null, null, false, null, null, new List<MenuItem>());
+                null, null, null, null, null, null, false, false, null, null, new List<MenuItem>());
 
             var existingMenuItem2 = new MenuItem(null, false, "GoogleLink2", "Google2", "https://google.com", null,
-                null, null, null, null, null, null, false, null, null, new List<MenuItem>());
+                null, null, null, null, null, null, false, false, null, null, new List<MenuItem>());
 
             await repository.InsertAsync(existingMenuItem1, true);
             await repository.InsertAsync(existingMenuItem2, true);
@@ -163,8 +163,8 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             await handler.HandleEventAsync(eto1);
             await handler.HandleEventAsync(eto2);
 
-            var menuItem1 = await repository.FindAsync(x => x.Name == "GoogleLink1");
-            var menuItem2 = await repository.FindAsync(x => x.Name == "GoogleLink2");
+            var menuItem1 = await repository.FindAsync(x => x.Id == "GoogleLink1");
+            var menuItem2 = await repository.FindAsync(x => x.Id == "GoogleLink2");
 
             // Assert
 

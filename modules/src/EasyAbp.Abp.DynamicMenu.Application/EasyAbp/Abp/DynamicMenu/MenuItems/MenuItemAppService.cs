@@ -6,10 +6,12 @@ using EasyAbp.Abp.DynamicMenu.Permissions;
 using EasyAbp.Abp.DynamicMenu.MenuItems.Dtos;
 using JetBrains.Annotations;
 using Volo.Abp.Application.Services;
+using Volo.Abp.Domain.Entities;
+using Volo.Abp.Data;
 
 namespace EasyAbp.Abp.DynamicMenu.MenuItems
 {
-    public class MenuItemAppService : AbstractKeyCrudAppService<MenuItem, MenuItemDto, MenuItemKey, GetMenuItemListInput
+    public class MenuItemAppService : AbstractKeyCrudAppService<MenuItem, MenuItemDto, string, GetMenuItemListInput
             , CreateMenuItemDto, UpdateMenuItemDto>,
         IMenuItemAppService
     {
@@ -28,23 +30,23 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
 
         protected override async Task<IQueryable<MenuItem>> CreateFilteredQueryAsync(GetMenuItemListInput input)
         {
-            return (await _repository.WithDetailsAsync()).Where(x => x.ParentName == input.ParentName);
+            return (await _repository.WithDetailsAsync()).Where(x => x.ParentId == input.ParentId);
         }
 
-        protected override Task DeleteByIdAsync(MenuItemKey id)
+        protected override Task DeleteByIdAsync(string id)
         {
             // TODO: AbpHelper generated
             return _repository.DeleteAsync(e =>
-                e.Name == id.Name
+                e.Id == id
             );
         }
 
-        protected override async Task<MenuItem> GetEntityByIdAsync(MenuItemKey id)
+        protected override async Task<MenuItem> GetEntityByIdAsync(string id)
         {
             // TODO: AbpHelper generated
             return await AsyncExecuter.FirstOrDefaultAsync(
                 (await _repository.WithDetailsAsync()).Where(e =>
-                    e.Name == id.Name
+                    e.Id == id
                 )
             );
         }
@@ -52,14 +54,14 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
         protected override IQueryable<MenuItem> ApplyDefaultSorting(IQueryable<MenuItem> query)
         {
             // TODO: AbpHelper generated
-            return query.OrderBy(e => e.Name);
+            return query.OrderBy(e => e.Id);
         }
 
         public override async Task<MenuItemDto> CreateAsync(CreateMenuItemDto input)
         {
             await CheckCreatePolicyAsync();
 
-            await CheckParentNameAsync(input.ParentName);
+            await CheckParentIdAsync(input.ParentId);
 
             var entity = await MapToEntityAsync(input);
 
@@ -70,22 +72,25 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             return await MapToGetOutputDtoAsync(entity);
         }
 
-        public override async Task<MenuItemDto> UpdateAsync(MenuItemKey id, UpdateMenuItemDto input)
+        public override async Task<MenuItemDto> UpdateAsync(string id, UpdateMenuItemDto input)
         {
             await CheckUpdatePolicyAsync();
 
-            await CheckParentNameAsync(input.ParentName);
+            await CheckParentIdAsync(input.ParentId);
 
             var entity = await GetEntityByIdAsync(id);
 
+            entity.SetConcurrencyStampIfNotNull(input.ConcurrencyStamp);
+
             await MapToEntityAsync(input, entity);
+
 
             await Repository.UpdateAsync(entity, autoSave: true);
 
             return await MapToGetOutputDtoAsync(entity);
         }
 
-        public override async Task DeleteAsync(MenuItemKey id)
+        public override async Task DeleteAsync(string id)
         {
             await CheckDeletePolicyAsync();
 
@@ -109,26 +114,26 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             await _repository.DeleteAsync(menuItem);
         }
 
-        protected async Task CheckParentNameAsync([CanBeNull] string parentName)
+        protected async Task CheckParentIdAsync([CanBeNull] string parentId)
         {
-            if (parentName == null)
+            if (parentId == null)
             {
                 return;
             }
 
-            var parent = await _repository.FindAsync(x => x.Name == parentName);
+            var parent = await _repository.FindAsync(x => x.Id == parentId);
 
             if (parent == null)
             {
-                throw new NonexistentParentMenuItemException(parentName);
+                throw new NonexistentParentMenuItemException(parentId);
             }
 
             // Maximum menu item level: 3
-            if (!parent.ParentName.IsNullOrEmpty())
+            if (!parent.ParentId.IsNullOrEmpty())
             {
-                var grandparent = await _repository.GetAsync(x => x.Name == parent.ParentName);
+                var grandparent = await _repository.GetAsync(x => x.Id == parent.ParentId);
 
-                if (grandparent.ParentName != null)
+                if (grandparent.ParentId != null)
                 {
                     throw new ExceededMenuLevelLimitException(3);
                 }

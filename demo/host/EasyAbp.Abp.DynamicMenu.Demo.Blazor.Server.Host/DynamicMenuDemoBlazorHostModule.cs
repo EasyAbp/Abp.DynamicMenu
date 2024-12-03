@@ -27,10 +27,10 @@ using Volo.Abp.VirtualFileSystem;
 using EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host.Menus;
 using EasyAbp.Abp.DynamicMenu.Demo.Localization;
 using EasyAbp.Abp.DynamicMenu.Demo.MultiTenancy;
-using EasyAbp.Abp.DynamicMenu.Demo.Web;
 using EasyAbp.Abp.DynamicMenu.EntityFrameworkCore;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite.Bundling;
+using EasyAbp.Abp.DynamicMenu.Demo.Web;
 
 namespace EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host
 {
@@ -48,7 +48,7 @@ namespace EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host
     [DependsOn(typeof(DemoHttpApiModule))]
     [DependsOn(typeof(DemoEntityFrameworkCoreModule))]
     [DependsOn(typeof(DemoApplicationModule))]
-    [DependsOn(typeof(DemoBlazorServerModule))]
+    //[DependsOn(typeof(DemoBlazorServerModule))]
     [DependsOn(typeof(DemoWebModule))]
     public class DynamicMenuDemoBlazorHostModule : AbpModule
     {

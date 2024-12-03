@@ -1,28 +1,24 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Volo.Abp.Domain.Entities;
+using Volo.Abp.Domain.Entities.Auditing;
 
 namespace EasyAbp.Abp.DynamicMenu.MenuItems
 {
-    public class MenuItem : AggregateRoot, IMenuItem
+    public class MenuItem : FullAuditedAggregateRoot<string>, IMenuItem
     {
         /// <summary>
         /// Name of the parent menu item.
         /// </summary>
-        public virtual string ParentName { get; protected set; }
+        public virtual string ParentId { get; protected set; }
 
         /// <summary>
         /// It will be a child of the Administration menu item if true.
-        /// Effect only if <see cref="ParentName"/> is null.
+        /// Effect only if <see cref="ParentId"/> is null.
         /// </summary>
         public virtual bool InAdministration { get; protected set; }
-
-        /// <summary>
-        /// Unique name of the menu in the application.
-        /// </summary>
-        [Key]
-        public virtual string Name { get; protected set; }
 
         /// <summary>
         /// Display name of the menu item.
@@ -71,6 +67,11 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
         public virtual string Target { get; protected set; }
 
         /// <summary>
+        /// Can be used to public this menu item.
+        /// </summary>
+        public virtual bool IsPublic { get; protected set; }
+
+        /// <summary>
         /// Can be used to disable this menu item.
         /// </summary>
         public virtual bool IsDisabled { get; protected set; }
@@ -79,13 +80,8 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
 
         public virtual string LResourceTypeAssemblyName { get; protected set; }
 
-        [ForeignKey(nameof(ParentName))]
+        [ForeignKey(nameof(ParentId))]
         public virtual List<MenuItem> MenuItems { get; protected set; }
-
-        public override object[] GetKeys()
-        {
-            return new object[] { Name };
-        }
 
         protected MenuItem()
         {
@@ -93,9 +89,9 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
         }
 
         public MenuItem(
-            string parentName,
+            string parentId,
             bool inAdministration,
-            string name,
+            string id,
             string displayName,
             string url,
             string urlMvc,
@@ -105,15 +101,16 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             int? order,
             string icon,
             string target,
+            bool isPublic,
             bool isDisabled,
             string lResourceTypeName,
             string lResourceTypeAssemblyName,
             List<MenuItem> menuItems
         )
         {
-            ParentName = parentName;
+            ParentId = parentId;
             InAdministration = inAdministration;
-            Name = name;
+            Id = id;
             DisplayName = displayName;
             Url = url;
             UrlMvc = urlMvc;
@@ -123,6 +120,7 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             Order = order;
             Icon = icon;
             Target = target;
+            IsPublic = isPublic;
             IsDisabled = isDisabled;
             LResourceTypeName = lResourceTypeName;
             LResourceTypeAssemblyName = lResourceTypeAssemblyName;

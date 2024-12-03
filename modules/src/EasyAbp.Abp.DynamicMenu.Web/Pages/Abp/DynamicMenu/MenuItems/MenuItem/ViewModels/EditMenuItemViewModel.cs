@@ -1,11 +1,16 @@
+using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
+using Volo.Abp.Domain.Entities;
 
 namespace EasyAbp.Abp.DynamicMenu.Web.Pages.Abp.DynamicMenu.MenuItems.MenuItem.ViewModels
 {
     public class EditMenuItemViewModel
     {
-        [Display(Name = "MenuItemParentName")]
-        public string ParentName { get; set; }
+        [Display(Name = "MenuItemId")]
+        public string Id { get; set; }
+
+        [Display(Name = "MenuItemParentId")]
+        public string ParentId { get; set; }
 
         [Display(Name = "MenuItemInAdministration")]
         public bool InAdministration { get; set; }
@@ -37,6 +42,9 @@ namespace EasyAbp.Abp.DynamicMenu.Web.Pages.Abp.DynamicMenu.MenuItems.MenuItem.V
         [Display(Name = "MenuItemTarget")]
         public string Target { get; set; }
 
+        [Display(Name = "MenuItemIsPublic")]
+        public bool IsPublic { get; set; }
+
         [Display(Name = "MenuItemIsDisabled")]
         public bool IsDisabled { get; set; }
 
@@ -45,5 +53,8 @@ namespace EasyAbp.Abp.DynamicMenu.Web.Pages.Abp.DynamicMenu.MenuItems.MenuItem.V
 
         [Display(Name = "MenuItemLResourceTypeAssemblyName")]
         public string LResourceTypeAssemblyName { get; set; }
+
+        [HiddenInput()]
+        public string ConcurrencyStamp { get; set; }
     }
 }

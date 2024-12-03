@@ -48,13 +48,10 @@ namespace EasyAbp.Abp.DynamicMenu.EntityFrameworkCore
                 b.ConfigureByConvention();
 
                 /* Configure more properties here */
-                
-                b.HasKey(e => new
-                {
-                    e.Name,
-                });
 
-                b.HasMany(x => x.MenuItems).WithOne().HasForeignKey(x => x.ParentName);
+                b.HasIndex(e => new { e.ParentId });
+
+                b.HasMany(x => x.MenuItems).WithOne().HasForeignKey(x => x.ParentId);
             });
         }
     }

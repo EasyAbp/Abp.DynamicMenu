@@ -4,14 +4,14 @@ namespace EasyAbp.Abp.DynamicMenu.Web.Pages.Abp.DynamicMenu.MenuItems.MenuItem.V
 {
     public class CreateMenuItemViewModel
     {
-        [Display(Name = "MenuItemParentName")]
-        public string ParentName { get; set; }
+        [Display(Name = "MenuItemParentId")]
+        public string ParentId { get; set; }
 
         [Display(Name = "MenuItemInAdministration")]
         public bool InAdministration { get; set; }
 
-        [Display(Name = "MenuItemName")]
-        public string Name { get; set; }
+        [Display(Name = "MenuItemId")]
+        public string Id { get; set; }
 
         [Display(Name = "MenuItemDisplayName")]
         public string DisplayName { get; set; }
@@ -39,6 +39,9 @@ namespace EasyAbp.Abp.DynamicMenu.Web.Pages.Abp.DynamicMenu.MenuItems.MenuItem.V
 
         [Display(Name = "MenuItemTarget")]
         public string Target { get; set; }
+
+        [Display(Name = "MenuItemIsPublic")]
+        public bool IsPublic { get; set; }
 
         [Display(Name = "MenuItemIsDisabled")]
         public bool IsDisabled { get; set; }

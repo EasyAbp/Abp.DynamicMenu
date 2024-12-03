@@ -15,7 +15,7 @@ $(function () {
         scrollCollapse: true,
         order: [[0, "asc"]],
         ajax: abp.libs.datatables.createAjax(service.getList, function() {
-            return { parentName: parentName };
+            return { parentId: parentId };
         }),
         columnDefs: [
             {
@@ -27,14 +27,14 @@ $(function () {
                                 visible: abp.auth.isGranted('EasyAbp.Abp.DynamicMenu.MenuItem.Update'),
                                 action: function (data) {
                                     editModal.open({
-                                        name: data.record.name
+                                        id: data.record.id
                                     });
                                 }
                             },
                             {
                                 text: l('SubMenuItems'),
                                 action: function (data) {
-                                    document.location.href = document.location.origin + abp.appPath +  "Abp/DynamicMenu/MenuItems/MenuItem?parentName=" + data.record.name;
+                                    document.location.href = document.location.origin + abp.appPath +  "Abp/DynamicMenu/MenuItems/MenuItem?parentId=" + data.record.id;
                                 }
                             },
                             {
@@ -45,7 +45,7 @@ $(function () {
                                 },
                                 action: function (data) {
                                     service.delete({
-                                            name: data.record.name
+                                            id: data.record.id
                                         })
                                         .then(function () {
                                             abp.notify.info(l('SuccessfullyDeleted'));
@@ -57,8 +57,8 @@ $(function () {
                 }
             },
             {
-                title: l('MenuItemName'),
-                data: "name"
+                title: l('MenuItemId'),
+                data: "id"
             },
             {
                 title: l('MenuItemDisplayName'),
@@ -85,6 +85,6 @@ $(function () {
 
     $('#NewMenuItemButton').click(function (e) {
         e.preventDefault();
-        createModal.open({ parentName: parentName });
+        createModal.open({ parentId: parentId });
     });
 });

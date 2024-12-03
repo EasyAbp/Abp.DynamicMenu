@@ -26,27 +26,27 @@
 }
 
 <script>
-    let parentName = '@Model.ParentName';
+    let parentId = '@Model.ParentId';
 </script>
 
 <abp-card>
     <abp-card-header>
         <abp-row>
             <abp-column size-md="_6">
-                @if (Model.ParentName.IsNullOrEmpty())
+                @if (Model.ParentId.IsNullOrEmpty())
                 {
                     <abp-card-title>@L["MenuItem"]</abp-card-title>
                 }
                 else
                 {
-                    <abp-card-title>@L["MenuItem"] - @Model.ParentName</abp-card-title>
+                    <abp-card-title>@L["MenuItem"] - @Model.ParentId</abp-card-title>
                 }
             </abp-column>
             <abp-column size-md="_6" class="text-end">
 			    @if (await Authorization.IsGrantedAsync(DynamicMenuPermissions.MenuItem.Create))
                 {
                 <abp-button id="NewMenuItemButton"
-                            text="@L["CreateMenuItem"].Value"
+                            text="@L["NewMenuItem"].Value"
                             icon="plus"
                             button-type="Primary" />
                 }

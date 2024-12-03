@@ -26,7 +26,7 @@ namespace EasyAbp.Abp.DynamicMenu.Demo.SqlServer.Migrations
 
             modelBuilder.Entity("EasyAbp.Abp.DynamicMenu.MenuItems.MenuItem", b =>
                 {
-                    b.Property<string>("Name")
+                    b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -35,6 +35,22 @@ namespace EasyAbp.Abp.DynamicMenu.Demo.SqlServer.Migrations
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)")
                         .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletionTime");
 
                     b.Property<string>("DisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -50,7 +66,16 @@ namespace EasyAbp.Abp.DynamicMenu.Demo.SqlServer.Migrations
                     b.Property<bool>("InAdministration")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
                     b.Property<bool>("IsDisabled")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsPublic")
                         .HasColumnType("bit");
 
                     b.Property<string>("LResourceTypeAssemblyName")
@@ -59,10 +84,18 @@ namespace EasyAbp.Abp.DynamicMenu.Demo.SqlServer.Migrations
                     b.Property<string>("LResourceTypeName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
                     b.Property<int?>("Order")
                         .HasColumnType("int");
 
-                    b.Property<string>("ParentName")
+                    b.Property<string>("ParentId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Permission")
@@ -83,9 +116,9 @@ namespace EasyAbp.Abp.DynamicMenu.Demo.SqlServer.Migrations
                     b.Property<string>("UrlMvc")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Name");
+                    b.HasKey("Id");
 
-                    b.HasIndex("ParentName");
+                    b.HasIndex("ParentId");
 
                     b.ToTable("EasyAbpAbpDynamicMenuMenuItems", (string)null);
                 });
@@ -2320,7 +2353,7 @@ namespace EasyAbp.Abp.DynamicMenu.Demo.SqlServer.Migrations
                 {
                     b.HasOne("EasyAbp.Abp.DynamicMenu.MenuItems.MenuItem", null)
                         .WithMany("MenuItems")
-                        .HasForeignKey("ParentName");
+                        .HasForeignKey("ParentId");
                 });
 
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLogAction", b =>

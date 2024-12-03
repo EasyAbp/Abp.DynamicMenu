@@ -20,7 +20,7 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
         
         public virtual async Task HandleEventAsync(TryDeleteMenuItemEto eventData)
         {
-            var menuItem = await _menuItemRepository.FindAsync(x => x.Name == eventData.Name);
+            var menuItem = await _menuItemRepository.FindAsync(x => x.Id == eventData.Id);
 
             if (menuItem == null)
             {

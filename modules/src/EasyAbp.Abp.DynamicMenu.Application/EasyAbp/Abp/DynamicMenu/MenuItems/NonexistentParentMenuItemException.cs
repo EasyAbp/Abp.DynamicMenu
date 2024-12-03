@@ -4,10 +4,10 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
 {
     public sealed class NonexistentParentMenuItemException : BusinessException
     {
-        public NonexistentParentMenuItemException(string parentName)
+        public NonexistentParentMenuItemException(string parentId)
             : base("EasyAbp.Abp.DynamicMenu:NonexistentParentMenuItem")
         {
-            Data["ParentName"] = parentName;
+            Data["ParentId"] = parentId;
         }
     }
 }

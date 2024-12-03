@@ -3,6 +3,7 @@ using Volo.Abp.Application.Dtos;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Volo.Abp;
+using System;
 
 namespace EasyAbp.Abp.DynamicMenu.MenuItems
 {
@@ -25,22 +26,22 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
         }
 
         [HttpPut]
-        [Route("{Name}")]
-        public virtual Task<MenuItemDto> UpdateAsync(MenuItemKey id, UpdateMenuItemDto input)
+        [Route("{id}")]
+        public virtual Task<MenuItemDto> UpdateAsync(string id, UpdateMenuItemDto input)
         {
             return _service.UpdateAsync(id, input);
         }
 
         [HttpDelete]
-        [Route("{Name}")]
-        public virtual Task DeleteAsync(MenuItemKey id)
+        [Route("{id}")]
+        public virtual Task DeleteAsync(string id)
         {
             return _service.DeleteAsync(id);
         }
 
         [HttpGet]
-        [Route("{Name}")]
-        public virtual Task<MenuItemDto> GetAsync(MenuItemKey id)
+        [Route("{id}")]
+        public virtual Task<MenuItemDto> GetAsync(string id)
         {
             return _service.GetAsync(id);
         }

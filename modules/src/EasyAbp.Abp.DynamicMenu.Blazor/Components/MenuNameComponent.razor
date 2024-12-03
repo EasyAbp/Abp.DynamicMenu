@@ -1,0 +1,23 @@
+﻿@using System;
+@using EasyAbp.Abp.DynamicMenu.Localization
+@using EasyAbp.Abp.DynamicMenu.MenuItems.Dtos
+@using Microsoft.Extensions.Localization
+
+@inject IStringLocalizer<DynamicMenuResource> L
+
+@(Data.As<MenuItemDto>().Id)
+@if (Data.As<MenuItemDto>().InAdministration)
+{
+    <Badge Color="Color.Success" Margin="Margin.Is1.FromStart">@L["DisplayName:InAdministration"]</Badge>
+}
+@if (Data.As<MenuItemDto>().IsPublic)
+{
+    <Badge Color="Color.Info" Margin="Margin.Is1.FromStart">@L["DisplayName:IsPublic"]</Badge>
+}
+@if (Data.As<MenuItemDto>().IsDisabled)
+{
+    <Badge Color="Color.Dark" Margin="Margin.Is1.FromStart">@L["DisplayName:IsDisabled"]</Badge>
+}
+@code{
+    [Parameter] public object Data { get; set; }
+}

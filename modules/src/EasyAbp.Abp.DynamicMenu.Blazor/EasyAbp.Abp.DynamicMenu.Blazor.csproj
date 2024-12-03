@@ -7,13 +7,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="Menus\**" />
-	  <Content Remove="Menus\**" />
-	  <EmbeddedResource Remove="Menus\**" />
-	  <None Remove="Menus\**" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
 		<PackageReference Include="Volo.Abp.AspNetCore.Components.Web.Theming" Version="$(AbpVersion)" />
 	</ItemGroup>

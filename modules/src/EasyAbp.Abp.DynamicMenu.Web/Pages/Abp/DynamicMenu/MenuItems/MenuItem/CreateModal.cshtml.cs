@@ -19,9 +19,9 @@ namespace EasyAbp.Abp.DynamicMenu.Web.Pages.Abp.DynamicMenu.MenuItems.MenuItem
             _service = service;
         }
 
-        public virtual async Task OnGetAsync([CanBeNull] string parentName)
+        public virtual async Task OnGetAsync([CanBeNull] string parentId)
         {
-            ViewModel.ParentName = parentName;
+            ViewModel.ParentId = parentId;
             ViewModel.LResourceTypeName = DynamicMenuConsts.DefaultLResourceTypeName;
             ViewModel.LResourceTypeAssemblyName = DynamicMenuConsts.DefaultLResourceTypeAssemblyName;
         }
