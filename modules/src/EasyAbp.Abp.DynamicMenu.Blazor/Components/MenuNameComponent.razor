@@ -5,19 +5,20 @@
 
 @inject IStringLocalizer<DynamicMenuResource> L
 
-@(Data.As<MenuItemDto>().Id)
-@if (Data.As<MenuItemDto>().InAdministration)
+@(Info.Id)
+@if (Info.InAdministration)
 {
     <Badge Color="Color.Success" Margin="Margin.Is1.FromStart">@L["MenuItemInAdministration"]</Badge>
 }
-@if (Data.As<MenuItemDto>().IsPublic)
+@if (Info.IsPublic)
 {
     <Badge Color="Color.Info" Margin="Margin.Is1.FromStart">@L["MenuItemIsPublic"]</Badge>
 }
-@if (Data.As<MenuItemDto>().IsDisabled)
+@if (Info.IsDisabled)
 {
     <Badge Color="Color.Dark" Margin="Margin.Is1.FromStart">@L["MenuItemIsDisabled"]</Badge>
 }
 @code{
     [Parameter] public object Data { get; set; }
+    private MenuItemViewModel Info => Data.As<MenuItemViewModel>();
 }

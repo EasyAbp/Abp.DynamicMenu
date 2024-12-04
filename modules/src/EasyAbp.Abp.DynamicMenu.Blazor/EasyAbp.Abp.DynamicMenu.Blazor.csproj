@@ -22,4 +22,8 @@
 		<ProjectReference Include="..\EasyAbp.Abp.DynamicMenu.Application.Contracts\EasyAbp.Abp.DynamicMenu.Application.Contracts.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="ViewModels\" />
+	</ItemGroup>
+
 </Project>

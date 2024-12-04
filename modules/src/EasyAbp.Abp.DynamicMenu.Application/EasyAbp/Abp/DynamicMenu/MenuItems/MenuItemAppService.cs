@@ -8,10 +8,11 @@ using JetBrains.Annotations;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Data;
+using Volo.Abp.Application.Dtos;
 
 namespace EasyAbp.Abp.DynamicMenu.MenuItems
 {
-    public class MenuItemAppService : AbstractKeyCrudAppService<MenuItem, MenuItemDto, string, GetMenuItemListInput
+    public class MenuItemAppService : AbstractKeyCrudAppService<MenuItem, MenuItemDto, MenuItemDto, string, GetMenuItemListInput
             , CreateMenuItemDto, UpdateMenuItemDto>,
         IMenuItemAppService
     {
@@ -55,6 +56,30 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
         {
             // TODO: AbpHelper generated
             return query.OrderBy(e => e.Id);
+        }
+
+        public override async Task<PagedResultDto<MenuItemDto>> GetListAsync(GetMenuItemListInput input)
+        {
+            await CheckGetListPolicyAsync();
+
+            var query = await CreateFilteredQueryAsync(input);
+            var totalCount = await AsyncExecuter.CountAsync(query);
+
+            var entities = new List<MenuItem>();
+            var entityDtos = new List<MenuItemDto>();
+
+            if (totalCount > 0)
+            {
+                query = ApplySorting(query, input);
+                query = ApplyPaging(query, input);
+
+                entities = await AsyncExecuter.ToListAsync(query);
+                entityDtos = await MapToGetListOutputDtosAsync(entities);
+            }
+            return new PagedResultDto<MenuItemDto>(
+                totalCount,
+                entityDtos
+            );
         }
 
         public override async Task<MenuItemDto> CreateAsync(CreateMenuItemDto input)

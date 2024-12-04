@@ -1,8 +1,7 @@
 ﻿@page "/Abp/DynamicMenu/MenuItems/MenuItem"
-@attribute [Authorize(DynamicMenuPermissions.MenuItem.Default)]
-@using EasyAbp.Abp.DynamicMenu.Localization
 @using EasyAbp.Abp.DynamicMenu.MenuItems
 @using EasyAbp.Abp.DynamicMenu.MenuItems.Dtos
+@using EasyAbp.Abp.DynamicMenu.Localization
 @using EasyAbp.Abp.DynamicMenu.Permissions
 @using Volo.Abp.BlazoriseUI.Components
 @using Microsoft.AspNetCore.Authorization
@@ -10,7 +9,8 @@
 @using Volo.Abp.AspNetCore.Components.Web.Theming.Layout
 @inject AbpBlazorMessageLocalizerHelper<DynamicMenuResource> LH
 
-@inherits AbpCrudPageBase<IMenuItemAppService, MenuItemDto, string, GetMenuItemListInput, CreateMenuItemDto, UpdateMenuItemDto>
+@attribute [Authorize(DynamicMenuPermissions.MenuItem.Default)]
+@inherits AbpCrudPageBase<IMenuItemAppService, MenuItemDto, MenuItemDto,string, GetMenuItemListInput, CreateMenuItemDto, UpdateMenuItemDto,MenuItemViewModel, CreateMenuItemDto, UpdateMenuItemDto>
 <Card>
     <CardHeader>
         @* ************************* PAGE HEADER ************************* *@
@@ -21,7 +21,7 @@
     </CardHeader>
     <CardBody>
         @* ************************* DATA GRID ************************* *@
-        <AbpExtensibleDataGrid TItem="MenuItemDto"
+        <AbpExtensibleDataGrid TItem="MenuItemViewModel"
                                Data="@Entities"
                                ReadData="@OnDataGridReadAsync"
                                TotalItems="@TotalCount"
@@ -41,7 +41,7 @@
             <Form>
                 <ModalHeader>
                     <ModalTitle>@L["NewMenuItem"]</ModalTitle>
-                    <CloseButton Clicked="CloseCreateModalAsync"/>
+                    <CloseButton Clicked="CloseCreateModalAsync" />
                 </ModalHeader>
                 <ModalBody>
                     <Validations @ref="@CreateValidationsRef" Model="@NewEntity" ValidateOnLoad="false">
@@ -50,7 +50,15 @@
                                 <FieldLabel>@L["MenuItemId"] *</FieldLabel>
                                 <TextEdit @bind-Text="@NewEntity.Id" Autofocus="true">
                                     <Feedback>
-                                        <ValidationError/>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                            <Field>
+                                <FieldLabel>@L["MenuItemParentId"] *</FieldLabel>
+                                <TextEdit @bind-Text="@NewEntity.ParentId" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
                                     </Feedback>
                                 </TextEdit>
                             </Field>
@@ -58,7 +66,87 @@
                                 <FieldLabel>@L["MenuItemDisplayName"] *</FieldLabel>
                                 <TextEdit @bind-Text="@NewEntity.DisplayName" Autofocus="true">
                                     <Feedback>
-                                        <ValidationError/>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                            <Field>
+                                <FieldLabel>@L["MenuItemUrl"] *</FieldLabel>
+                                <TextEdit @bind-Text="@NewEntity.Url" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                            <Field>
+                                <FieldLabel>@L["MenuItemUrlMvc"] *</FieldLabel>
+                                <TextEdit @bind-Text="@NewEntity.UrlMvc" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                            <Field>
+                                <FieldLabel>@L["MenuItemUrlBlazor"] *</FieldLabel>
+                                <TextEdit @bind-Text="@NewEntity.UrlBlazor" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                            <Field>
+                                <FieldLabel>@L["MenuItemUrlAngular"] *</FieldLabel>
+                                <TextEdit @bind-Text="@NewEntity.UrlAngular" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                            <Field>
+                                <FieldLabel>@L["MenuItemPermission"] *</FieldLabel>
+                                <TextEdit @bind-Text="@NewEntity.Permission" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                            <Field>
+                                <FieldLabel>@L["MenuItemOrder"] *</FieldLabel>
+                                <NumericEdit @bind-Value="@NewEntity.Order" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </NumericEdit>
+                            </Field>
+                            <Field>
+                                <FieldLabel>@L["MenuItemIcon"] *</FieldLabel>
+                                <TextEdit @bind-Text="@NewEntity.Icon" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                            <Field>
+                                <FieldLabel>@L["MenuItemTarget"] *</FieldLabel>
+                                <TextEdit @bind-Text="@NewEntity.Target" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                            <Field>
+                                <FieldLabel>@L["MenuItemLResourceTypeName"] *</FieldLabel>
+                                <TextEdit @bind-Text="@NewEntity.LResourceTypeName" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                            <Field>
+                                <FieldLabel>@L["MenuItemLResourceTypeAssemblyName"] *</FieldLabel>
+                                <TextEdit @bind-Text="@NewEntity.LResourceTypeAssemblyName" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
                                     </Feedback>
                                 </TextEdit>
                             </Field>
@@ -73,7 +161,7 @@
                 </ModalBody>
                 <ModalFooter>
                     <Button Color="Color.Primary" Outline Clicked="CloseCreateModalAsync">@L["Cancel"]</Button>
-                    <SubmitButton Clicked="@CreateEntityAsync"/>
+                    <SubmitButton Clicked="@CreateEntityAsync" />
                 </ModalFooter>
             </Form>
         </ModalContent>
@@ -87,17 +175,25 @@
             <Form>
                 <ModalHeader>
                     <ModalTitle>@L["Edit"]</ModalTitle>
-                    <CloseButton Clicked="CloseEditModalAsync"/>
+                    <CloseButton Clicked="CloseEditModalAsync" />
                 </ModalHeader>
                 <ModalBody>
                     <Validations @ref="@EditValidationsRef" Model="@EditingEntity" ValidateOnLoad="false">
-                        <input type="hidden" name="ConcurrencyStamp" @bind-value="EditingEntity.ConcurrencyStamp"/>
+                        <input type="hidden" name="ConcurrencyStamp" @bind-value="EditingEntity.ConcurrencyStamp" />
                         <Validation MessageLocalizer="@LH.Localize">
                             <Field>
-                                <FieldLabel>@L["MenuItemName"] *</FieldLabel>
+                                <FieldLabel>@L["MenuItemId"] *</FieldLabel>
                                 <TextEdit @bind-Text="EditingEntity.Id" Autofocus="true">
                                     <Feedback>
-                                        <ValidationError/>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                            <Field>
+                                <FieldLabel>@L["MenuItemParentId"] *</FieldLabel>
+                                <TextEdit @bind-Text="@EditingEntity.ParentId" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
                                     </Feedback>
                                 </TextEdit>
                             </Field>
@@ -105,11 +201,91 @@
                                 <FieldLabel>@L["MenuItemDisplayName"] *</FieldLabel>
                                 <TextEdit @bind-Text="EditingEntity.DisplayName" Autofocus="true">
                                     <Feedback>
-                                        <ValidationError/>
+                                        <ValidationError />
                                     </Feedback>
                                 </TextEdit>
                             </Field>
-                            <ExtensionProperties TEntityType="UpdateMenuItemDto" TResourceType="DynamicMenuResource" Entity="@EditingEntity" LH="@LH"  ModalType="ExtensionPropertyModalType.EditModal" />
+                            <Field>
+                                <FieldLabel>@L["MenuItemUrl"] *</FieldLabel>
+                                <TextEdit @bind-Text="@EditingEntity.Url" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                            <Field>
+                                <FieldLabel>@L["MenuItemUrlMvc"] *</FieldLabel>
+                                <TextEdit @bind-Text="@EditingEntity.UrlMvc" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                            <Field>
+                                <FieldLabel>@L["MenuItemUrlBlazor"] *</FieldLabel>
+                                <TextEdit @bind-Text="@EditingEntity.UrlBlazor" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                            <Field>
+                                <FieldLabel>@L["MenuItemUrlAngular"] *</FieldLabel>
+                                <TextEdit @bind-Text="@EditingEntity.UrlAngular" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                            <Field>
+                                <FieldLabel>@L["MenuItemPermission"] *</FieldLabel>
+                                <TextEdit @bind-Text="@EditingEntity.Permission" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                            <Field>
+                                <FieldLabel>@L["MenuItemOrder"] *</FieldLabel>
+                                <NumericEdit @bind-Value="@EditingEntity.Order" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </NumericEdit>
+                            </Field>
+                            <Field>
+                                <FieldLabel>@L["MenuItemIcon"] *</FieldLabel>
+                                <TextEdit @bind-Text="@EditingEntity.Icon" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                            <Field>
+                                <FieldLabel>@L["MenuItemTarget"] *</FieldLabel>
+                                <TextEdit @bind-Text="@EditingEntity.Target" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                            <Field>
+                                <FieldLabel>@L["MenuItemLResourceTypeName"] *</FieldLabel>
+                                <TextEdit @bind-Text="@EditingEntity.LResourceTypeName" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                            <Field>
+                                <FieldLabel>@L["MenuItemLResourceTypeAssemblyName"] *</FieldLabel>
+                                <TextEdit @bind-Text="@EditingEntity.LResourceTypeAssemblyName" Autofocus="true">
+                                    <Feedback>
+                                        <ValidationError />
+                                    </Feedback>
+                                </TextEdit>
+                            </Field>
+                            <ExtensionProperties TEntityType="UpdateMenuItemDto" TResourceType="DynamicMenuResource" Entity="@EditingEntity" LH="@LH" ModalType="ExtensionPropertyModalType.EditModal" />
                         </Validation>
                         <Field>
                             <Check TValue="bool" @bind-Checked="@EditingEntity.InAdministration">@L["MenuItemInAdministration"]</Check>
@@ -120,7 +296,7 @@
                 </ModalBody>
                 <ModalFooter>
                     <Button Color="Color.Primary" Outline Clicked="CloseEditModalAsync">@L["Cancel"]</Button>
-                    <SubmitButton Clicked="@UpdateEntityAsync"/>
+                    <SubmitButton Clicked="@UpdateEntityAsync" />
                 </ModalFooter>
             </Form>
         </ModalContent>

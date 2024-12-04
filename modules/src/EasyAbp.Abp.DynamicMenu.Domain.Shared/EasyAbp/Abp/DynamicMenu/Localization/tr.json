@@ -12,7 +12,7 @@
     "MenuItemParentId": "Üst menü tanımı",
     "MenuItemInAdministration": "Yönetim Alanında",
     "MenuItemId": "Tanımı",
-    "MenuItemDisplayName": "Display name",
+    "MenuItemDisplayName": "Ekran adı",
     "MenuItemUrl": "URL / Path",
     "MenuItemUrlMvc": "URL / MVC adresi",
     "MenuItemUrlBlazor": "URL / Blazor adresi",

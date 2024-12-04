@@ -10,6 +10,7 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
     public interface IMenuItemAppService :
         ICrudAppService<
             MenuItemDto,
+            MenuItemDto,
             string,
             GetMenuItemListInput,
             CreateMenuItemDto,
