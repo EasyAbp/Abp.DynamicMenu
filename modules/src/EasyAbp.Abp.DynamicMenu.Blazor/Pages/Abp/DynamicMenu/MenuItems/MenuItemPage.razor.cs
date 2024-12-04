@@ -72,14 +72,14 @@ public partial class MenuItemPage
                     },
                     new TableColumn
                     {
-                        Title = L["MenuName"],
+                        Title = L["MenuItemId"],
                         Sortable = true,
                         Data = nameof(MenuItemDto.Id),
                         Component = typeof(MenuNameComponent)
                     },
                     new TableColumn
                     {
-                        Title = L["DisplayName"],
+                        Title = L["MenuItemDisplayName"],
                         Sortable = true,
                         Data = nameof(MenuItemDto.DisplayName),
                     },

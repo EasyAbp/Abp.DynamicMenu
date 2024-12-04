@@ -30,7 +30,7 @@ using EasyAbp.Abp.DynamicMenu.Demo.MultiTenancy;
 using EasyAbp.Abp.DynamicMenu.EntityFrameworkCore;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite.Bundling;
-using EasyAbp.Abp.DynamicMenu.Demo.Web;
+using Volo.Abp.Account.Web;
 
 namespace EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host
 {
@@ -48,8 +48,13 @@ namespace EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.Host
     [DependsOn(typeof(DemoHttpApiModule))]
     [DependsOn(typeof(DemoEntityFrameworkCoreModule))]
     [DependsOn(typeof(DemoApplicationModule))]
-    //[DependsOn(typeof(DemoBlazorServerModule))]
-    [DependsOn(typeof(DemoWebModule))]
+
+    //[DependsOn(typeof(AbpIdentityWebModule))]
+    [DependsOn(typeof(AbpAccountWebModule))]
+    [DependsOn(typeof(AbpAccountWebIdentityServerModule))]
+
+    [DependsOn(typeof(DemoBlazorServerModule))]
+    //[DependsOn(typeof(DemoWebModule))]
     public class DynamicMenuDemoBlazorHostModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

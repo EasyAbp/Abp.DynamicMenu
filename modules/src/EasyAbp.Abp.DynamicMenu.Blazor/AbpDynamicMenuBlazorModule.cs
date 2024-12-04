@@ -17,13 +17,19 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            context.Services.AddAutoMapperObjectMapper<AbpDynamicMenuBlazorModule>();
+            //context.Services.AddAutoMapperObjectMapper<AbpDynamicMenuBlazorModule>();
 
+            //Configure<AbpAutoMapperOptions>(options =>
+            //{
+            //    options.AddProfile<DynamicMenuBlazorAutoMapperProfile>(validate: true);
+            //});
+
+            context.Services.AddAutoMapperObjectMapper<AbpDynamicMenuBlazorModule>();
             Configure<AbpAutoMapperOptions>(options =>
             {
-                options.AddProfile<DynamicMenuBlazorAutoMapperProfile>(validate: true);
+                options.AddMaps<AbpDynamicMenuBlazorModule>(validate: true);
             });
-
+            
             Configure<AbpNavigationOptions>(options =>
             {
                 options.MenuContributors.Add(new DynamicMenuMenuContributor());

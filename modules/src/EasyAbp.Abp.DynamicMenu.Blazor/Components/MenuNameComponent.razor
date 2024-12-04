@@ -8,15 +8,15 @@
 @(Data.As<MenuItemDto>().Id)
 @if (Data.As<MenuItemDto>().InAdministration)
 {
-    <Badge Color="Color.Success" Margin="Margin.Is1.FromStart">@L["DisplayName:InAdministration"]</Badge>
+    <Badge Color="Color.Success" Margin="Margin.Is1.FromStart">@L["MenuItemInAdministration"]</Badge>
 }
 @if (Data.As<MenuItemDto>().IsPublic)
 {
-    <Badge Color="Color.Info" Margin="Margin.Is1.FromStart">@L["DisplayName:IsPublic"]</Badge>
+    <Badge Color="Color.Info" Margin="Margin.Is1.FromStart">@L["MenuItemIsPublic"]</Badge>
 }
 @if (Data.As<MenuItemDto>().IsDisabled)
 {
-    <Badge Color="Color.Dark" Margin="Margin.Is1.FromStart">@L["DisplayName:IsDisabled"]</Badge>
+    <Badge Color="Color.Dark" Margin="Margin.Is1.FromStart">@L["MenuItemIsDisabled"]</Badge>
 }
 @code{
     [Parameter] public object Data { get; set; }

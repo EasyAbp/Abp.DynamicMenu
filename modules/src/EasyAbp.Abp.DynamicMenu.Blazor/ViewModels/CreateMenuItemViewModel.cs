@@ -40,6 +40,9 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.ViewModels
         [Display(Name = "MenuItemTarget")]
         public string Target { get; set; }
 
+        [Display(Name = "MenuItemIsPublic")]
+        public bool IsPublic { get; set; }
+
         [Display(Name = "MenuItemIsDisabled")]
         public bool IsDisabled { get; set; }
 

@@ -15,6 +15,7 @@ namespace EasyAbp.Abp.DynamicMenu
             CreateMap<MenuItem, MenuItemDto>().MapExtraProperties();
             CreateMap<CreateMenuItemDto, MenuItem>(MemberList.Source).MapExtraProperties();
             CreateMap<UpdateMenuItemDto, MenuItem>(MemberList.Source).MapExtraProperties();
+            CreateMap<MenuItemDto, UpdateMenuItemDto>();
         }
     }
 }

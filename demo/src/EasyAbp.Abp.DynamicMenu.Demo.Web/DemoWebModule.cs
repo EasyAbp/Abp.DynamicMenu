@@ -19,12 +19,14 @@ namespace EasyAbp.Abp.DynamicMenu.Demo.Web
 
     [DependsOn(typeof(AbpAspNetCoreMvcUiThemeSharedModule))]
     [DependsOn(typeof(AbpAutoMapperModule))]
+
     [DependsOn(typeof(AbpAccountWebModule))]
-    [DependsOn(typeof(AbpSettingManagementWebModule))]
     [DependsOn(typeof(AbpIdentityWebModule))]
+    [DependsOn(typeof(AbpAccountWebIdentityServerModule))]
+
+    [DependsOn(typeof(AbpSettingManagementWebModule))]
     [DependsOn(typeof(AbpFeatureManagementWebModule))]
     [DependsOn(typeof(AbpTenantManagementWebModule))]
-    [DependsOn(typeof(AbpAccountWebIdentityServerModule))]
 
     [DependsOn(typeof(AbpDynamicMenuWebModule))]
     public class DemoWebModule : AbpModule

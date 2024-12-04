@@ -14,10 +14,10 @@
 	<ItemGroup>
 		<PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
 		<PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Identity.Web" Version="$(AbpVersion)" />
 		<PackageReference Include="Volo.Abp.Account.Web" Version="$(AbpVersion)" />
 		<PackageReference Include="Volo.Abp.Account.Web.IdentityServer" Version="$(AbpVersion)" />
 		<PackageReference Include="Volo.Abp.SettingManagement.Web" Version="$(AbpVersion)" />
-		<PackageReference Include="Volo.Abp.Identity.Web" Version="$(AbpVersion)" />
 		<PackageReference Include="Volo.Abp.FeatureManagement.Web" Version="$(AbpVersion)" />
 		<PackageReference Include="Volo.Abp.TenantManagement.Web" Version="$(AbpVersion)" />
 	</ItemGroup>

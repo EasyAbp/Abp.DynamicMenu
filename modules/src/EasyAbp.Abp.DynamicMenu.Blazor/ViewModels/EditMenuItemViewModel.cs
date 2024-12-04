@@ -4,6 +4,9 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.ViewModels
 {
     public class EditMenuItemViewModel
     {
+        [Display(Name = "MenuItemId")]
+        public string Id { get; set; }
+
         [Display(Name = "MenuItemParentId")]
         public string ParentId { get; set; }
 
@@ -37,6 +40,9 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.ViewModels
         [Display(Name = "MenuItemTarget")]
         public string Target { get; set; }
 
+        [Display(Name = "MenuItemIsPublic")]
+        public bool IsPublic { get; set; }
+
         [Display(Name = "MenuItemIsDisabled")]
         public bool IsDisabled { get; set; }
 
@@ -45,5 +51,8 @@ namespace EasyAbp.Abp.DynamicMenu.Blazor.ViewModels
 
         [Display(Name = "MenuItemLResourceTypeAssemblyName")]
         public string LResourceTypeAssemblyName { get; set; }
+
+        [UIHint("Hidden")]
+        public string ConcurrencyStamp { get; set; }
     }
 }

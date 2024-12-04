@@ -31,6 +31,11 @@
 		<PackageReference Include="Volo.Abp.AspNetCore.Authentication.JwtBearer" Version="$(AbpVersion)" />
 		<PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="$(AbpVersion)" />
 		<PackageReference Include="Volo.Abp.AspNetCore.Components.Server.BasicTheme" Version="$(AbpVersion)" />
+
+		<!--<PackageReference Include="Volo.Abp.Identity.Web" Version="$(AbpVersion)" />-->
+		<PackageReference Include="Volo.Abp.Account.Web" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Account.Web.IdentityServer" Version="$(AbpVersion)" />
+
 		<PackageReference Include="Volo.Abp.Identity.Blazor.Server" Version="$(AbpVersion)" />
 		<PackageReference Include="Volo.Abp.TenantManagement.Blazor.Server" Version="$(AbpVersion)" />
 		<PackageReference Include="Volo.Abp.SettingManagement.Blazor.Server" Version="$(AbpVersion)" />
@@ -52,11 +57,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<!--<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server\EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.csproj" />-->
+		<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server\EasyAbp.Abp.DynamicMenu.Demo.Blazor.Server.csproj" />
 		<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.HttpApi\EasyAbp.Abp.DynamicMenu.Demo.HttpApi.csproj" />
 		<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.Application\EasyAbp.Abp.DynamicMenu.Demo.Application.csproj" />
 		<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.EntityFrameworkCore\EasyAbp.Abp.DynamicMenu.Demo.EntityFrameworkCore.csproj" />
-		<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.Web\EasyAbp.Abp.DynamicMenu.Demo.Web.csproj" />
+		<!--<ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Demo.Web\EasyAbp.Abp.DynamicMenu.Demo.Web.csproj" />-->
 	</ItemGroup>
 
 	<ItemGroup>

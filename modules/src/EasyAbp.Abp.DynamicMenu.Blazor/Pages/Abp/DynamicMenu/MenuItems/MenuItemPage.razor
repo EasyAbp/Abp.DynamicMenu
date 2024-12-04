@@ -6,8 +6,6 @@
 @using EasyAbp.Abp.DynamicMenu.Permissions
 @using Volo.Abp.BlazoriseUI.Components
 @using Microsoft.AspNetCore.Authorization
-@using Volo.Abp.AspNetCore.Components.Web
-@using Volo.Abp.AspNetCore.Components.Web.Theming
 @using Volo.Abp.BlazoriseUI.Components.ObjectExtending
 @using Volo.Abp.AspNetCore.Components.Web.Theming.Layout
 @inject AbpBlazorMessageLocalizerHelper<DynamicMenuResource> LH
@@ -16,7 +14,7 @@
 <Card>
     <CardHeader>
         @* ************************* PAGE HEADER ************************* *@
-        <PageHeader Title="@L["Roles"]"
+        <PageHeader Title="@L["Menu:MenuItem"]"
                     BreadcrumbItems="@BreadcrumbItems"
                     Toolbar="@Toolbar">
         </PageHeader>
@@ -49,7 +47,7 @@
                     <Validations @ref="@CreateValidationsRef" Model="@NewEntity" ValidateOnLoad="false">
                         <Validation MessageLocalizer="@LH.Localize">
                             <Field>
-                                <FieldLabel>@L["DisplayName:Name"] *</FieldLabel>
+                                <FieldLabel>@L["MenuItemId"] *</FieldLabel>
                                 <TextEdit @bind-Text="@NewEntity.Id" Autofocus="true">
                                     <Feedback>
                                         <ValidationError/>
@@ -57,7 +55,7 @@
                                 </TextEdit>
                             </Field>
                             <Field>
-                                <FieldLabel>@L["DisplayName:DisplayName"] *</FieldLabel>
+                                <FieldLabel>@L["MenuItemDisplayName"] *</FieldLabel>
                                 <TextEdit @bind-Text="@NewEntity.DisplayName" Autofocus="true">
                                     <Feedback>
                                         <ValidationError/>
@@ -67,9 +65,9 @@
                             <ExtensionProperties TEntityType="CreateMenuItemDto" TResourceType="DynamicMenuResource" Entity="@NewEntity" LH="@LH" ModalType="ExtensionPropertyModalType.CreateModal" />
                         </Validation>
                         <Field>
-                            <Check TValue="bool" @bind-Checked="@NewEntity.InAdministration">@L["DisplayName:InAdministration"]</Check>
-                            <Check TValue="bool" @bind-Checked="@NewEntity.IsPublic">@L["DisplayName:IsPublic"]</Check>
-                            <Check TValue="bool" @bind-Checked="@NewEntity.IsDisabled">@L["DisplayName:IsDisabled"]</Check>
+                            <Check TValue="bool" @bind-Checked="@NewEntity.InAdministration">@L["MenuItemInAdministration"]</Check>
+                            <Check TValue="bool" @bind-Checked="@NewEntity.IsPublic">@L["MenuItemIsPublic"]</Check>
+                            <Check TValue="bool" @bind-Checked="@NewEntity.IsDisabled">@L["MenuItemIsDisabled"]</Check>
                         </Field>
                     </Validations>
                 </ModalBody>
@@ -96,7 +94,7 @@
                         <input type="hidden" name="ConcurrencyStamp" @bind-value="EditingEntity.ConcurrencyStamp"/>
                         <Validation MessageLocalizer="@LH.Localize">
                             <Field>
-                                <FieldLabel>@L["DisplayName:Name"] *</FieldLabel>
+                                <FieldLabel>@L["MenuItemName"] *</FieldLabel>
                                 <TextEdit @bind-Text="EditingEntity.Id" Autofocus="true">
                                     <Feedback>
                                         <ValidationError/>
@@ -104,7 +102,7 @@
                                 </TextEdit>
                             </Field>
                             <Field>
-                                <FieldLabel>@L["DisplayName:DisplayName"] *</FieldLabel>
+                                <FieldLabel>@L["MenuItemDisplayName"] *</FieldLabel>
                                 <TextEdit @bind-Text="EditingEntity.DisplayName" Autofocus="true">
                                     <Feedback>
                                         <ValidationError/>
@@ -114,9 +112,9 @@
                             <ExtensionProperties TEntityType="UpdateMenuItemDto" TResourceType="DynamicMenuResource" Entity="@EditingEntity" LH="@LH"  ModalType="ExtensionPropertyModalType.EditModal" />
                         </Validation>
                         <Field>
-                            <Check TValue="bool" @bind-Checked="@EditingEntity.InAdministration">@L["DisplayName:InAdministration"]</Check>
-                            <Check TValue="bool" @bind-Checked="@EditingEntity.IsPublic">@L["DisplayName:IsPublic"]</Check>
-                            <Check TValue="bool" @bind-Checked="@EditingEntity.IsDisabled">@L["DisplayName:IsDisabled"]</Check>
+                            <Check TValue="bool" @bind-Checked="@EditingEntity.InAdministration">@L["MenuItemInAdministration"]</Check>
+                            <Check TValue="bool" @bind-Checked="@EditingEntity.IsPublic">@L["MenuItemIsPublic"]</Check>
+                            <Check TValue="bool" @bind-Checked="@EditingEntity.IsDisabled">@L["MenuItemIsDisabled"]</Check>
                         </Field>
                     </Validations>
                 </ModalBody>
