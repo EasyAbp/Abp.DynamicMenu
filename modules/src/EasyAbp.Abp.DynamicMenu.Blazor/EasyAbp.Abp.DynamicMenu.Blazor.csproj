@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<Import Project="..\..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="ViewModels\**" />
+	  <Content Remove="ViewModels\**" />
+	  <EmbeddedResource Remove="ViewModels\**" />
+	  <None Remove="ViewModels\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.AspNetCore.Components.Web.Theming" Version="$(AbpVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\EasyAbp.Abp.DynamicMenu.Application.Contracts\EasyAbp.Abp.DynamicMenu.Application.Contracts.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="ViewModels\" />
+	</ItemGroup>
+
+</Project>

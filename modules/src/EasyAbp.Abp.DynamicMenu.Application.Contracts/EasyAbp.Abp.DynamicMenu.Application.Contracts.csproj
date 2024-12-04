@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<RootNamespace />
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="EasyAbp\Abp\DynamicMenu\MenuItems\Dtos\MenuItemKey.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
+		<ProjectReference Include="..\EasyAbp.Abp.DynamicMenu.Domain.Shared\EasyAbp.Abp.DynamicMenu.Domain.Shared.csproj" />
+	</ItemGroup>
+
+</Project>

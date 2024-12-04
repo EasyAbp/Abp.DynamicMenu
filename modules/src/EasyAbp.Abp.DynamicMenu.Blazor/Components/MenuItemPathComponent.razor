@@ -1,0 +1,17 @@
+﻿@using EasyAbp.Abp.DynamicMenu.Localization
+@using Microsoft.Extensions.Localization
+
+@inject IStringLocalizer<DynamicMenuResource> L
+<CascadingValue Value="this" IsFixed="true">
+    <Button Block="true"
+            Color="@Color.Default"
+            Clicked="@ClickedAsync">
+        <Span TextAlignment="TextAlignment.Start" Class="btn-block">
+            @if (!string.IsNullOrEmpty(Info.Icon))
+            {
+                <Icon Name="@Info.Icon" Class="me-1" />
+            }
+            @Info.DisplayName
+        </Span>
+    </Button>
+</CascadingValue>
