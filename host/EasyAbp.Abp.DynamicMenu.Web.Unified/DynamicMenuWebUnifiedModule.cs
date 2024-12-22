@@ -150,7 +150,7 @@ namespace EasyAbp.Abp.DynamicMenu
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            app.MapAbpStaticAssets();
             app.UseRouting();
             app.UseAuthentication();
 
