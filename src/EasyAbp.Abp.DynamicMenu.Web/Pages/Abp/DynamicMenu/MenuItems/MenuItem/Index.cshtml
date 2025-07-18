@@ -11,8 +11,14 @@
 @inject IHtmlLocalizer<DynamicMenuResource> L
 @inject IAuthorizationService Authorization
 @{
-    PageLayout.Content.Title = L["MenuItem"].Value;
-    PageLayout.Content.BreadCrumb.Add(L["Menu:MenuItem"].Value);
+    var title = L["Menu:MenuItem"].Value;
+    if (!Model.ParentName.IsNullOrEmpty())
+    {
+        title += $" - {Model.ParentName}";
+    }
+
+    PageLayout.Content.Title = title;
+    PageLayout.Content.BreadCrumb.Add(L["Menu:DynamicMenu"].Value);
     PageLayout.Content.MenuItemName = DynamicMenuMenus.MenuItem;
 }
 
@@ -24,35 +30,23 @@
 {
     <abp-style src="/Pages/Abp/DynamicMenu/MenuItems/MenuItem/index.css"/>
 }
+@section content_toolbar
+{
+    @if (await Authorization.IsGrantedAsync(DynamicMenuPermissions.MenuItem.Create))
+    {
+        <abp-button id="NewMenuItemButton"
+                    text="@L["CreateMenuItem"].Value"
+                    icon="plus"
+                    size="Small"
+                    button-type="Primary" />
+    }
+}
 
 <script>
     let parentName = '@Model.ParentName';
 </script>
 
 <abp-card>
-    <abp-card-header>
-        <abp-row>
-            <abp-column size-md="_6">
-                @if (Model.ParentName.IsNullOrEmpty())
-                {
-                    <abp-card-title>@L["MenuItem"]</abp-card-title>
-                }
-                else
-                {
-                    <abp-card-title>@L["MenuItem"] - @Model.ParentName</abp-card-title>
-                }
-            </abp-column>
-            <abp-column size-md="_6" class="text-end">
-			    @if (await Authorization.IsGrantedAsync(DynamicMenuPermissions.MenuItem.Create))
-                {
-                <abp-button id="NewMenuItemButton"
-                            text="@L["CreateMenuItem"].Value"
-                            icon="plus"
-                            button-type="Primary" />
-                }
-            </abp-column>
-        </abp-row>
-    </abp-card-header>
     <abp-card-body>
         <abp-table striped-rows="true" id="MenuItemTable" class="nowrap"/>
     </abp-card-body>
