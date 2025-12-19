@@ -1,14 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <RootNamespace>EasyAbp.Abp.DynamicMenu</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\EasyAbp.Abp.DynamicMenu.Application\EasyAbp.Abp.DynamicMenu.Application.csproj" />
     <ProjectReference Include="..\EasyAbp.Abp.DynamicMenu.Domain.Tests\EasyAbp.Abp.DynamicMenu.Domain.Tests.csproj" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
   </ItemGroup>
 
 </Project>

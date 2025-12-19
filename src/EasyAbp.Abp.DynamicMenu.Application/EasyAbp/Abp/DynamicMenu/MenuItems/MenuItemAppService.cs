@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EasyAbp.Abp.DynamicMenu.Localization;
 using EasyAbp.Abp.DynamicMenu.Permissions;
 using EasyAbp.Abp.DynamicMenu.MenuItems.Dtos;
 using JetBrains.Annotations;
@@ -24,6 +25,9 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
         public MenuItemAppService(IMenuItemRepository repository) : base(repository)
         {
             _repository = repository;
+
+            LocalizationResource = typeof(DynamicMenuResource);
+            ObjectMapperContext = typeof(AbpDynamicMenuApplicationModule);
         }
 
         protected override async Task<IQueryable<MenuItem>> CreateFilteredQueryAsync(GetMenuItemListInput input)

@@ -17,7 +17,7 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
         private readonly IMenuItemRepository _menuItemRepository;
 
         public CreateMenuItemEventHandler(
-            IObjectMapper objectMapper,
+            IObjectMapper<AbpDynamicMenuDomainModule> objectMapper,
             IMenuItemRepository menuItemRepository)
         {
             _objectMapper = objectMapper;
