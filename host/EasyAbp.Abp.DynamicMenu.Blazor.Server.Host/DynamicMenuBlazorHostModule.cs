@@ -6,7 +6,7 @@ using Blazorise.Icons.FontAwesome;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using EasyAbp.Abp.DynamicMenu.Blazor.Server.Host.Menus;
 using EasyAbp.Abp.DynamicMenu.EntityFrameworkCore;
 using EasyAbp.Abp.DynamicMenu.Localization;
