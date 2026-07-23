@@ -1,12 +1,12 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Volo.Abp.AutoMapper;
+using Volo.Abp.Mapperly;
 using Volo.Abp.Domain;
 using Volo.Abp.Modularity;
 
 namespace EasyAbp.Abp.DynamicMenu
 {
     [DependsOn(
-        typeof(AbpAutoMapperModule),
+        typeof(AbpMapperlyModule),
         typeof(AbpDddDomainModule),
         typeof(AbpDynamicMenuDomainSharedModule)
     )]
@@ -14,11 +14,7 @@ namespace EasyAbp.Abp.DynamicMenu
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            context.Services.AddAutoMapperObjectMapper<AbpDynamicMenuDomainModule>();
-            Configure<AbpAutoMapperOptions>(options =>
-            {
-                options.AddMaps<AbpDynamicMenuDomainModule>(validate: false); // todo: https://github.com/abpframework/abp/issues/15404
-            });
+            context.Services.AddMapperlyObjectMapper<AbpDynamicMenuDomainModule>();
         }
     }
 }

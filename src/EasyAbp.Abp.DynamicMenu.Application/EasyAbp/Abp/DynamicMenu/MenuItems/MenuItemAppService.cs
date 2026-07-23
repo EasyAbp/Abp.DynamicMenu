@@ -7,6 +7,7 @@ using EasyAbp.Abp.DynamicMenu.Permissions;
 using EasyAbp.Abp.DynamicMenu.MenuItems.Dtos;
 using JetBrains.Annotations;
 using Volo.Abp.Application.Services;
+using Volo.Abp.ObjectExtending;
 
 namespace EasyAbp.Abp.DynamicMenu.MenuItems
 {
@@ -28,6 +29,54 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
 
             LocalizationResource = typeof(DynamicMenuResource);
             ObjectMapperContext = typeof(AbpDynamicMenuApplicationModule);
+        }
+
+        protected override Task<MenuItem> MapToEntityAsync(CreateMenuItemDto createInput)
+        {
+            var entity = new MenuItem(
+                createInput.ParentName,
+                createInput.InAdministration,
+                createInput.Name,
+                createInput.DisplayName,
+                createInput.Url,
+                createInput.UrlMvc,
+                createInput.UrlBlazor,
+                createInput.UrlAngular,
+                createInput.Permission,
+                createInput.Order,
+                createInput.Icon,
+                createInput.Target,
+                createInput.IsDisabled,
+                createInput.LResourceTypeName,
+                createInput.LResourceTypeAssemblyName,
+                null);
+
+            createInput.MapExtraPropertiesTo(entity);
+
+            return Task.FromResult(entity);
+        }
+
+        protected override Task MapToEntityAsync(UpdateMenuItemDto updateInput, MenuItem entity)
+        {
+            entity.Update(
+                updateInput.ParentName,
+                updateInput.InAdministration,
+                updateInput.DisplayName,
+                updateInput.Url,
+                updateInput.UrlMvc,
+                updateInput.UrlBlazor,
+                updateInput.UrlAngular,
+                updateInput.Permission,
+                updateInput.Order,
+                updateInput.Icon,
+                updateInput.Target,
+                updateInput.IsDisabled,
+                updateInput.LResourceTypeName,
+                updateInput.LResourceTypeAssemblyName);
+
+            updateInput.MapExtraPropertiesTo(entity);
+
+            return Task.CompletedTask;
         }
 
         protected override async Task<IQueryable<MenuItem>> CreateFilteredQueryAsync(GetMenuItemListInput input)

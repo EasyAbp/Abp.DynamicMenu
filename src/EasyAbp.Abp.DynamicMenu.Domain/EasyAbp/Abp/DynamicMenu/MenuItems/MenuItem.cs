@@ -128,5 +128,38 @@ namespace EasyAbp.Abp.DynamicMenu.MenuItems
             LResourceTypeAssemblyName = lResourceTypeAssemblyName;
             MenuItems = menuItems ?? new List<MenuItem>();
         }
+
+        public void Update(
+            string parentName,
+            bool inAdministration,
+            string displayName,
+            string url,
+            string urlMvc,
+            string urlBlazor,
+            string urlAngular,
+            string permission,
+            int? order,
+            string icon,
+            string target,
+            bool isDisabled,
+            string lResourceTypeName,
+            string lResourceTypeAssemblyName
+        )
+        {
+            ParentName = parentName;
+            InAdministration = inAdministration;
+            DisplayName = displayName;
+            Url = url;
+            UrlMvc = urlMvc;
+            UrlBlazor = urlBlazor;
+            UrlAngular = urlAngular;
+            Permission = permission;
+            Order = order;
+            Icon = icon;
+            Target = target;
+            IsDisabled = isDisabled;
+            LResourceTypeName = lResourceTypeName;
+            LResourceTypeAssemblyName = lResourceTypeAssemblyName;
+        }
     }
 }
